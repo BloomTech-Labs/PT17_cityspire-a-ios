@@ -20,5 +20,5 @@ struct Walkability: Decodable {
 }
 
 /// TODO: other decodable data to use
-
+//Setup Sal
 
