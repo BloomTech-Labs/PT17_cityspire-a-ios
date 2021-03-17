@@ -22,7 +22,9 @@ struct Profile: Codable {
         case id
         case email
         case name
-        case avatarURL = "avatarUrl"
+//        case avatarURL = "avatarUrl"
+        case avatarURL
+        
     }
 }
 

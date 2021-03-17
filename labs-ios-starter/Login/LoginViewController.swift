@@ -60,7 +60,11 @@ class LoginViewController: UIViewController {
             if exists {
                 self.performSegue(withIdentifier: "ShowDetailProfileList", sender: nil)
             } else {
+                
+                // TO-DO: - FIX Add Profile
+                //bypass AddProfile and go to ShowDetailPro
                 self.performSegue(withIdentifier: "ModalAddProfile", sender: nil)
+//                self.performSegue(withIdentifier: "ShowDetailProfileList", sender: nil)
             }
         }
     }

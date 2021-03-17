@@ -9,6 +9,8 @@
 import UIKit
 import OktaAuth
 
+//https://auth.lambdalabs.dev/
+
 class ProfileController {
     
     static let shared = ProfileController()
@@ -20,7 +22,7 @@ class ProfileController {
     private(set) var authenticatedUserProfile: Profile?
     private(set) var profiles: [Profile] = []
     
-    private let baseURL = URL(string: "https://labs-api-starter.herokuapp.com/")!
+    private let baseURL = URL(string: "netw")!
     
     private init() {
         NotificationCenter.default.addObserver(self,
