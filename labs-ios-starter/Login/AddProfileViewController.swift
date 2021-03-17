@@ -54,9 +54,10 @@ class AddProfileViewController: UIViewController {
                 NSLog("Fields missing information. Present alert to notify user to enter all information.")
                 return
         }
-        
+        // TO-DO: - HIDE activityIndicator by default - Add Image instead of URL
         activityIndicator.startAnimating()
         
+        // if successful
         profileController.addProfile(profile) { [weak self] in
             
             guard let self = self else { return }
@@ -88,6 +89,7 @@ extension AddProfileViewController: UITextFieldDelegate {
         switch textField {
         case nameTextField:
             emailTextField.becomeFirstResponder()
+            
         case emailTextField:
             avatarURLTextField.becomeFirstResponder()
         case avatarURLTextField:
