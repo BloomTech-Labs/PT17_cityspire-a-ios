@@ -88,7 +88,7 @@
                     <connections>
                         <segue destination="o9A-9L-jW8" kind="presentation" identifier="ModalAddProfile" id="vYb-th-yYx"/>
                         <segue destination="aOC-qF-9qB" kind="presentation" identifier="ShowDetailProfileList" modalPresentationStyle="fullScreen" id="Tfb-bT-2YH"/>
-                        <segue destination="sGd-cV-1cL" kind="show" identifier="MainTabBar" animates="NO" id="KdX-NJ-G8r"/>
+                        <segue destination="sGd-cV-1cL" kind="presentation" identifier="MainTabBar" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="KdX-NJ-G8r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-Mn-ZnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -118,7 +118,7 @@
             <objects>
                 <collectionViewController id="dv3-nm-Kh5" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6iJ-qa-Dw7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rXV-2j-O1P">
@@ -153,7 +153,7 @@
             <objects>
                 <collectionViewController id="ibW-xU-KzC" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NVQ-sq-Ine">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v6d-JI-vbm">
@@ -188,22 +188,27 @@
             <objects>
                 <viewController id="EaI-as-orf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5N2-pi-CGH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mdv-ZR-BSs">
-                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for a home" translatesAutoresizingMaskIntoConstraints="NO" id="ygC-kO-3ch">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" placeholder="Search for a home" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ygC-kO-3ch">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cfF-e8-8sj"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u3Y-pS-hu6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ygC-kO-3ch" firstAttribute="leading" secondItem="u3Y-pS-hu6" secondAttribute="leading" id="3nQ-0L-LSV"/>
+                            <constraint firstItem="ygC-kO-3ch" firstAttribute="top" secondItem="u3Y-pS-hu6" secondAttribute="top" id="OzR-WY-984"/>
                             <constraint firstItem="u3Y-pS-hu6" firstAttribute="bottom" secondItem="Mdv-ZR-BSs" secondAttribute="bottom" id="Q26-BO-ikY"/>
+                            <constraint firstItem="ygC-kO-3ch" firstAttribute="trailing" secondItem="u3Y-pS-hu6" secondAttribute="trailing" id="WD9-sj-UBY"/>
                             <constraint firstItem="u3Y-pS-hu6" firstAttribute="trailing" secondItem="Mdv-ZR-BSs" secondAttribute="trailing" id="gG7-7s-REa"/>
                             <constraint firstItem="Mdv-ZR-BSs" firstAttribute="leading" secondItem="u3Y-pS-hu6" secondAttribute="leading" id="rKD-Tv-omn"/>
                             <constraint firstItem="Mdv-ZR-BSs" firstAttribute="top" secondItem="u3Y-pS-hu6" secondAttribute="top" id="s4T-w9-Ely"/>
@@ -213,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWK-zd-JaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3729" y="871"/>
+            <point key="canvasLocation" x="3245" y="817"/>
         </scene>
         <!--Main Dashboard Tab Bar Controller-->
         <scene sceneID="sy9-k1-CHB">
@@ -323,7 +328,7 @@
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass.circle" catalog="system" id="3j7-aj-gl7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="grv-Ml-JlP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -333,7 +338,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8F-wm-fZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2477" y="871"/>
+            <point key="canvasLocation" x="2199" y="817"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="9nF-GC-ngg">
@@ -342,7 +347,7 @@
                     <tabBarItem key="tabBarItem" title="Favorites" image="bolt.heart" catalog="system" id="LRv-GA-SCn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="91W-K6-Cyc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -361,7 +366,7 @@
                     <tabBarItem key="tabBarItem" title="Popular" image="flame" catalog="system" id="6CW-pQ-c1m"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eNl-2c-7cH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
