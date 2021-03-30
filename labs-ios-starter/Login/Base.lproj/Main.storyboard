@@ -88,6 +88,7 @@
                     <connections>
                         <segue destination="o9A-9L-jW8" kind="presentation" identifier="ModalAddProfile" id="vYb-th-yYx"/>
                         <segue destination="aOC-qF-9qB" kind="presentation" identifier="ShowDetailProfileList" modalPresentationStyle="fullScreen" id="Tfb-bT-2YH"/>
+                        <segue destination="sGd-cV-1cL" kind="show" identifier="MainTabBar" animates="NO" id="KdX-NJ-G8r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcT-Mn-ZnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -117,7 +118,7 @@
             <objects>
                 <collectionViewController id="dv3-nm-Kh5" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6iJ-qa-Dw7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rXV-2j-O1P">
@@ -152,7 +153,7 @@
             <objects>
                 <collectionViewController id="ibW-xU-KzC" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NVQ-sq-Ine">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v6d-JI-vbm">
@@ -187,11 +188,11 @@
             <objects>
                 <viewController id="EaI-as-orf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5N2-pi-CGH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mdv-ZR-BSs">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                             </mapView>
                             <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for a home" translatesAutoresizingMaskIntoConstraints="NO" id="ygC-kO-3ch">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
@@ -214,10 +215,11 @@
             </objects>
             <point key="canvasLocation" x="3729" y="871"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Dashboard Tab Bar Controller-->
         <scene sceneID="sy9-k1-CHB">
             <objects>
-                <tabBarController id="sGd-cV-1cL" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ShowDetailProfileList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sGd-cV-1cL" customClass="MainDashboardTabBarController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="g8Y-ph-4va"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jvN-V1-FeU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -321,7 +323,7 @@
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass.circle" catalog="system" id="3j7-aj-gl7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="grv-Ml-JlP">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -340,7 +342,7 @@
                     <tabBarItem key="tabBarItem" title="Favorites" image="bolt.heart" catalog="system" id="LRv-GA-SCn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="91W-K6-Cyc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -359,7 +361,7 @@
                     <tabBarItem key="tabBarItem" title="Popular" image="flame" catalog="system" id="6CW-pQ-c1m"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eNl-2c-7cH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

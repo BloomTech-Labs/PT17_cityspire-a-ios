@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileTabBarViewController: UITabBarController {
+class ProfileTabBarViewController: MainDashboardTabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

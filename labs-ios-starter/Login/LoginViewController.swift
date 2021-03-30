@@ -57,8 +57,10 @@ class LoginViewController: UIViewController {
             guard let self = self,
                 self.presentedViewController == nil else { return }
             
+            //Transition to MainTabBar Controller Not ShowDetailProfileList
+            
             if exists {
-                self.performSegue(withIdentifier: "ShowDetailProfileList", sender: nil)
+                self.performSegue(withIdentifier: "MainTabBar", sender: nil)
             } else {
                 self.performSegue(withIdentifier: "ModalAddProfile", sender: nil)
             }

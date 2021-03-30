@@ -140,7 +140,7 @@
                 <viewControllerPlaceholder storyboardName="MapScreen" id="9k4-1Y-ICJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IoP-4t-8Gx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="65"/>
+            <point key="canvasLocation" x="1180" y="-52"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="ENq-cX-3NS">
@@ -150,7 +150,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yh7-Nd-T0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="121"/>
+            <point key="canvasLocation" x="1388" y="280"/>
         </scene>
     </scenes>
     <resources>
