@@ -112,7 +112,42 @@
             </objects>
             <point key="canvasLocation" x="2143" y="325"/>
         </scene>
-        <!--Favorites-->
+        <!--Collection View Controller-->
+        <scene sceneID="ojT-9G-82G">
+            <objects>
+                <collectionViewController id="dv3-nm-Kh5" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6iJ-qa-Dw7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rXV-2j-O1P">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hdm-j4-Itx">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="e3J-aB-Bdt">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="dv3-nm-Kh5" id="HBZ-As-chV"/>
+                            <outlet property="delegate" destination="dv3-nm-Kh5" id="19O-S4-Zk5"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="ZMX-B7-aa5"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUD-NP-FT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2807" y="1521"/>
+        </scene>
+        <!--Collection View Controller-->
         <scene sceneID="IFX-32-PYn">
             <objects>
                 <collectionViewController id="ibW-xU-KzC" sceneMemberID="viewController">
@@ -141,27 +176,11 @@
                             <outlet property="delegate" destination="ibW-xU-KzC" id="T8Y-C5-TeC"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="bolt.heart" catalog="system" id="LRv-GA-SCn"/>
+                    <navigationItem key="navigationItem" id="3al-SR-Hqp"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aw2-Uj-tic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2428" y="1817"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="aZN-Sh-dEo">
-            <objects>
-                <viewController id="Ypy-ME-oek" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fFh-K1-H0k">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="rRS-ka-EvS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Uv7-Le-njx"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WS7-tX-3eV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3461" y="1453"/>
+            <point key="canvasLocation" x="3891" y="2229"/>
         </scene>
         <!--Map Search-->
         <scene sceneID="ZUo-TL-xQj">
@@ -193,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWK-zd-JaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4371.0144927536239" y="750"/>
+            <point key="canvasLocation" x="3729" y="871"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sy9-k1-CHB">
@@ -206,13 +225,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="taY-GX-CUA" kind="relationship" relationship="viewControllers" id="Vfe-08-C4K"/>
-                        <segue destination="Ypy-ME-oek" kind="relationship" relationship="viewControllers" id="eod-is-tVP"/>
-                        <segue destination="ibW-xU-KzC" kind="relationship" relationship="viewControllers" id="PP9-hP-fbc"/>
+                        <segue destination="frC-nw-PPR" kind="relationship" relationship="viewControllers" id="PP9-hP-fbc"/>
+                        <segue destination="atw-we-OY1" kind="relationship" relationship="viewControllers" id="agH-MZ-ozx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MFF-eE-8vp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1129" y="969"/>
+            <point key="canvasLocation" x="1006" y="1081"/>
         </scene>
         <!--Add Profile View Controller-->
         <scene sceneID="Rcb-Kk-CcR">
@@ -312,7 +331,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8F-wm-fZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3460.8695652173915" y="750"/>
+            <point key="canvasLocation" x="2477" y="871"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="9nF-GC-ngg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="frC-nw-PPR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="bolt.heart" catalog="system" id="LRv-GA-SCn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="91W-K6-Cyc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ibW-xU-KzC" kind="relationship" relationship="rootViewController" id="hmw-yK-pkK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Fp-Rt-FlU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2513" y="2229"/>
+        </scene>
+        <!--Popular-->
+        <scene sceneID="Gyq-Ss-vcI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="atw-we-OY1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Popular" image="flame" catalog="system" id="6CW-pQ-c1m"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eNl-2c-7cH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dv3-nm-Kh5" kind="relationship" relationship="rootViewController" id="QtP-wG-NZE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SSl-k2-apm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="1522"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -323,6 +380,7 @@
         <image name="Map" width="374.5" height="605"/>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
         <image name="bolt.heart" catalog="system" width="128" height="109"/>
+        <image name="flame" catalog="system" width="108" height="128"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <namedColor name="LightBlue">
             <color red="0.043000001460313797" green="0.47499999403953552" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
