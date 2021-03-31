@@ -13,8 +13,8 @@ class SearchViewController: UIViewController {
     // MARK: - Properties
     var searchResponse = Map()
     var network = NetworkClient()
-    var city = ""
-    var state = ""
+    var city = "New York"
+    var state = "NY"
     
     // MARK: Outlets
     @IBOutlet weak var backgroundGradient: UIView!
