@@ -112,7 +112,7 @@
             </objects>
             <point key="canvasLocation" x="2143" y="325"/>
         </scene>
-        <!--Item 2-->
+        <!--Favorites-->
         <scene sceneID="zh2-5p-S5G">
             <objects>
                 <viewController id="zRL-gO-elP" sceneMemberID="viewController">
@@ -122,11 +122,11 @@
                         <viewLayoutGuide key="safeArea" id="bly-7a-l9W"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="vfs-Ln-Zeu"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="hlj-fV-nYP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zT2-OV-Vbw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3309" y="2119"/>
+            <point key="canvasLocation" x="4218.840579710145" y="2118.75"/>
         </scene>
         <!--Search-->
         <scene sceneID="pdH-hg-50d">
@@ -190,7 +190,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="sD1-uo-oY4" kind="relationship" relationship="viewControllers" id="dae-fO-cAX"/>
-                        <segue destination="zRL-gO-elP" kind="relationship" relationship="viewControllers" id="ze4-si-zq9"/>
+                        <segue destination="UPA-Yg-boD" kind="relationship" relationship="viewControllers" id="ze4-si-zq9"/>
                         <segue destination="Jgo-uv-817" kind="relationship" relationship="viewControllers" id="Q4F-SQ-Fhk"/>
                     </connections>
                 </tabBarController>
@@ -317,6 +317,25 @@
             </objects>
             <point key="canvasLocation" x="3779.7101449275365" y="1366.7410714285713"/>
         </scene>
+        <!--Favorites-->
+        <scene sceneID="wiS-Zf-YKH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UPA-Yg-boD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="bolt.heart" catalog="system" id="vfs-Ln-Zeu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kMO-T0-rg6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zRL-gO-elP" kind="relationship" relationship="rootViewController" id="QWG-EH-AKn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tlc-rC-L2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3308.6956521739135" y="2118.75"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Tfb-bT-2YH"/>
@@ -325,6 +344,7 @@
         <image name="CitySpireLogo-Dark" width="234" height="66"/>
         <image name="Map" width="374.5" height="605"/>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
+        <image name="bolt.heart" catalog="system" width="128" height="109"/>
         <image name="flame" catalog="system" width="108" height="128"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <namedColor name="LightBlue">
