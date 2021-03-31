@@ -47,6 +47,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
+                                    <segue destination="QDa-2K-GPH" kind="presentation" identifier="NewTabBarController" modalPresentationStyle="fullScreen" id="pdf-nQ-GfE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rE-Kz-bu3">
@@ -126,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zT2-OV-Vbw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4218.840579710145" y="2118.75"/>
+            <point key="canvasLocation" x="3752" y="2068"/>
         </scene>
         <!--Search-->
         <scene sceneID="pdH-hg-50d">
@@ -142,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpu-4M-ome" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4026" y="616"/>
+            <point key="canvasLocation" x="3709" y="658"/>
         </scene>
         <!--Popular Cities-->
         <scene sceneID="WsQ-Wv-6Ty">
@@ -177,7 +178,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ui6-2w-n8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4689.8550724637689" y="1366.7410714285713"/>
+            <point key="canvasLocation" x="3709" y="1367"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mim-HO-EAZ">
@@ -296,7 +297,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oB6-DV-4UK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3159" y="616"/>
+            <point key="canvasLocation" x="2477" y="658"/>
         </scene>
         <!--Popular-->
         <scene sceneID="tvm-4i-TKw">
@@ -315,7 +316,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xR-Tw-dO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3779.7101449275365" y="1366.7410714285713"/>
+            <point key="canvasLocation" x="2446" y="1367"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="wiS-Zf-YKH">
@@ -334,7 +335,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlc-rC-L2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3308.6956521739135" y="2118.75"/>
+            <point key="canvasLocation" x="2477" y="2068"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
