@@ -23,8 +23,7 @@ struct NetworkClient {
     func getWalkability(city: String, state: String, completion: @escaping (Walkability?, Error?) -> ()) {
         
 //        let endpoint = "walkability"
-//        guard let url = URL(string: api + "/" + endpoint) else { return }
-//        print(url)
+//        guard let url = URL(string: api + endpoint) else { return }
         
         guard let url = URL(string: "http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/api/walkability") else { return }
         
