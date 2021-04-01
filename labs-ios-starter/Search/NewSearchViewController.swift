@@ -24,9 +24,9 @@ class NewSearchViewController: UIViewController {
     @IBOutlet weak var populationLabel: UILabel!
     @IBOutlet weak var livabilityLabel: UILabel!
     
-    @IBOutlet weak var diversityIndex: UILabel!
-    @IBOutlet weak var diversityIndex: UILabel!
-    @IBOutlet weak var diversityIndex: UILabel!
+    @IBOutlet weak var diversityIndexLabel: UILabel!
+    @IBOutlet weak var rentalPriceLabel: UILabel!
+    @IBOutlet weak var walkabilityIndexLabel: UILabel!
     
     @IBOutlet weak var searchBar: UISearchBar!
     
