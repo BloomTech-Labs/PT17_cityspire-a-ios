@@ -11,7 +11,9 @@ import Foundation
 /// Handles logic for networking requests to retrieve specific information for a city
 struct NetworkClient {
     // MARK: - Properties
-    let api = "http://cityscape-203.eba-ijacxhm2.us-east-1.elasticbeanstalk.com/api/"
+//    let api = "http://cityscape-203.eba-ijacxhm2.us-east-1.elasticbeanstalk.com/api/" // Returning 404 error
+    let api = "http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/"
+    
     
     /// Function to retrieve walkability score
     /// - Parameters:
@@ -20,15 +22,17 @@ struct NetworkClient {
     ///  - completion: Closure that will be called when the request is complete
     func getWalkability(city: String, state: String, completion: @escaping (Walkability?, Error?) -> ()) {
         
-        let endpoint = "walkability"
-        guard let url = URL(string: api + endpoint) else { return }
+//        let endpoint = "walkability"
+//        guard let url = URL(string: api + endpoint) else { return }
+        
+        guard let url = URL(string: "http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/api/walkability") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         
-        let body = PostParans(city: city, state: state)
+        let body = PostParams(city: city, state: state)
         guard let jsonData = try? JSONEncoder().encode(body) else { return }
         request.httpBody = jsonData
         

@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
             
             guard let self = self,
                 self.presentedViewController == nil else { return }
-            
+            //Added Sal - Temp - transition from ShowDetailProfileList to NewTabBarControllerSegue
             if exists {
                 self.performSegue(withIdentifier: "ShowDetailProfileList", sender: nil)
             } else {
