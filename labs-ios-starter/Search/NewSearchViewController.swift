@@ -59,6 +59,7 @@ class NewSearchViewController: UIViewController {
                 self!.diversityIndexLabel.text = "The Diversity Index is: \(cityData.diversityIndex ?? 0)"
                 self!.rentalPriceLabel.text = "The Avg Rental Prices is: $\(cityData.rentalPrice ?? 0)"
                 self!.walkabilityIndexLabel.text = "The Walkability Index is: \(cityData.walkability ?? 0)"
+                self!.navigationItem.title = cityData.city.city?.capitalized
             }
 
         }
