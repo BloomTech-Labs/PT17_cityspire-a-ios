@@ -189,7 +189,7 @@
                     <connections>
                         <outlet property="airQualityLabel" destination="uTY-A1-dn9" id="5tY-zA-YYY"/>
                         <outlet property="crimeLabel" destination="HBw-bT-OBZ" id="NVz-fe-spY"/>
-                        <outlet property="liveabilityLabel" destination="STe-PF-e3O" id="3Ny-hX-god"/>
+                        <outlet property="livabilityLabel" destination="STe-PF-e3O" id="3Ny-hX-god"/>
                         <outlet property="populationLabel" destination="cjA-px-4OD" id="A2s-Gn-9WK"/>
                         <outlet property="searchBar" destination="PDs-WC-VIW" id="9mf-OL-Y3q"/>
                     </connections>
