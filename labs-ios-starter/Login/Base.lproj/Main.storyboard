@@ -131,18 +131,64 @@
         <!--Search-->
         <scene sceneID="pdH-hg-50d">
             <objects>
-                <viewController id="zQc-Kd-Ctn" sceneMemberID="viewController">
+                <viewController id="zQc-Kd-Ctn" customClass="NewSearchViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xBW-Up-o7a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search For A City" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PDs-WC-VIW">
+                                <rect key="frame" x="0.0" y="763" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ArT-9Z-2Sm"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="fWM-q1-YxI">
+                                <rect key="frame" x="20" y="138" width="374" height="181"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Quality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTY-A1-dn9">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBw-bT-OBZ">
+                                        <rect key="frame" x="0.0" y="53.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Population" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjA-px-4OD">
+                                        <rect key="frame" x="0.0" y="107" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liveability" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STe-PF-e3O">
+                                        <rect key="frame" x="0.0" y="160.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="P5s-SI-12F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fWM-q1-YxI" firstAttribute="top" secondItem="P5s-SI-12F" secondAttribute="top" constant="50" id="ERQ-PR-5EL"/>
+                            <constraint firstItem="P5s-SI-12F" firstAttribute="trailing" secondItem="fWM-q1-YxI" secondAttribute="trailing" constant="20" id="J7I-t4-bJK"/>
+                            <constraint firstItem="PDs-WC-VIW" firstAttribute="leading" secondItem="P5s-SI-12F" secondAttribute="leading" id="SkG-bx-kER"/>
+                            <constraint firstItem="PDs-WC-VIW" firstAttribute="bottom" secondItem="P5s-SI-12F" secondAttribute="bottom" id="UDT-EH-Cn5"/>
+                            <constraint firstItem="PDs-WC-VIW" firstAttribute="trailing" secondItem="P5s-SI-12F" secondAttribute="trailing" id="Xur-go-QuI"/>
+                            <constraint firstItem="fWM-q1-YxI" firstAttribute="leading" secondItem="P5s-SI-12F" secondAttribute="leading" constant="20" id="wvO-wl-aY0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="fOE-cO-oic"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpu-4M-ome" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3709" y="658"/>
+            <point key="canvasLocation" x="3708.6956521739135" y="657.58928571428567"/>
         </scene>
         <!--Popular Cities-->
         <scene sceneID="WsQ-Wv-6Ty">
