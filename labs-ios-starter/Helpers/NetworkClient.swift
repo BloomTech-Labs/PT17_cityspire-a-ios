@@ -22,10 +22,10 @@ struct NetworkClient {
     ///  - completion: Closure that will be called when the request is complete
     func getWalkability(city: String, state: String, completion: @escaping (Walkability?, Error?) -> ()) {
         
-//        let endpoint = "walkability"
-//        guard let url = URL(string: api + endpoint) else { return }
+        let endpoint = "walkability"
+        guard let url = URL(string: api + endpoint) else { return }
         
-        guard let url = URL(string: "http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/api/walkability") else { return }
+//        guard let url = URL(string: "http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/api/walkability") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -48,7 +48,6 @@ struct NetworkClient {
                     completion(nil, error)
                 }
             }
-            
         }
         task.resume()
     }
