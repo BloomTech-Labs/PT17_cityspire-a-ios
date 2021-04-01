@@ -145,7 +145,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="fWM-q1-YxI">
-                                <rect key="frame" x="20" y="138" width="374" height="181"/>
+                                <rect key="frame" x="20" y="138" width="374" height="341.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Quality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTY-A1-dn9">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -171,6 +171,24 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="diversityIndex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAm-sc-ivr">
+                                        <rect key="frame" x="0.0" y="214" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rentalPrice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqf-5I-0f5">
+                                        <rect key="frame" x="0.0" y="267.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="walkability" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjI-Jd-jxJ">
+                                        <rect key="frame" x="0.0" y="321" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -189,9 +207,12 @@
                     <connections>
                         <outlet property="airQualityLabel" destination="uTY-A1-dn9" id="5tY-zA-YYY"/>
                         <outlet property="crimeLabel" destination="HBw-bT-OBZ" id="NVz-fe-spY"/>
+                        <outlet property="diversityIndexLabel" destination="HAm-sc-ivr" id="d65-sV-7xX"/>
                         <outlet property="livabilityLabel" destination="STe-PF-e3O" id="3Ny-hX-god"/>
                         <outlet property="populationLabel" destination="cjA-px-4OD" id="A2s-Gn-9WK"/>
+                        <outlet property="rentalPriceLabel" destination="Mqf-5I-0f5" id="hBl-m3-Emz"/>
                         <outlet property="searchBar" destination="PDs-WC-VIW" id="9mf-OL-Y3q"/>
+                        <outlet property="walkabilityIndexLabel" destination="DjI-Jd-jxJ" id="N6W-zX-Xkb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpu-4M-ome" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

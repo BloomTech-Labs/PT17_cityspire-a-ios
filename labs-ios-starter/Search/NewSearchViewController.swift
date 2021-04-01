@@ -55,7 +55,10 @@ class NewSearchViewController: UIViewController {
                 self!.airQualityLabel.text = "The AirQuality Index is: \(cityData.airQualityIndex ?? "NA")"
                 self!.crimeLabel.text = "The CrimeData Index is: \(cityData.crime ?? "NA")"
                 self!.populationLabel.text = "The Population is: \(cityData.population ?? 0)"
-                self!.livabilityLabel.text = "The Liveability Index is: \(cityData.livability ?? 0)"
+                self!.livabilityLabel.text = "The Livability Index is: \(cityData.livability ?? 0)"
+                self!.diversityIndexLabel.text = "The Diversity Index is: \(cityData.diversityIndex ?? 0)"
+                self!.rentalPriceLabel.text = "The Avg Rental Prices is: $\(cityData.rentalPrice ?? 0)"
+                self!.walkabilityIndexLabel.text = "The Walkability Index is: \(cityData.walkability ?? 0)"
             }
 
         }
