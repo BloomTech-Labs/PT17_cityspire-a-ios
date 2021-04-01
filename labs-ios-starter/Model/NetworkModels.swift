@@ -26,7 +26,6 @@ struct City: Codable {
 }
 
 struct CityData : Codable {
-    
     let airQualityIndex : String?
     let crime : String?
     let diversityIndex : Int?

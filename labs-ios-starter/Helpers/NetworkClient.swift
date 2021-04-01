@@ -12,7 +12,7 @@ import Foundation
 struct NetworkClient {
     // MARK: - Properties
 //    let api = "http://cityscape-203.eba-ijacxhm2.us-east-1.elasticbeanstalk.com/api/" // Returning 404 error
-    let api = "http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/"
+    let api = "http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/api/"
     
     
     /// Function to retrieve walkability score
