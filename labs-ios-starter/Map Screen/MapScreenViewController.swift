@@ -83,6 +83,7 @@ class MapScreenViewController: UIViewController {
     /// Sets the card view the user tapped on to display more information
     func setUpViews() {
         walkabilityLabel.text = "\(walkability!.walkability)"
+        print("Walkability score is : \(walkability!.walkability)")
 
     }
 
