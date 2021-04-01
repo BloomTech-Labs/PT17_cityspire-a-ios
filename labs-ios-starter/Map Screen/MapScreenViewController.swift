@@ -94,7 +94,11 @@ class MapScreenViewController: UIViewController {
     }
     
     //MARK: - Request City Data
-    
+    func getCityDataFromAPI(city: String, state: String) {
+        network.getCityData(city: city, state: state) { (data, error) in
+            
+        }
+    }
 
     // MARK: - IBActions
     @IBAction func searchButtonPressed(_ sender: Any) {
