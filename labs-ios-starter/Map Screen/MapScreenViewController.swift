@@ -49,6 +49,9 @@ class MapScreenViewController: UIViewController {
     
     //Add CityData
     var cityData = [CityData]()
+    var network = NetworkClient()
+    var city = "New York"
+    var state = "NY"
 
     override var prefersStatusBarHidden: Bool { return true }
 
@@ -89,6 +92,9 @@ class MapScreenViewController: UIViewController {
         print("Walkability score is : \(walkability!.walkability)")
 
     }
+    
+    //MARK: - Request City Data
+    
 
     // MARK: - IBActions
     @IBAction func searchButtonPressed(_ sender: Any) {
