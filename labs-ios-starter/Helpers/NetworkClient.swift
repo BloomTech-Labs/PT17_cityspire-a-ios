@@ -56,9 +56,9 @@ struct NetworkClient {
     ///  - city: city to be entered to get specific score
     ///  - state: state to be entered to get specific score
     ///  - completion: Closure that will be called when the request is complete
-    func getCityData(city: String, state: String, completion: @escaping (Walkability?, Error?) -> ()) {
+    func getCityData(city: String, state: String, completion: @escaping (CityData?, Error?) -> ()) {
         
-        let endpoint = "walkability"
+        let endpoint = "get_data"
         guard let url = URL(string: api + endpoint) else { return }
         
         var request = URLRequest(url: url)
@@ -75,8 +75,8 @@ struct NetworkClient {
                 print(error)
             } else if let data = data {
                 do {
-                    let walkability = try JSONDecoder().decode(Walkability.self, from: data)
-                    completion(walkability, nil)
+                    let cityData = try JSONDecoder().decode(CityData.self, from: data)
+                    completion(cityData, nil)
                 }
                 catch {
                     completion(nil, error)
