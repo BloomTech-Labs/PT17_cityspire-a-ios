@@ -10,6 +10,12 @@ import UIKit
 
 class NewSearchViewController: UITabBarController {
     
+    
+    //MARK: - Variables
+    let networkClient = NetworkClient()
+    let city : String? = ""
+    let state : String? = ""
+    
     //MARK: - Outlets
     
     @IBOutlet weak var airQualityLabel: UILabel!
@@ -19,14 +25,33 @@ class NewSearchViewController: UITabBarController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+//        searchBar.delegate = self
+        view.backgroundColor = .white
         
-        searchBar.delegate = self
-        
-
+        fetchCityData(city: "New York", state: "NY")
         // Do any additional setup after loading the view.
     }
+    
+    
+    //get city data
+    func fetchCityData(city: String, state: String) -> Void {
+        networkClient.getCityData(city: city, state: state) { (cityData, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+                return
+            }
+            print(cityData)
+//            self.airQualityLabel.text = "The AirQuality Index is: \(String(describing: cityData?.airQualityIndex))"
+//            self.crimeLabel.text = "The CrimeData Index is: \(cityData?.crime)"
+//            self.populationLabel.text = "The Population is: \(cityData!.population)"
+//            self.liveabilityLabel.text = "The Liveability Index is: \(cityData!.livability)"
+        }
+    }
+    
+    
 }
 
 extension NewSearchViewController: UISearchBarDelegate {

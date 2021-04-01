@@ -47,6 +47,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="qez-xn-3z4"/>
+                                    <segue destination="QDa-2K-GPH" kind="presentation" identifier="NewTabBarControllerSegue" modalPresentationStyle="fullScreen" id="R0O-Hg-l9K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rE-Kz-bu3">
@@ -249,7 +250,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7t-vw-7om" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="1076"/>
+            <point key="canvasLocation" x="1545" y="897"/>
         </scene>
         <!--Add Profile View Controller-->
         <scene sceneID="Rcb-Kk-CcR">
@@ -349,7 +350,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oB6-DV-4UK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2477" y="771"/>
+            <point key="canvasLocation" x="2675" y="658"/>
         </scene>
         <!--Popular-->
         <scene sceneID="tvm-4i-TKw">
