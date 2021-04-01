@@ -174,7 +174,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P5s-SI-12F"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="fWM-q1-YxI" firstAttribute="top" secondItem="P5s-SI-12F" secondAttribute="top" constant="50" id="ERQ-PR-5EL"/>
                             <constraint firstItem="P5s-SI-12F" firstAttribute="trailing" secondItem="fWM-q1-YxI" secondAttribute="trailing" constant="20" id="J7I-t4-bJK"/>
@@ -185,6 +185,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="fOE-cO-oic"/>
+                    <connections>
+                        <outlet property="airQualityLabel" destination="uTY-A1-dn9" id="5tY-zA-YYY"/>
+                        <outlet property="crimeLabel" destination="HBw-bT-OBZ" id="NVz-fe-spY"/>
+                        <outlet property="liveabilityLabel" destination="STe-PF-e3O" id="3Ny-hX-god"/>
+                        <outlet property="populationLabel" destination="cjA-px-4OD" id="A2s-Gn-9WK"/>
+                        <outlet property="searchBar" destination="PDs-WC-VIW" id="9mf-OL-Y3q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpu-4M-ome" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -401,6 +408,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
