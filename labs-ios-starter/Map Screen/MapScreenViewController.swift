@@ -46,6 +46,9 @@ class MapScreenViewController: UIViewController {
     var rentalStatement: String = ""
 
     var activityView = UIActivityIndicatorView(style: .large)
+    
+    //Add CityData
+    var cityData = [CityData]()
 
     override var prefersStatusBarHidden: Bool { return true }
 
