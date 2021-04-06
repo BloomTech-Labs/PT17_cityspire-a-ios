@@ -34,7 +34,7 @@ class NewSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        searchBar.delegate = self
-        view.backgroundColor = .white
+//        view.backgroundColor = .white
         
 
         fetchCityData(city: "Los Angeles", state: "CA")
@@ -44,10 +44,10 @@ class NewSearchViewController: UIViewController {
     func fetchCityData(city: String, state: String) -> Void {
         networkClient.getCityData(city: city, state: state) { [weak self] (cityData, error) in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
                 return
             }
-            print("Just CiTYDATA \(cityData)")
+//            print("Just CiTYDATA \(cityData)")
             
             guard let cityData = cityData else { return }
             
