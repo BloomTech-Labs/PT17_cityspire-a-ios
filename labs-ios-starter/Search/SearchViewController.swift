@@ -55,11 +55,35 @@ class SearchViewController: UIViewController {
         }
     }
     
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toMap" {
+//            let vc = segue.destination as! MapScreenViewController
+//            vc.searchItem = searchResponse
+//
+//
+//            network.getCityData(city: city, state: state) { (cityData, error) in
+//                if error != nil {
+//                    DispatchQueue.main.async {
+//                        vc.performSegue(withIdentifier: "unwindToSearch", sender: self)
+//                    }
+//                    return
+//                }
+//                DispatchQueue.main.async {
+//                    vc.walkability = cityData?.walkability ?? 0
+//                    vc.setUpViews()
+//                    vc.counterForBlurView -= 1
+//                    vc.checkCounter()
+//                }
+//            }
+//        }
+//    }
+//
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMap" {
             let vc = segue.destination as! MapScreenViewController
             vc.searchItem = searchResponse
-            
+
             network.getWalkability(city: city, state: state) { (walkability, error) in
                 if error != nil {
                     DispatchQueue.main.async {
@@ -68,7 +92,7 @@ class SearchViewController: UIViewController {
                     return
                 }
                 DispatchQueue.main.async {
-                    vc.walkability = walkability
+//                    vc.walkability = walkability
                     vc.setUpViews()
                     vc.counterForBlurView -= 1
                     vc.checkCounter()

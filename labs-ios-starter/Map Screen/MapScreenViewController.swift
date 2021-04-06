@@ -46,6 +46,12 @@ class MapScreenViewController: UIViewController {
     var rentalStatement: String = ""
 
     var activityView = UIActivityIndicatorView(style: .large)
+    
+    //Add CityData
+    var cityData = [CityData]()
+    var network = NetworkClient()
+    var city = "New York"
+    var state = "NY"
 
     override var prefersStatusBarHidden: Bool { return true }
 
@@ -71,6 +77,15 @@ class MapScreenViewController: UIViewController {
         blurView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         popUpView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width / 1.5, height: self.view.frame.height / 3.5)
         popUpView.layer.cornerRadius = 5.0
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        var cityData = getCityDataFromAPI(city: searchItem.cityName, state: state)
+        print(cityData)
+    
     }
 
     func checkCounter(){
@@ -80,10 +95,27 @@ class MapScreenViewController: UIViewController {
         }
     }
 
+    
+    
     /// Sets the card view the user tapped on to display more information
     func setUpViews() {
-        walkabilityLabel.text = "\(walkability!.walkability)"
+//        walkabilityLabel.text = cit
+//        print("Walkability score is : \(walkability!.walkability)")
+//        print(cityData)
+    }
+    
+//    //MARK: - Request City Data
+    func getCityDataFromAPI(city: String, state: String) {
+        network.getCityData(city: searchItem.cityName, state: state) { (data, error) in
 
+            if error != nil {
+                print(error?.localizedDescription)
+                return
+            }
+            //set retrieved data to cityData variable
+//            let data = self.cityData
+            print("Printing cityData",data)
+        }
     }
 
     // MARK: - IBActions
@@ -95,7 +127,7 @@ class MapScreenViewController: UIViewController {
         favorite.lat = searchItem.lat
         favorite.lon = searchItem.long
         favorite.name = searchItem.cityName
-        favorite.walkabilityScore = Int64(walkability!.walkability)
+//        favorite.walkabilityScore = Int64(walkability!.walkability)
 
         do {
             try context.save()
