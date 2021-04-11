@@ -27,6 +27,7 @@
 		AD6493A02622E02E0013A4B3 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64939F2622E02E0013A4B3 /* VerticalStackView.swift */; };
 		AD6493A42622E06F0013A4B3 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493A32622E06F0013A4B3 /* BaseListController.swift */; };
 		AD6493A82622E0C20013A4B3 /* BaseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493A72622E0C20013A4B3 /* BaseCVCell.swift */; };
+		AD6493AC2622E1310013A4B3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493AB2622E1310013A4B3 /* Extensions.swift */; };
 		C31B35AB25DB7BB300F5436E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AA25DB7BB300F5436E /* NetworkClient.swift */; };
 		C31B35AE25DB7E3000F5436E /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AD25DB7E3000F5436E /* NetworkModels.swift */; };
 		C33AB38025D1137200DAD194 /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */; };
@@ -81,6 +82,7 @@
 		AD64939F2622E02E0013A4B3 /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		AD6493A32622E06F0013A4B3 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		AD6493A72622E0C20013A4B3 /* BaseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVCell.swift; sourceTree = "<group>"; };
+		AD6493AB2622E1310013A4B3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C31B35AA25DB7BB300F5436E /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		C31B35AD25DB7E3000F5436E /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				AD64939B2622DFD80013A4B3 /* UIView+Layout.swift */,
 				AD6493A32622E06F0013A4B3 /* BaseListController.swift */,
 				AD6493A72622E0C20013A4B3 /* BaseCVCell.swift */,
+				AD6493AB2622E1310013A4B3 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				C380305625E4C2F400CB8B60 /* CitySpire.xcdatamodeld in Sources */,
 				466C4276249A8748007D033E /* SceneDelegate.swift in Sources */,
 				AD6493A82622E0C20013A4B3 /* BaseCVCell.swift in Sources */,
+				AD6493AC2622E1310013A4B3 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
