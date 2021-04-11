@@ -24,6 +24,8 @@ class SearchVCS: UITabBarController {
     
     //MARK: - IBOutlets
     @IBOutlet private var mapView: MKMapView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
 
     /*
@@ -35,5 +37,14 @@ class SearchVCS: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    //MARK: - IB Actions
+    
+    @IBAction func favoriteButtonWasPressed(_ sender: UIBarButtonItem) {
+    }
+    
+    
+    
 }
+
+//MARK: - Extensions

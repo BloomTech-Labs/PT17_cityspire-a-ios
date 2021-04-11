@@ -201,10 +201,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="fOE-cO-oic">
-                        <barButtonItem key="rightBarButtonItem" image="bolt.heart.fill" catalog="system" style="plain" id="PYn-a3-b5l"/>
+                        <barButtonItem key="rightBarButtonItem" image="bolt.heart.fill" catalog="system" style="plain" id="PYn-a3-b5l">
+                            <connections>
+                                <action selector="favoriteButtonWasPressed:" destination="zQc-Kd-Ctn" id="I7U-o4-B8b"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="2GI-H6-yOo" id="dZ8-Q0-xGf"/>
+                        <outlet property="searchBar" destination="YOR-j8-daP" id="Cai-fB-iyN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpu-4M-ome" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
