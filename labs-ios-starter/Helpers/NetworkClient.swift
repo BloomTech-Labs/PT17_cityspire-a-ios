@@ -60,9 +60,11 @@ struct NetworkClient {
     ///  - state: state to be entered to get specific score
     ///  - completion: Closure that will be called when the request is complete
     func getCityData(city: String, state: String, completion: @escaping (CityData?, Error?) -> ()) {
+        //http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/api/get_data'
         
-        let endpoint = "get_data"
-        guard let url = URL(string: api + endpoint) else { return }
+//        let endpoint = "get_data"
+//        guard let url = URL(string: api + endpoint) else { return }
+        guard let url = URL(string: "http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/api/get_data") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

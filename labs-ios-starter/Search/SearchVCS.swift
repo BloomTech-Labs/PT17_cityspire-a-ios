@@ -75,11 +75,27 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             let vc = segue.destination as! CityDataViewController
             vc.searchItem = searchResponse
             
-            network.getWalkability(city: searchResponse.cityName, state: state) { (walkability, error) in
+            network.getCityData(city: searchResponse.cityName, state: state) { (cityData, error) in
                 if error != nil {
                     print(error?.localizedDescription)
                 }
-                print("City Walkability Score: \(walkability?.walkability)")
+                
+                DispatchQueue.main.async {
+                    print("City Walkability Score: \(cityData?.walkability)")
+                    vc.walkabilityLabel.text = "The Walkability is \(cityData?.walkability)"
+                    vc.AirQualityLabel.text = "The Air Quality Index is \(cityData?.airQualityIndex)"
+                    vc.crimeLabel.text = "The Crime Index is \(cityData?.crime)"
+                    vc.populationLabel.text = "The Population of \(self.searchResponse.cityName) is \(cityData?.population) Million)"
+                }
+               
+                
+                
+//                @IBOutlet weak var walkabilityLabel: UILabel!
+//                @IBOutlet weak var AirQualityLabel: UILabel!
+//
+//                @IBOutlet weak var crimeLabel: UILabel!
+//                @IBOutlet weak var populationLabel: UILabel!
+//                @IBOutlet weak var rentalPriceLabel: UILabel!
                 
                 return
             }
