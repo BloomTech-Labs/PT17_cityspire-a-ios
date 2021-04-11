@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class SearchVCS: UIViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     let favoriteCell = "FavoritesCell"
     
@@ -74,27 +74,8 @@ class SearchVCS: UIViewController, UISearchBarDelegate, UICollectionViewDelegate
     
     // MARK: - Navigation
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toMap" {
-//            let vc = segue.destination as! MapScreenViewController
-//            vc.searchItem = searchResponse
-//
-//            network.getWalkability(city: city, state: state) { (walkability, error) in
-//                if error != nil {
-//                    DispatchQueue.main.async {
-//                        vc.performSegue(withIdentifier: "unwindToSearch", sender: self)
-//                    }
-//                    return
-//                }
-//                DispatchQueue.main.async {
-//                    vc.walkability = walkability
-//                    vc.setUpViews()
-//                    vc.counterForBlurView -= 1
-//                    vc.checkCounter()
-//                }
-//            }
-//        }
-//    }
+// Prepare to segue
+    
     
     //MARK: - IB Actions
     
@@ -124,7 +105,30 @@ class SearchVCS: UIViewController, UISearchBarDelegate, UICollectionViewDelegate
 }
 
 //MARK: - Extensions
-
+extension SearchVCS: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchRequest = MKLocalSearch.Request()
+        
+        searchRequest.naturalLanguageQuery = searchBar.text
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        
+        activeSearch.start { (response, error) in
+            if response == nil {
+                Alert.showBasicAlert(on: self, with: "Invalid Input", message: "Please use the format of \"City, State\"")
+            } else {
+                self.searchResponse.long = (response?.boundingRegion.center.longitude)!
+                self.searchResponse.lat = (response?.boundingRegion.center.latitude)!
+                self.searchResponse.cityName = searchBar.text!
+                self.createStringURL(searchBar.text!)
+                self.performSegue(withIdentifier: "MapDetails", sender: self)
+                 
+            }
+        }
+    }
+    
+    
+}
 
 //extension SearchVCS: UISearchBarDelegate {
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
