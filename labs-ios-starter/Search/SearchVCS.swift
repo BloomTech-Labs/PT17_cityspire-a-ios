@@ -13,11 +13,20 @@ class SearchVCS: UITabBarController {
     
     //create MapView
     
+    
+    //create searchController
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
+    
+    //create search function
+    func setupSearchBar() {
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .red
+        //setup search
+        setupSearchBar()
         
         
     }
@@ -48,3 +57,11 @@ class SearchVCS: UITabBarController {
 }
 
 //MARK: - Extensions
+
+extension SearchVCS : UISearchBarDelegate {
+    
+}
+
+extension SearchVCS : UICollectionViewDelegateFlowLayout {
+    
+}
