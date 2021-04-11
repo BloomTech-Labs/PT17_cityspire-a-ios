@@ -21,6 +21,7 @@
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
 		AD6493902622BD090013A4B3 /* LambdaTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64938F2622BD090013A4B3 /* LambdaTabBarController.swift */; };
+		AD6493942622D6D50013A4B3 /* SearchVCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493932622D6D50013A4B3 /* SearchVCS.swift */; };
 		C31B35AB25DB7BB300F5436E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AA25DB7BB300F5436E /* NetworkClient.swift */; };
 		C31B35AE25DB7E3000F5436E /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AD25DB7E3000F5436E /* NetworkModels.swift */; };
 		C33AB38025D1137200DAD194 /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */; };
@@ -69,6 +70,7 @@
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
 		AD64938F2622BD090013A4B3 /* LambdaTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambdaTabBarController.swift; sourceTree = "<group>"; };
+		AD6493932622D6D50013A4B3 /* SearchVCS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVCS.swift; sourceTree = "<group>"; };
 		C31B35AA25DB7BB300F5436E /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		C31B35AD25DB7E3000F5436E /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				C3BEDE8925C27271006BF31A /* Search.storyboard */,
 				C3BEDE9225C2731D006BF31A /* SearchViewController.swift */,
 				F35C107E25C791E0000AA795 /* CardView.swift */,
+				AD6493932622D6D50013A4B3 /* SearchVCS.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
 				463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */,
+				AD6493942622D6D50013A4B3 /* SearchVCS.swift in Sources */,
 				F35C107F25C791E0000AA795 /* CardView.swift in Sources */,
 				C37D6E3625D07F150025842E /* FavoritesCollectionViewCell.swift in Sources */,
 				C31B35AE25DB7E3000F5436E /* NetworkModels.swift in Sources */,

@@ -36,6 +36,13 @@ class LoginViewController: UIViewController {
             tabBarController.modalPresentationStyle = .fullScreen
             present(tabBarController, animated: true)
         }
+        
+        //Original design workflow -> Enter SearchVC
+//        if let searchController = storyboard?.instantiateViewController(identifier: "SearchID") as? SearchViewController {
+//            searchController.modalPresentationStyle = .fullScreen
+//            present(searchController, animated: true)
+//        }
+        
     }
     
     

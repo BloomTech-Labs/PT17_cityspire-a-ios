@@ -25,7 +25,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="arrowshape.turn.up.right.fill" catalog="system"/>
                                 <connections>
-                                    <segue destination="aOC-qF-9qB" kind="presentation" modalPresentationStyle="fullScreen" id="dot-8d-cdO"/>
+                                    <segue destination="aOC-qF-9qB" kind="presentation" identifier="SearchID" modalPresentationStyle="fullScreen" id="dot-8d-cdO"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map" translatesAutoresizingMaskIntoConstraints="NO" id="cY4-Oc-Cfw">
@@ -146,7 +146,7 @@
         <!--Search-->
         <scene sceneID="pdH-hg-50d">
             <objects>
-                <viewController id="zQc-Kd-Ctn" sceneMemberID="viewController">
+                <viewController id="zQc-Kd-Ctn" customClass="SearchVCS" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xBW-Up-o7a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,7 +354,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tfb-bT-2YH"/>
+        <segue reference="dot-8d-cdO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CitySpireLogo-Dark" width="234" height="66"/>

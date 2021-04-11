@@ -16,6 +16,8 @@ class SearchViewController: UIViewController {
     var city = "New York"
     var state = "NY"
     
+    var id = "SearchID"
+    
     // MARK: Outlets
     @IBOutlet weak var backgroundGradient: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
