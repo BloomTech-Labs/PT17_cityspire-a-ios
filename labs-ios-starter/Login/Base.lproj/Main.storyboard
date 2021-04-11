@@ -34,11 +34,11 @@
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ATB-96-VC1">
-                                <rect key="frame" x="107" y="615" width="200" height="112"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ATB-96-VC1">
+                                <rect key="frame" x="97" y="615" width="220" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQk-Xf-had" customClass="StyledButton" customModule="labs_ios_starter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="50"/>
                                         <color key="backgroundColor" name="LightBlue"/>
                                         <accessibility key="accessibilityConfiguration" identifier="signInButton" label="Sign in button"/>
                                         <state key="normal" title="Sign in with Okta">
@@ -49,13 +49,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBf-iA-gxY" customClass="StyledButton" customModule="labs_ios_starter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="66" width="200" height="46"/>
+                                        <rect key="frame" x="0.0" y="70" width="220" height="50"/>
                                         <color key="backgroundColor" name="AccentGreen"/>
                                         <accessibility key="accessibilityConfiguration" identifier="signInButton" label="Sign in button"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="krf-0Z-JC5"/>
-                                            <constraint firstAttribute="width" constant="140" id="zSW-Ts-AIG"/>
-                                        </constraints>
                                         <state key="normal" title="Sign in with Lambda">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -65,7 +61,8 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Rcs-Me-OBo"/>
+                                    <constraint firstAttribute="height" constant="120" id="Cih-WR-9NN"/>
+                                    <constraint firstAttribute="width" constant="220" id="WqV-mO-YbS"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rE-Kz-bu3">
@@ -93,6 +90,7 @@
                             <constraint firstItem="R8l-LV-vJe" firstAttribute="bottom" secondItem="mXo-da-Z8S" secondAttribute="bottom" constant="50" id="Wc3-VK-D5X"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cY4-Oc-Cfw" secondAttribute="trailing" constant="-23" id="ZsH-0Y-ml3"/>
                             <constraint firstItem="R8l-LV-vJe" firstAttribute="trailing" secondItem="mXo-da-Z8S" secondAttribute="trailing" constant="50" id="eWr-Fb-o2F"/>
+                            <constraint firstItem="ATB-96-VC1" firstAttribute="top" secondItem="cY4-Oc-Cfw" secondAttribute="bottom" constant="15" id="enq-bZ-aVK"/>
                             <constraint firstItem="cY4-Oc-Cfw" firstAttribute="leading" secondItem="INU-fS-Snd" secondAttribute="leading" id="hd3-KG-tlz"/>
                             <constraint firstItem="1rE-Kz-bu3" firstAttribute="bottom" secondItem="R8l-LV-vJe" secondAttribute="bottom" id="jrM-mS-IVc"/>
                             <constraint firstItem="ATB-96-VC1" firstAttribute="centerX" secondItem="INU-fS-Snd" secondAttribute="centerX" id="mmj-ep-sZe"/>
