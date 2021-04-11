@@ -23,7 +23,6 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     var timer : Timer?
     
     //MARK: - Outlets
-    @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     
@@ -34,8 +33,6 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         definesPresentationContext = true
         //set delegate to searchBar
         searchBar.delegate = self
-
-       
     }
     
     
@@ -70,10 +67,6 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         }
     }
     
-    
-    
-  
-    
     // MARK: - Navigation
 
 // Prepare to segue
@@ -82,6 +75,13 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             let vc = segue.destination as! MapLandingDetailsVCS
             vc.searchItem = searchResponse
             
+            network.getWalkability(city: searchResponse.cityName, state: state) { (walkability, error) in
+                if error != nil {
+                    print(error?.localizedDescription)
+                }
+                print("City Walkability Score: \(walkability?.walkability)")
+                return
+            }
             
         }
     }
@@ -131,6 +131,9 @@ extension SearchVCS: UISearchBarDelegate {
                 self.searchResponse.lat = (response?.boundingRegion.center.latitude)!
                 self.searchResponse.cityName = searchBar.text!
                 self.createStringURL(searchBar.text!)
+                
+                
+                
                 self.performSegue(withIdentifier: "MapDetails", sender: self)
                  
             }
