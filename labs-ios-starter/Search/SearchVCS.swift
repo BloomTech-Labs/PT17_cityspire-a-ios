@@ -71,8 +71,8 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
 
 // Prepare to segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MapDetails" {
-            let vc = segue.destination as! MapLandingDetailsVCS
+        if segue.identifier == "CityDataSegue" {
+            let vc = segue.destination as! CityDataViewController
             vc.searchItem = searchResponse
             
             network.getWalkability(city: searchResponse.cityName, state: state) { (walkability, error) in
@@ -97,7 +97,7 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+//        print(searchText)
     }
     
     
@@ -135,7 +135,7 @@ extension SearchVCS: UISearchBarDelegate {
                 
                 
                 
-                self.performSegue(withIdentifier: "MapDetails", sender: self)
+                self.performSegue(withIdentifier: "CityDataSegue", sender: self)
                  
             }
         }

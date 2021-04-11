@@ -230,7 +230,7 @@
                     <connections>
                         <outlet property="favoritesCollectionView" destination="2Yh-eD-F9S" id="Y6H-7h-N6e"/>
                         <outlet property="searchBar" destination="YOR-j8-daP" id="pgA-t1-ByU"/>
-                        <segue destination="AwQ-ZT-K8Q" kind="show" identifier="MapDetails" id="LJf-hc-Frn"/>
+                        <segue destination="Fbe-Z5-rG1" kind="show" identifier="CityDataSegue" id="DEB-MV-10v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpu-4M-ome" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -271,41 +271,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ui6-2w-n8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3709" y="1367"/>
-        </scene>
-        <!--Search Results-->
-        <scene sceneID="V3Y-Il-jUk">
-            <objects>
-                <collectionViewController title="Search Results" id="AwQ-ZT-K8Q" customClass="MapLandingDetailsVCS" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bW4-Go-27Z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1aM-mc-y9C">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kRx-EA-kCQ">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="P1w-fm-iar">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="AwQ-ZT-K8Q" id="Ey1-ep-X1J"/>
-                            <outlet property="delegate" destination="AwQ-ZT-K8Q" id="jHe-eq-jgh"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="H79-yl-8S1"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dzk-Sm-kkr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4591" y="703"/>
         </scene>
         <!--Lambda Tab Bar Controller-->
         <scene sceneID="mim-HO-EAZ">
@@ -464,6 +429,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlc-rC-L2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2477" y="2068"/>
+        </scene>
+        <!--City Data View Controller-->
+        <scene sceneID="eQ7-7m-wN5">
+            <objects>
+                <viewController storyboardIdentifier="CityData" id="Fbe-Z5-rG1" customClass="CityDataViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jgy-9n-i9c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="t48-H6-w1h">
+                                <rect key="frame" x="50" y="293.5" width="314" height="309"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walkability" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odm-20-Rgr">
+                                        <rect key="frame" x="101.5" y="0.0" width="111.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AirQualityIndex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zQ-sq-fqV">
+                                        <rect key="frame" x="78" y="70" width="158" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eem-i5-VOJ">
+                                        <rect key="frame" x="126" y="140" width="62" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Population" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fp-15-Wy7">
+                                        <rect key="frame" x="102.5" y="210" width="109.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rental Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nql-S9-ciI">
+                                        <rect key="frame" x="95.5" y="280" width="123" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fal-sn-kiC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fal-sn-kiC" firstAttribute="trailing" secondItem="t48-H6-w1h" secondAttribute="trailing" constant="50" id="YLh-lV-eXl"/>
+                            <constraint firstItem="t48-H6-w1h" firstAttribute="centerY" secondItem="Jgy-9n-i9c" secondAttribute="centerY" id="bik-8C-HHv"/>
+                            <constraint firstItem="t48-H6-w1h" firstAttribute="leading" secondItem="Fal-sn-kiC" secondAttribute="leading" constant="50" id="hyd-WP-5Zg"/>
+                            <constraint firstItem="t48-H6-w1h" firstAttribute="centerX" secondItem="Jgy-9n-i9c" secondAttribute="centerX" id="iwu-a1-2e1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wkv-4E-14Q"/>
+                    <connections>
+                        <outlet property="AirQualityLabel" destination="0zQ-sq-fqV" id="3eI-xi-DtD"/>
+                        <outlet property="crimeLabel" destination="eem-i5-VOJ" id="VPg-oO-2Hq"/>
+                        <outlet property="populationLabel" destination="4Fp-15-Wy7" id="pQd-Yt-3Jm"/>
+                        <outlet property="rentalPriceLabel" destination="Nql-S9-ciI" id="GGP-ki-Wqr"/>
+                        <outlet property="walkabilityLabel" destination="odm-20-Rgr" id="eJ9-A2-Fia"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCS-HQ-BUf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4431.884057971015" y="693.75"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
