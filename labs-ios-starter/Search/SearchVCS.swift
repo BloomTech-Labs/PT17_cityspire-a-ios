@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import MapKit
 
 class SearchVCS: UITabBarController {
+    
+    //create MapView
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .red
+        
+        
     }
+    
+    //MARK: - IBOutlets
+    @IBOutlet private var mapView: MKMapView!
     
 
     /*
