@@ -32,7 +32,10 @@ class LoginViewController: UIViewController {
     
     //Added signin with Lambda option
     @IBAction func signInWithLambda(_ sender: UIButton) {
-        present(LambdaTabBarController, animated: true)
+        if let tabBarController = storyboard?.instantiateViewController(withIdentifier: "LambdaID") as? LambdaTabBarController {
+            tabBarController.modalPresentationStyle = .fullScreen
+            present(tabBarController, animated: true)
+        }
     }
     
     

@@ -14,9 +14,11 @@ class LambdaTabBarController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        self.modalPresentationStyle = .fullScreen
     }
     
 
+    
     /*
     // MARK: - Navigation
 
