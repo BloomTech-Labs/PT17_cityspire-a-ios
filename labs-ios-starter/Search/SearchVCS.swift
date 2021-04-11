@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class SearchVCS: UITabBarController {
+class SearchVCS: UIViewController {
     
     // MARK: - Properties
     var searchResponse = Map()
