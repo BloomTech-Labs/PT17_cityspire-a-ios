@@ -11,8 +11,13 @@ import MapKit
 
 class SearchVCS: UITabBarController {
     
-    //create MapView
+    // MARK: - Properties
+    var searchResponse = Map()
+    var network = NetworkClient()
+    var city = "New York"
+    var state = "NY"
     
+    //create MapView
     
     //create searchController
     fileprivate let searchController = UISearchController(searchResultsController: nil)
@@ -20,6 +25,7 @@ class SearchVCS: UITabBarController {
     //create search function
     func setupSearchBar() {
         
+        //MARK: - View Lifecycle
     }
 
     override func viewDidLoad() {
@@ -31,21 +37,56 @@ class SearchVCS: UITabBarController {
         
     }
     
+    //MARK: - Helper Function
+    
+    /// Creates a string based on the search query entered by the user
+    func createStringURL(_ input: String) {
+        var address = input
+        for char in address {
+            if char == "," {
+                address = address.replacingOccurrences(of: city, with: "")
+                state = address
+                state = state.replacingOccurrences(of: ",", with: "")
+                state = state.replacingOccurrences(of: " ", with: "")
+                return
+            } else {
+                city.append(char)
+            }
+        }
+    }
+    
+    
+    
     //MARK: - IBOutlets
     @IBOutlet private var mapView: MKMapView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toMap" {
+            let vc = segue.destination as! MapScreenViewController
+            vc.searchItem = searchResponse
+            
+            network.getWalkability(city: city, state: state) { (walkability, error) in
+                if error != nil {
+                    DispatchQueue.main.async {
+                        vc.performSegue(withIdentifier: "unwindToSearch", sender: self)
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    vc.walkability = walkability
+                    vc.setUpViews()
+                    vc.counterForBlurView -= 1
+                    vc.checkCounter()
+                }
+            }
+        }
     }
-    */
     
     //MARK: - IB Actions
     
@@ -58,8 +99,27 @@ class SearchVCS: UITabBarController {
 
 //MARK: - Extensions
 
-extension SearchVCS : UISearchBarDelegate {
-    
+extension SearchVCS: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchRequest = MKLocalSearch.Request()
+        
+        searchRequest.naturalLanguageQuery = searchBar.text
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        
+        activeSearch.start { (response, error) in
+            if response == nil {
+                Alert.showBasicAlert(on: self, with: "Invalid Input", message: "Please use the format of \"City, State\"")
+            } else {
+                self.searchResponse.long = (response?.boundingRegion.center.longitude)!
+                self.searchResponse.lat = (response?.boundingRegion.center.latitude)!
+                self.searchResponse.cityName = searchBar.text!
+                self.createStringURL(searchBar.text!)
+                self.performSegue(withIdentifier: "toMap", sender: self)
+                
+                
+            }
+        }
+    }
 }
 
 extension SearchVCS : UICollectionViewDelegateFlowLayout {
