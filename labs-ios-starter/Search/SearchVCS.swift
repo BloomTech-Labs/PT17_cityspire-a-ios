@@ -17,14 +17,14 @@ class SearchVCS: UIViewController {
     var city = "New York"
     var state = "NY"
     
-    //create MapView
-    
-    //create searchController
-    fileprivate let searchController = UISearchController(searchResultsController: nil)
+    //timer for search
+    var timer : Timer?
     
     //create search function
     func setupSearchBar() {
-        
+        definesPresentationContext = true
+        //set delegate to searchBar
+        searchBar.delegate = self
        
     }
     
