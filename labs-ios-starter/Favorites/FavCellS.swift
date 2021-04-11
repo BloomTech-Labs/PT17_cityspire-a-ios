@@ -11,9 +11,12 @@ import UIKit
 
 class FavCellS: UICollectionViewCell {
     
+    let imageView = UIImageView(cornerRadius: 10)
+    
+    
     //ADDVIEWS
     let appiconImageView = UIImageView(cornerRadius: 16)
-    let nameLabel = UILabel(text: "City Name", font: .boldSystemFont(ofSize: 18), numberOfLines: 2)
+    let nameLabel = UILabel(text: "Popular City Name", font: .boldSystemFont(ofSize: 30), numberOfLines: 1)
     let descriptionLabel = UILabel(text: "Information about the City....", font: .systemFont(ofSize: 12, weight: .light) )
     
     let whatsNewLabel = UILabel(text: "Whats New", font: .boldSystemFont(ofSize: 18))
@@ -22,7 +25,14 @@ class FavCellS: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .green
+        imageView.contentMode = .scaleAspectFill
+        addSubview(nameLabel)
+        addSubview(imageView)
+        addSubview(nameLabel)
+        imageView.fillSuperview()
+        nameLabel.textColor = .white
+     
+        nameLabel.anchor(top: nil, leading: imageView.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 20, bottom: 20, right: 0))
         
     }
     

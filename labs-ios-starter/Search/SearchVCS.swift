@@ -25,8 +25,6 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     //MARK: - Outlets
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var collectionView: UICollectionView!
-    
     
     
     @IBOutlet weak var favoritesCollectionView: UICollectionView!
@@ -44,8 +42,8 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        favoritesCollectionView.dataSource = self
+        favoritesCollectionView.delegate = self
         //setup search
         setupSearchBar()
         
@@ -79,6 +77,14 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     // MARK: - Navigation
 
 // Prepare to segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MapDetails" {
+            let vc = segue.destination as! MapLandingDetailsVCS
+            vc.searchItem = searchResponse
+            
+            
+        }
+    }
     
     
     //MARK: - IB Actions
@@ -100,7 +106,7 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCell, for: indexPath) as! FavCellS
-        cell.backgroundColor = .red
+        cell.imageView.image = UIImage(named: "ny")
         return cell
     }
     
@@ -136,7 +142,7 @@ extension SearchVCS: UISearchBarDelegate {
 extension SearchVCS: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 48, height: 200)
+        return .init(width: view.frame.width - 48, height: 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

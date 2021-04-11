@@ -10,10 +10,15 @@ import UIKit
 
 class MapSearchResultsCellVCS: UICollectionViewCell {
     
+    //City Results
+    let cityNameLabel = UILabel(text: "City Name", font: .boldSystemFont(ofSize: 20))
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .blue
+        addSubview(cityNameLabel)
         
-        backgroundColor = .brown
+       
     }
     
     

@@ -17,12 +17,15 @@ class MapLandingDetailsVCS: BaseCVListController {
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        emptyView.backgroundColor = .yellow
-        view.addSubview(emptyView)
+//        emptyView.backgroundColor = .yellow
+//        view.addSubview(emptyView)
         
 //        view.backgroundColor = .green
         title = searchItem.cityName
         collectionView.register(MapSearchResultsCellVCS.self, forCellWithReuseIdentifier: "searchCell")
+        
+//        let annotations = self.mapView.annotations
+//        self.mapView.removeAnnotations(annotations)
         
     }
     
@@ -37,7 +40,7 @@ class MapLandingDetailsVCS: BaseCVListController {
     var livabilityStatement: String = ""
     var rentalStatement: String = ""
 
-//    var activityView = UIActivityIndicatorView(style: .large)
+    var activityView = UIActivityIndicatorView(style: .large)
     
     
     
@@ -51,7 +54,10 @@ class MapLandingDetailsVCS: BaseCVListController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "searchCell", for: indexPath) as! MapSearchResultsCellVCS
         
-        cell.backgroundColor = .darkGray
+        print(searchItem)
+        cell.cityNameLabel.text = searchItem.cityName
+        cell.cityNameLabel.textColor = .red
+        
         return cell
     }
     
