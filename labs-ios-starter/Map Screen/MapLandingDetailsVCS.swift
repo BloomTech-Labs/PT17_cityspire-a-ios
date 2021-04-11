@@ -9,15 +9,19 @@
 import UIKit
 import MapKit
 
-
 class MapLandingDetailsVCS: BaseCVListController {
 
+    let emptyView = UIImageView(cornerRadius: 14)
+    
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
-//        title = searchItem.cityName
+        emptyView.backgroundColor = .yellow
+        view.addSubview(emptyView)
+        
+//        view.backgroundColor = .green
+        title = searchItem.cityName
         collectionView.register(MapSearchResultsCellVCS.self, forCellWithReuseIdentifier: "searchCell")
         
     }

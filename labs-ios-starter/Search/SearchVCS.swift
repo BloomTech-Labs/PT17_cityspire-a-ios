@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     let favoriteCell = "FavoritesCell"
     
@@ -25,6 +25,9 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     //MARK: - Outlets
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     
     @IBOutlet weak var favoritesCollectionView: UICollectionView!
     
@@ -41,11 +44,12 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        collectionView.dataSource = self
+        collectionView.delegate = self
         //setup search
         setupSearchBar()
         
-        favoritesCollectionView.register(FavoritesCollectionViewCell.self, forCellWithReuseIdentifier: favoriteCell)
+        favoritesCollectionView.register(FavCellS.self, forCellWithReuseIdentifier: favoriteCell)
         
         
     }
@@ -91,12 +95,12 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCell, for: indexPath)
-        cell.backgroundColor = .yellow
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCell, for: indexPath) as! FavCellS
+        cell.backgroundColor = .red
         return cell
     }
     
@@ -126,30 +130,19 @@ extension SearchVCS: UISearchBarDelegate {
             }
         }
     }
-    
-    
 }
 
-//extension SearchVCS: UISearchBarDelegate {
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        let searchRequest = MKLocalSearch.Request()
-//
-//        searchRequest.naturalLanguageQuery = searchBar.text
-//        let activeSearch = MKLocalSearch(request: searchRequest)
-//
-//        activeSearch.start { (response, error) in
-//            if response == nil {
-//                Alert.showBasicAlert(on: self, with: "Invalid Input", message: "Please use the format of \"City, State\"")
-//            } else {
-//                self.searchResponse.long = (response?.boundingRegion.center.longitude)!
-//                self.searchResponse.lat = (response?.boundingRegion.center.latitude)!
-//                self.searchResponse.cityName = searchBar.text!
-//                self.createStringURL(searchBar.text!)
-//                self.performSegue(withIdentifier: "toMap", sender: self)
-//
-//
-//            }
-//        }
-//    }
-//}
+
+extension SearchVCS: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: view.frame.width - 48, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 25, left: 25, bottom: 25, right: 25)
+    }
+}
+
+ 
  
