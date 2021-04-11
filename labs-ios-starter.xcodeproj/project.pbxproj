@@ -22,6 +22,8 @@
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
 		AD6493902622BD090013A4B3 /* LambdaTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64938F2622BD090013A4B3 /* LambdaTabBarController.swift */; };
 		AD6493942622D6D50013A4B3 /* SearchVCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493932622D6D50013A4B3 /* SearchVCS.swift */; };
+		AD6493982622DFA20013A4B3 /* HorizontalSnappingCVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493972622DFA20013A4B3 /* HorizontalSnappingCVController.swift */; };
+		AD64939C2622DFD80013A4B3 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64939B2622DFD80013A4B3 /* UIView+Layout.swift */; };
 		C31B35AB25DB7BB300F5436E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AA25DB7BB300F5436E /* NetworkClient.swift */; };
 		C31B35AE25DB7E3000F5436E /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AD25DB7E3000F5436E /* NetworkModels.swift */; };
 		C33AB38025D1137200DAD194 /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */; };
@@ -71,6 +73,8 @@
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
 		AD64938F2622BD090013A4B3 /* LambdaTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambdaTabBarController.swift; sourceTree = "<group>"; };
 		AD6493932622D6D50013A4B3 /* SearchVCS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVCS.swift; sourceTree = "<group>"; };
+		AD6493972622DFA20013A4B3 /* HorizontalSnappingCVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingCVController.swift; sourceTree = "<group>"; };
+		AD64939B2622DFD80013A4B3 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		C31B35AA25DB7BB300F5436E /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		C31B35AD25DB7E3000F5436E /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
@@ -164,9 +168,11 @@
 		46BEB4EA24C98EA300FE0CD1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AD6493972622DFA20013A4B3 /* HorizontalSnappingCVController.swift */,
 				46BEB4E624C98D8900FE0CD1 /* Notifications.swift */,
 				46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */,
 				C31B35AA25DB7BB300F5436E /* NetworkClient.swift */,
+				AD64939B2622DFD80013A4B3 /* UIView+Layout.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
 				C31B35AB25DB7BB300F5436E /* NetworkClient.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
+				AD64939C2622DFD80013A4B3 /* UIView+Layout.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
 				463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */,
 				AD6493942622D6D50013A4B3 /* SearchVCS.swift in Sources */,
@@ -377,6 +384,7 @@
 				46BEB4E524C98CDC00FE0CD1 /* LoginViewController.swift in Sources */,
 				C3BEDE9925C2733B006BF31A /* FavoritesViewController.swift in Sources */,
 				F363987C25CEEA53008C5102 /* StyledButton.swift in Sources */,
+				AD6493982622DFA20013A4B3 /* HorizontalSnappingCVController.swift in Sources */,
 				C380305625E4C2F400CB8B60 /* CitySpire.xcdatamodeld in Sources */,
 				466C4276249A8748007D033E /* SceneDelegate.swift in Sources */,
 			);

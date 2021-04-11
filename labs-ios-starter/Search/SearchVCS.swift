@@ -25,9 +25,11 @@ class SearchVCS: UITabBarController {
     //create search function
     func setupSearchBar() {
         
-        //MARK: - View Lifecycle
+       
     }
-
+    
+    
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,8 +63,6 @@ class SearchVCS: UITabBarController {
     @IBOutlet private var mapView: MKMapView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
-
 
     // MARK: - Navigation
 
