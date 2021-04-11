@@ -154,15 +154,12 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2GI-H6-yOo">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for a new home" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOR-j8-daP">
-                                <rect key="frame" x="0.0" y="552" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Yh-eD-F9S">
-                                <rect key="frame" x="0.0" y="611" width="414" height="202"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Yh-eD-F9S">
+                                <rect key="frame" x="0.0" y="613" width="414" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="QbO-CK-bko"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O74-CN-4h9">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -180,17 +177,32 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" placeholder="Search for a new home" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOR-j8-daP">
+                                <rect key="frame" x="0.0" y="563" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BXZ-8V-oWA"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P5s-SI-12F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2Yh-eD-F9S" firstAttribute="leading" secondItem="P5s-SI-12F" secondAttribute="leading" id="0Tq-QZ-kUt"/>
                             <constraint firstItem="P5s-SI-12F" firstAttribute="bottom" secondItem="2GI-H6-yOo" secondAttribute="bottom" id="3s8-kc-lxU"/>
+                            <constraint firstItem="YOR-j8-daP" firstAttribute="leading" secondItem="P5s-SI-12F" secondAttribute="leading" id="88c-TP-ocf"/>
                             <constraint firstItem="2GI-H6-yOo" firstAttribute="top" secondItem="P5s-SI-12F" secondAttribute="top" id="Kzz-22-g6T"/>
+                            <constraint firstItem="2Yh-eD-F9S" firstAttribute="bottom" secondItem="P5s-SI-12F" secondAttribute="bottom" id="WoU-lI-Odx"/>
+                            <constraint firstItem="2Yh-eD-F9S" firstAttribute="trailing" secondItem="P5s-SI-12F" secondAttribute="trailing" id="dhV-Cm-KJo"/>
+                            <constraint firstItem="YOR-j8-daP" firstAttribute="trailing" secondItem="P5s-SI-12F" secondAttribute="trailing" id="dn2-wp-ui9"/>
                             <constraint firstItem="2GI-H6-yOo" firstAttribute="leading" secondItem="P5s-SI-12F" secondAttribute="leading" id="j85-TH-HDg"/>
+                            <constraint firstItem="2Yh-eD-F9S" firstAttribute="top" secondItem="YOR-j8-daP" secondAttribute="bottom" id="qcb-t3-7e1"/>
                             <constraint firstItem="P5s-SI-12F" firstAttribute="trailing" secondItem="2GI-H6-yOo" secondAttribute="trailing" id="rCI-b2-R7A"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="fOE-cO-oic"/>
+                    <navigationItem key="navigationItem" title="Search" id="fOE-cO-oic">
+                        <barButtonItem key="rightBarButtonItem" image="bolt.heart.fill" catalog="system" style="plain" id="PYn-a3-b5l"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="2GI-H6-yOo" id="dZ8-Q0-xGf"/>
                     </connections>
@@ -401,6 +413,7 @@
         <image name="Map" width="374.5" height="605"/>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
         <image name="bolt.heart" catalog="system" width="128" height="109"/>
+        <image name="bolt.heart.fill" catalog="system" width="128" height="109"/>
         <image name="flame" catalog="system" width="108" height="128"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <namedColor name="AccentGreen">
