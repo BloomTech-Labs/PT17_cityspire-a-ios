@@ -10,9 +10,10 @@ import UIKit
 import MapKit
 
 
-class MapLandingVCS: BaseCVListController {
+class MapLandingDetailsVCS: BaseCVListController {
+
     
-    
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
@@ -36,6 +37,7 @@ class MapLandingVCS: BaseCVListController {
     
     
     
+    
     //Show CollectionView with Stats for selected City
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,7 +57,7 @@ class MapLandingVCS: BaseCVListController {
     
 }
 
-extension MapLandingVCS: UICollectionViewDelegateFlowLayout {
+extension MapLandingDetailsVCS: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width, height: 400)
     }

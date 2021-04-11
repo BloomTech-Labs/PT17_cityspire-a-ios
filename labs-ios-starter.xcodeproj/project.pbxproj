@@ -28,7 +28,7 @@
 		AD6493A42622E06F0013A4B3 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493A32622E06F0013A4B3 /* BaseListController.swift */; };
 		AD6493A82622E0C20013A4B3 /* BaseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493A72622E0C20013A4B3 /* BaseCVCell.swift */; };
 		AD6493AC2622E1310013A4B3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493AB2622E1310013A4B3 /* Extensions.swift */; };
-		AD6493B42622F6D30013A4B3 /* MapLandingVCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493B32622F6D30013A4B3 /* MapLandingVCS.swift */; };
+		AD6493B42622F6D30013A4B3 /* MapLandingDetailsVCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493B32622F6D30013A4B3 /* MapLandingDetailsVCS.swift */; };
 		AD6493C02622F9920013A4B3 /* MapSearchResultsCellVCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493BF2622F9920013A4B3 /* MapSearchResultsCellVCS.swift */; };
 		C31B35AB25DB7BB300F5436E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AA25DB7BB300F5436E /* NetworkClient.swift */; };
 		C31B35AE25DB7E3000F5436E /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AD25DB7E3000F5436E /* NetworkModels.swift */; };
@@ -85,7 +85,7 @@
 		AD6493A32622E06F0013A4B3 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		AD6493A72622E0C20013A4B3 /* BaseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVCell.swift; sourceTree = "<group>"; };
 		AD6493AB2622E1310013A4B3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		AD6493B32622F6D30013A4B3 /* MapLandingVCS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLandingVCS.swift; sourceTree = "<group>"; };
+		AD6493B32622F6D30013A4B3 /* MapLandingDetailsVCS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLandingDetailsVCS.swift; sourceTree = "<group>"; };
 		AD6493BF2622F9920013A4B3 /* MapSearchResultsCellVCS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchResultsCellVCS.swift; sourceTree = "<group>"; };
 		C31B35AA25DB7BB300F5436E /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		C31B35AD25DB7E3000F5436E /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 			children = (
 				C3BEDE8C25C2728D006BF31A /* MapScreen.storyboard */,
 				C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */,
-				AD6493B32622F6D30013A4B3 /* MapLandingVCS.swift */,
+				AD6493B32622F6D30013A4B3 /* MapLandingDetailsVCS.swift */,
 				AD6493BF2622F9920013A4B3 /* MapSearchResultsCellVCS.swift */,
 			);
 			path = "Map Screen";
@@ -383,7 +383,7 @@
 			files = (
 				C3BEDE9325C2731D006BF31A /* SearchViewController.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
-				AD6493B42622F6D30013A4B3 /* MapLandingVCS.swift in Sources */,
+				AD6493B42622F6D30013A4B3 /* MapLandingDetailsVCS.swift in Sources */,
 				AD6493902622BD090013A4B3 /* LambdaTabBarController.swift in Sources */,
 				C34804EB25D4E9C3007CEA5A /* Map.swift in Sources */,
 				C34804EE25D4F640007CEA5A /* Alert.swift in Sources */,
