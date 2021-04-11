@@ -30,6 +30,13 @@ class LoginViewController: UIViewController {
     
     // MARK: - Actions
     
+    //Added signin with Lambda option
+    @IBAction func signInWithLambda(_ sender: UIButton) {
+        present(LambdaTabBarController, animated: true)
+    }
+    
+    
+    
     @IBAction func signIn(_ sender: Any) {
         UIApplication.shared.open(ProfileController.shared.oktaAuth.identityAuthURL()!)
     }

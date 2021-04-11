@@ -56,7 +56,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="signIn:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="E6l-lM-GRI"/>
+                                            <action selector="signInWithLambda:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="Bx3-rm-rcc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -194,10 +194,11 @@
             </objects>
             <point key="canvasLocation" x="3709" y="1367"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Lambda Tab Bar Controller-->
         <scene sceneID="mim-HO-EAZ">
             <objects>
-                <tabBarController id="QDa-2K-GPH" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="LambdaID" id="QDa-2K-GPH" customClass="LambdaTabBarController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Yf1-Lf-KQM"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fgV-fm-rDa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
