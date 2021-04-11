@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SearchMainVCS : BaseCVListController, UICollectionViewFlowLayout, UISearchBarDelegate {
+class SearchMainVCS : BaseCVListController, UISearchBarDelegate {
     
     //create search bar controller
     let searchController = UISearchController()
