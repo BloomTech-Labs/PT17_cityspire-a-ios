@@ -151,9 +151,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2GI-H6-yOo">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                            </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Yh-eD-F9S">
                                 <rect key="frame" x="0.0" y="613" width="414" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -184,32 +181,44 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CitySpireLogo-Dark" translatesAutoresizingMaskIntoConstraints="NO" id="V57-XO-ldt">
+                                <rect key="frame" x="20" y="98" width="374" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="WTy-dO-YdJ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touristMap" translatesAutoresizingMaskIntoConstraints="NO" id="yUD-hI-U3k">
+                                <rect key="frame" x="0.0" y="246" width="414" height="317"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P5s-SI-12F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2Yh-eD-F9S" firstAttribute="leading" secondItem="P5s-SI-12F" secondAttribute="leading" id="0Tq-QZ-kUt"/>
-                            <constraint firstItem="P5s-SI-12F" firstAttribute="bottom" secondItem="2GI-H6-yOo" secondAttribute="bottom" id="3s8-kc-lxU"/>
+                            <constraint firstItem="V57-XO-ldt" firstAttribute="leading" secondItem="P5s-SI-12F" secondAttribute="leading" constant="20" id="2Ks-pZ-csa"/>
                             <constraint firstItem="YOR-j8-daP" firstAttribute="leading" secondItem="P5s-SI-12F" secondAttribute="leading" id="88c-TP-ocf"/>
-                            <constraint firstItem="2GI-H6-yOo" firstAttribute="top" secondItem="P5s-SI-12F" secondAttribute="top" id="Kzz-22-g6T"/>
+                            <constraint firstItem="yUD-hI-U3k" firstAttribute="leading" secondItem="P5s-SI-12F" secondAttribute="leading" id="DGb-Bk-Ix9"/>
+                            <constraint firstItem="V57-XO-ldt" firstAttribute="top" secondItem="P5s-SI-12F" secondAttribute="top" constant="10" id="QTS-ZG-VXu"/>
+                            <constraint firstItem="yUD-hI-U3k" firstAttribute="top" secondItem="V57-XO-ldt" secondAttribute="bottom" constant="-2" id="UBX-wo-eTe"/>
+                            <constraint firstItem="yUD-hI-U3k" firstAttribute="trailing" secondItem="P5s-SI-12F" secondAttribute="trailing" id="VZi-wy-1Wn"/>
                             <constraint firstItem="2Yh-eD-F9S" firstAttribute="bottom" secondItem="P5s-SI-12F" secondAttribute="bottom" id="WoU-lI-Odx"/>
                             <constraint firstItem="2Yh-eD-F9S" firstAttribute="trailing" secondItem="P5s-SI-12F" secondAttribute="trailing" id="dhV-Cm-KJo"/>
                             <constraint firstItem="YOR-j8-daP" firstAttribute="trailing" secondItem="P5s-SI-12F" secondAttribute="trailing" id="dn2-wp-ui9"/>
-                            <constraint firstItem="2GI-H6-yOo" firstAttribute="leading" secondItem="P5s-SI-12F" secondAttribute="leading" id="j85-TH-HDg"/>
+                            <constraint firstItem="V57-XO-ldt" firstAttribute="trailing" secondItem="P5s-SI-12F" secondAttribute="trailing" constant="-20" id="h5i-Jq-0He"/>
                             <constraint firstItem="2Yh-eD-F9S" firstAttribute="top" secondItem="YOR-j8-daP" secondAttribute="bottom" id="qcb-t3-7e1"/>
-                            <constraint firstItem="P5s-SI-12F" firstAttribute="trailing" secondItem="2GI-H6-yOo" secondAttribute="trailing" id="rCI-b2-R7A"/>
+                            <constraint firstItem="YOR-j8-daP" firstAttribute="top" secondItem="yUD-hI-U3k" secondAttribute="bottom" id="wjo-2p-Mtb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="fOE-cO-oic">
                         <barButtonItem key="rightBarButtonItem" image="bolt.heart.fill" catalog="system" style="plain" id="PYn-a3-b5l">
                             <connections>
-                                <action selector="favoriteButtonWasPressed:" destination="zQc-Kd-Ctn" id="I7U-o4-B8b"/>
+                                <action selector="favoriteButtonWasPressed:" destination="zQc-Kd-Ctn" id="aJ3-Kf-2Za"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="2GI-H6-yOo" id="dZ8-Q0-xGf"/>
-                        <outlet property="searchBar" destination="YOR-j8-daP" id="Cai-fB-iyN"/>
+                        <outlet property="favoritesCollectionView" destination="2Yh-eD-F9S" id="Y6H-7h-N6e"/>
+                        <outlet property="searchBar" destination="YOR-j8-daP" id="pgA-t1-ByU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpu-4M-ome" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -421,6 +430,7 @@
         <image name="bolt.heart.fill" catalog="system" width="128" height="109"/>
         <image name="flame" catalog="system" width="108" height="128"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
+        <image name="touristMap" width="961" height="743"/>
         <namedColor name="AccentGreen">
             <color red="0.28999999165534973" green="0.4779999852180481" blue="0.54900002479553223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

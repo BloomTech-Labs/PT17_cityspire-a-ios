@@ -9,7 +9,9 @@
 import UIKit
 import MapKit
 
-class SearchVCS: UIViewController {
+class SearchVCS: UIViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    let favoriteCell = "FavoritesCell"
     
     // MARK: - Properties
     var searchResponse = Map()
@@ -20,11 +22,18 @@ class SearchVCS: UIViewController {
     //timer for search
     var timer : Timer?
     
+    //MARK: - Outlets
+    @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var favoritesCollectionView: UICollectionView!
+    
     //create search function
     func setupSearchBar() {
         definesPresentationContext = true
         //set delegate to searchBar
         searchBar.delegate = self
+
        
     }
     
@@ -35,6 +44,8 @@ class SearchVCS: UIViewController {
 
         //setup search
         setupSearchBar()
+        
+        favoritesCollectionView.register(FavoritesCollectionViewCell.self, forCellWithReuseIdentifier: favoriteCell)
         
         
     }
@@ -59,38 +70,53 @@ class SearchVCS: UIViewController {
     
     
     
-    //MARK: - IBOutlets
-    @IBOutlet private var mapView: MKMapView!
-    @IBOutlet weak var searchBar: UISearchBar!
+  
     
-
     // MARK: - Navigation
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMap" {
-            let vc = segue.destination as! MapScreenViewController
-            vc.searchItem = searchResponse
-            
-            network.getWalkability(city: city, state: state) { (walkability, error) in
-                if error != nil {
-                    DispatchQueue.main.async {
-                        vc.performSegue(withIdentifier: "unwindToSearch", sender: self)
-                    }
-                    return
-                }
-                DispatchQueue.main.async {
-                    vc.walkability = walkability
-                    vc.setUpViews()
-                    vc.counterForBlurView -= 1
-                    vc.checkCounter()
-                }
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toMap" {
+//            let vc = segue.destination as! MapScreenViewController
+//            vc.searchItem = searchResponse
+//
+//            network.getWalkability(city: city, state: state) { (walkability, error) in
+//                if error != nil {
+//                    DispatchQueue.main.async {
+//                        vc.performSegue(withIdentifier: "unwindToSearch", sender: self)
+//                    }
+//                    return
+//                }
+//                DispatchQueue.main.async {
+//                    vc.walkability = walkability
+//                    vc.setUpViews()
+//                    vc.counterForBlurView -= 1
+//                    vc.checkCounter()
+//                }
+//            }
+//        }
+//    }
     
     //MARK: - IB Actions
     
     @IBAction func favoriteButtonWasPressed(_ sender: UIBarButtonItem) {
+        
+        print("Favorites Button Pressed")
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCell, for: indexPath)
+        cell.backgroundColor = .yellow
+        return cell
     }
     
     
@@ -99,29 +125,27 @@ class SearchVCS: UIViewController {
 
 //MARK: - Extensions
 
-extension SearchVCS: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let searchRequest = MKLocalSearch.Request()
-        
-        searchRequest.naturalLanguageQuery = searchBar.text
-        let activeSearch = MKLocalSearch(request: searchRequest)
-        
-        activeSearch.start { (response, error) in
-            if response == nil {
-                Alert.showBasicAlert(on: self, with: "Invalid Input", message: "Please use the format of \"City, State\"")
-            } else {
-                self.searchResponse.long = (response?.boundingRegion.center.longitude)!
-                self.searchResponse.lat = (response?.boundingRegion.center.latitude)!
-                self.searchResponse.cityName = searchBar.text!
-                self.createStringURL(searchBar.text!)
-                self.performSegue(withIdentifier: "toMap", sender: self)
-                
-                
-            }
-        }
-    }
-}
 
-extension SearchVCS : UICollectionViewDelegateFlowLayout {
-    
-}
+//extension SearchVCS: UISearchBarDelegate {
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        let searchRequest = MKLocalSearch.Request()
+//
+//        searchRequest.naturalLanguageQuery = searchBar.text
+//        let activeSearch = MKLocalSearch(request: searchRequest)
+//
+//        activeSearch.start { (response, error) in
+//            if response == nil {
+//                Alert.showBasicAlert(on: self, with: "Invalid Input", message: "Please use the format of \"City, State\"")
+//            } else {
+//                self.searchResponse.long = (response?.boundingRegion.center.longitude)!
+//                self.searchResponse.lat = (response?.boundingRegion.center.latitude)!
+//                self.searchResponse.cityName = searchBar.text!
+//                self.createStringURL(searchBar.text!)
+//                self.performSegue(withIdentifier: "toMap", sender: self)
+//
+//
+//            }
+//        }
+//    }
+//}
+ 

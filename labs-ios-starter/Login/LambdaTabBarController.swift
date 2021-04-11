@@ -12,21 +12,25 @@ class LambdaTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-//        self.modalPresentationStyle = .fullScreen
+    
+//        viewControllers = [
+//            createNavController(viewController: SearchMainVCS(), title: "Search", imageName: "search"),
+//            createNavController(viewController: UIViewController(), title: "Map", imageName: "apps"),
+//            createNavController(viewController: UIViewController(), title: "Favorites", imageName: "today_icon"),
+//        ]
     }
     
-
+    //create Nav Bar
+//    fileprivate func createNavController(viewController: UIViewController, title: String, imageName: String) -> UIViewController {
+//        let navController = UINavigationController(rootViewController: viewController)
+//        navController.navigationBar.prefersLargeTitles = true
+//        viewController.navigationItem.title = title
+//        viewController.view.backgroundColor = .white
+//        navController.tabBarItem.title = title
+//        navController.tabBarItem.image = UIImage(named: imageName)
+//        return navController
+//        
+//    }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
