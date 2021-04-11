@@ -15,7 +15,6 @@ class MapSearchResultsCellVCS: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .blue
         addSubview(cityNameLabel)
         
        
@@ -27,6 +26,6 @@ class MapSearchResultsCellVCS: UICollectionViewCell {
 //        fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
 }
+
+

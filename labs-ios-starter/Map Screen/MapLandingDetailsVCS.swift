@@ -47,6 +47,10 @@ class MapLandingDetailsVCS: BaseCVListController {
     
     //Show CollectionView with Stats for selected City
     
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
@@ -60,9 +64,6 @@ class MapLandingDetailsVCS: BaseCVListController {
         
         return cell
     }
-    
-
-    
     
     
 }

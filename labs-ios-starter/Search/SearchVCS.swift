@@ -80,6 +80,7 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                     print(error?.localizedDescription)
                 }
                 print("City Walkability Score: \(walkability?.walkability)")
+                
                 return
             }
             
