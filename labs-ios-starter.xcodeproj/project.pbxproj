@@ -34,6 +34,7 @@
 		AD6493E4262334970013A4B3 /* CityDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493E3262334970013A4B3 /* CityDataViewController.swift */; };
 		AD6493F726245D6F0013A4B3 /* CityDataCVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493F626245D6F0013A4B3 /* CityDataCVS.swift */; };
 		AD6493FB26245FFA0013A4B3 /* CityDataCellS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493FA26245FFA0013A4B3 /* CityDataCellS.swift */; };
+		AD6493FF26246E4D0013A4B3 /* CityDataHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493FE26246E4D0013A4B3 /* CityDataHeaderCell.swift */; };
 		C31B35AB25DB7BB300F5436E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AA25DB7BB300F5436E /* NetworkClient.swift */; };
 		C31B35AE25DB7E3000F5436E /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AD25DB7E3000F5436E /* NetworkModels.swift */; };
 		C33AB38025D1137200DAD194 /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */; };
@@ -95,6 +96,7 @@
 		AD6493E3262334970013A4B3 /* CityDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataViewController.swift; sourceTree = "<group>"; };
 		AD6493F626245D6F0013A4B3 /* CityDataCVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataCVS.swift; sourceTree = "<group>"; };
 		AD6493FA26245FFA0013A4B3 /* CityDataCellS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataCellS.swift; sourceTree = "<group>"; };
+		AD6493FE26246E4D0013A4B3 /* CityDataHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataHeaderCell.swift; sourceTree = "<group>"; };
 		C31B35AA25DB7BB300F5436E /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		C31B35AD25DB7E3000F5436E /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				AD6493E3262334970013A4B3 /* CityDataViewController.swift */,
 				AD6493F626245D6F0013A4B3 /* CityDataCVS.swift */,
 				AD6493FA26245FFA0013A4B3 /* CityDataCellS.swift */,
+				AD6493FE26246E4D0013A4B3 /* CityDataHeaderCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				C380305625E4C2F400CB8B60 /* CitySpire.xcdatamodeld in Sources */,
 				466C4276249A8748007D033E /* SceneDelegate.swift in Sources */,
 				AD6493F726245D6F0013A4B3 /* CityDataCVS.swift in Sources */,
+				AD6493FF26246E4D0013A4B3 /* CityDataHeaderCell.swift in Sources */,
 				AD6493A82622E0C20013A4B3 /* BaseCVCell.swift in Sources */,
 				AD6493C8262304D80013A4B3 /* FavCellS.swift in Sources */,
 				AD6493AC2622E1310013A4B3 /* Extensions.swift in Sources */,

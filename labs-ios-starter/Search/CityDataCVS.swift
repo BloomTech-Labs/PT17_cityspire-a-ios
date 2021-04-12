@@ -12,6 +12,9 @@ class CityDataCVS : BaseCVListController {
     
     let cityDataCellId = "CityDataCellId"
     let headerCellId = "HeaderCell"
+    
+    //create cityDataObject to holdData
+    let cityData = [CityData]()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,8 @@ class CityDataCVS : BaseCVListController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cityDataCellId, for: indexPath) as! CityDataCellS
+        
+        //presentCityData
         
         return cell
     }
