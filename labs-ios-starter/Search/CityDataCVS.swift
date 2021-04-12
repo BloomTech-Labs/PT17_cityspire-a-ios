@@ -24,6 +24,7 @@ class CityDataCVS : BaseCVListController {
         collectionView.register(CityDataCellS.self, forCellWithReuseIdentifier: cityDataCellId)
         
         //Register headerCell
+        collectionView.register(CityDataHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCellId)
 
     }
     
@@ -42,6 +43,19 @@ class CityDataCVS : BaseCVListController {
         //presentCityData
         
         return cell
+    }
+    
+    
+    //MARK: - Required Methods for Header
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCellId, for: indexPath) as! CityDataHeader
+        header.imageView.image = #imageLiteral(resourceName: "sf1")
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: view.frame.width, height: 200)
     }
     
     

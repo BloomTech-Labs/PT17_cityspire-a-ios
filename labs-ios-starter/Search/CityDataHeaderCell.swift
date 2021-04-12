@@ -8,7 +8,11 @@
 
 import UIKit
 
-class nameCityDataHeaderCell: UICollectionReusableView {
+class CityDataHeaderCell: UICollectionViewCell {
+    
+    
+    //setup Views
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -16,6 +20,9 @@ class nameCityDataHeaderCell: UICollectionReusableView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    
 }
