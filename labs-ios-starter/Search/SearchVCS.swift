@@ -71,33 +71,37 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
 
 // Prepare to segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CityDataSegue" {
-            let vc = segue.destination as! CityDataViewController
-            vc.searchItem = searchResponse
-            
-            network.getCityData(city: searchResponse.cityName, state: state) { (cityData, error) in
-                if error != nil {
-                    print(error?.localizedDescription)
-                }
-                
-                DispatchQueue.main.async {
-//                    print("City Walkability Score: \(cityData?.walkability ?? 0)")
-                    vc.walkabilityLabel.text = "The Walkability is \(cityData?.walkability ?? 0)"
-                    vc.AirQualityLabel.text = "The Air Quality Index is \(cityData?.airQualityIndex ?? "n/a")"
-                    vc.crimeLabel.text = "The Crime Index is \(cityData?.crime ?? "n/a")"
-                    vc.populationLabel.text = "The Population of \(self.searchResponse.cityName ) is \(cityData?.population ?? 0) Million)"
-                    vc.rentalPriceLabel.text = "The Average Rent is $\(cityData?.rentalPrice ?? 0))"
-                    //add
-                    //diversityIndex
-                    //livability
-                }
-
-//                @IBOutlet weak var rentalPriceLabel: UILabel!
-                
-                return
-            }
-            
-        }
+        
+        let cityDataVC = CityDataCVS()
+        present(cityDataVC, animated: true)
+        
+//        if segue.identifier == "CityDataSegue" {
+//            let vc = segue.destination as! CityDataViewController
+//            vc.searchItem = searchResponse
+//
+//            network.getCityData(city: searchResponse.cityName, state: state) { (cityData, error) in
+//                if error != nil {
+//                    print(error?.localizedDescription)
+//                }
+//
+//                DispatchQueue.main.async {
+////                    print("City Walkability Score: \(cityData?.walkability ?? 0)")
+//                    vc.walkabilityLabel.text = "The Walkability is \(cityData?.walkability ?? 0)"
+//                    vc.AirQualityLabel.text = "The Air Quality Index is \(cityData?.airQualityIndex ?? "n/a")"
+//                    vc.crimeLabel.text = "The Crime Index is \(cityData?.crime ?? "n/a")"
+//                    vc.populationLabel.text = "The Population of \(self.searchResponse.cityName ) is \(cityData?.population ?? 0) Million)"
+//                    vc.rentalPriceLabel.text = "The Average Rent is $\(cityData?.rentalPrice ?? 0))"
+//                    //add
+//                    //diversityIndex
+//                    //livability
+//                }
+//
+////                @IBOutlet weak var rentalPriceLabel: UILabel!
+//
+//                return
+//            }
+//
+//        }
     }
     
     
