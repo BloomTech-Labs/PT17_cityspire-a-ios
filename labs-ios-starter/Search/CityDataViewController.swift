@@ -19,7 +19,11 @@ class CityDataViewController: UIViewController {
     var incomeStatement: String = ""
     var ageStatement: String = ""
     var livabilityStatement: String = ""
+    //livability
     var rentalStatement: String = ""
+    var diversityIndex: String = ""
+
+    
 
     var activityView = UIActivityIndicatorView(style: .large)
     
@@ -31,6 +35,7 @@ class CityDataViewController: UIViewController {
     @IBOutlet weak var populationLabel: UILabel!
     @IBOutlet weak var rentalPriceLabel: UILabel!
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
