@@ -22,7 +22,6 @@ class CityDataViewController: UIViewController {
     //livability
     var rentalStatement: String = ""
     var diversityIndex: String = ""
-
     
 
     var activityView = UIActivityIndicatorView(style: .large)

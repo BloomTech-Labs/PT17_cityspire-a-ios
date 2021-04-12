@@ -10,7 +10,7 @@ import UIKit
 
 class CityDataCVS : BaseCVListController {
     
-    let cityDataCellId = "TrackCellId"
+    let cityDataCellId = "CityDataCellId"
     let headerCellId = "HeaderCell"
         
     override func viewDidLoad() {
@@ -18,6 +18,7 @@ class CityDataCVS : BaseCVListController {
         collectionView.backgroundColor = .white
         
         //Register CityDataCell
+        collectionView.register(CityDataCellS.self, forCellWithReuseIdentifier: cityDataCellId)
         
         //Register headerCell
 
@@ -29,11 +30,11 @@ class CityDataCVS : BaseCVListController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cityDataCellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cityDataCellId, for: indexPath) as! CityDataCellS
         
         return cell
     }
@@ -43,5 +44,7 @@ class CityDataCVS : BaseCVListController {
 
 extension CityDataCVS: UICollectionViewDelegateFlowLayout {
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: view.frame.width, height: 250)
+    }
 }
