@@ -10,25 +10,17 @@ import UIKit
 
 class CityDataHeaderHorizontalCV : HorizontalSnappingCVController, UICollectionViewDelegateFlowLayout {
     
-    let cityHeaderCellID = "cityHeaderCell"
-    
-    //City Image
-    let cityImage = UIImageView(cornerRadius: 16)
-    //title
-    let titleLabel = UILabel(text: "City of Life", font: .systemFont(ofSize: 18, weight: .semibold))
-    //subtitle
-    let subTitle = UILabel(text: "Rated the Best Place in America", font: .systemFont(ofSize: 12, weight: .light))
-    
+    let cityHeaderCell = "cityHeaderCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = .yellow
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cityHeaderCellID)
+        collectionView.backgroundColor = .white
+        collectionView.register(CityDataHeaderCell.self, forCellWithReuseIdentifier: cityHeaderCell)
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 28, height: view.frame.height)
+        return .init(width: view.frame.width - 28, height: view.frame.height - 28)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -36,11 +28,11 @@ class CityDataHeaderHorizontalCV : HorizontalSnappingCVController, UICollectionV
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 5
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cityHeaderCellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cityHeaderCell, for: indexPath) as! CityDataHeaderCell
         
         return cell
     }
