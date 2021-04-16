@@ -26,8 +26,6 @@ class CityDataCVS : BaseCVListController {
     //timer for search
     var timer : Timer?
         
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white

@@ -438,69 +438,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="t48-H6-w1h">
-                                <rect key="frame" x="50" y="293.5" width="314" height="309"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walkability" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odm-20-Rgr">
-                                        <rect key="frame" x="101.5" y="0.0" width="111.5" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AirQualityIndex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zQ-sq-fqV">
-                                        <rect key="frame" x="78" y="70" width="158" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eem-i5-VOJ">
-                                        <rect key="frame" x="126" y="140" width="62" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Population" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fp-15-Wy7">
-                                        <rect key="frame" x="102.5" y="210" width="109.5" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rental Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nql-S9-ciI">
-                                        <rect key="frame" x="95.5" y="280" width="123" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="UOZ-dg-LSK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="nQw-Cx-ggW"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="weatherMockup" translatesAutoresizingMaskIntoConstraints="NO" id="yBH-WW-2Vp">
+                                <rect key="frame" x="20" y="356" width="358" height="141"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pFg-GI-kAd">
+                                <rect key="frame" x="0.0" y="505" width="414" height="308"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MOH-31-YZd">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TmI-bx-3fC" customClass="CityDataVCSCollectionViewCell" customModule="labs_ios_starter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MK7-K4-7tM">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fal-sn-kiC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Fal-sn-kiC" firstAttribute="trailing" secondItem="t48-H6-w1h" secondAttribute="trailing" constant="50" id="YLh-lV-eXl"/>
-                            <constraint firstItem="t48-H6-w1h" firstAttribute="centerY" secondItem="Jgy-9n-i9c" secondAttribute="centerY" id="bik-8C-HHv"/>
-                            <constraint firstItem="t48-H6-w1h" firstAttribute="leading" secondItem="Fal-sn-kiC" secondAttribute="leading" constant="50" id="hyd-WP-5Zg"/>
-                            <constraint firstItem="t48-H6-w1h" firstAttribute="centerX" secondItem="Jgy-9n-i9c" secondAttribute="centerX" id="iwu-a1-2e1"/>
+                            <constraint firstItem="UOZ-dg-LSK" firstAttribute="trailing" secondItem="Fal-sn-kiC" secondAttribute="trailing" id="0Oo-Dw-wOR"/>
+                            <constraint firstItem="Fal-sn-kiC" firstAttribute="bottom" secondItem="yBH-WW-2Vp" secondAttribute="bottom" constant="316" id="6Fe-RC-V0W"/>
+                            <constraint firstItem="yBH-WW-2Vp" firstAttribute="top" secondItem="UOZ-dg-LSK" secondAttribute="bottom" constant="8" id="JRZ-pA-Rso"/>
+                            <constraint firstItem="yBH-WW-2Vp" firstAttribute="leading" secondItem="Jgy-9n-i9c" secondAttribute="leadingMargin" id="gvE-pE-fsX"/>
+                            <constraint firstItem="UOZ-dg-LSK" firstAttribute="leading" secondItem="Fal-sn-kiC" secondAttribute="leading" id="hGQ-1e-ZVb"/>
+                            <constraint firstItem="UOZ-dg-LSK" firstAttribute="top" secondItem="Fal-sn-kiC" secondAttribute="top" id="oin-wl-itc"/>
+                            <constraint firstItem="yBH-WW-2Vp" firstAttribute="centerX" secondItem="UOZ-dg-LSK" secondAttribute="centerX" id="xhu-pQ-kTR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wkv-4E-14Q"/>
-                    <connections>
-                        <outlet property="AirQualityLabel" destination="0zQ-sq-fqV" id="3eI-xi-DtD"/>
-                        <outlet property="crimeLabel" destination="eem-i5-VOJ" id="VPg-oO-2Hq"/>
-                        <outlet property="populationLabel" destination="4Fp-15-Wy7" id="pQd-Yt-3Jm"/>
-                        <outlet property="rentalPriceLabel" destination="Nql-S9-ciI" id="GGP-ki-Wqr"/>
-                        <outlet property="walkabilityLabel" destination="odm-20-Rgr" id="eJ9-A2-Fia"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="wkv-4E-14Q">
+                        <barButtonItem key="rightBarButtonItem" image="mappin.circle" catalog="system" id="Yfg-mz-FSs"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCS-HQ-BUf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4431.884057971015" y="693.75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9Kb-vt-gYz">
+            <objects>
+                <viewController id="Zjl-VR-u6L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0G8-qI-egr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8Eg-Bt-xj6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zjc-3U-eoO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5434" y="701"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dot-8d-cdO"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="5" width="275" height="183"/>
         <image name="CitySpireLogo-Dark" width="234" height="66"/>
         <image name="Map" width="374.5" height="605"/>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
@@ -508,7 +517,9 @@
         <image name="bolt.heart.fill" catalog="system" width="128" height="109"/>
         <image name="flame" catalog="system" width="108" height="128"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
+        <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <image name="touristMap" width="961" height="743"/>
+        <image name="weatherMockup" width="311" height="126"/>
         <namedColor name="AccentGreen">
             <color red="0.28999999165534973" green="0.4779999852180481" blue="0.54900002479553223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
