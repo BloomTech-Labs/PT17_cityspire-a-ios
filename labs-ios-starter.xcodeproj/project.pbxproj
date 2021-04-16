@@ -33,6 +33,7 @@
 		AD0835C4262935C6005971BD /* SearchVCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835C3262935C6005971BD /* SearchVCS.swift */; };
 		AD0835C8262935DF005971BD /* CityDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835C7262935DF005971BD /* CityDataViewController.swift */; };
 		AD0835CC262935E5005971BD /* CityDataVCSCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835CB262935E5005971BD /* CityDataVCSCollectionViewCell.swift */; };
+		AD0835D42629421D005971BD /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835D32629421D005971BD /* MockDataLoader.swift */; };
 		AD6493982622DFA20013A4B3 /* HorizontalSnappingCVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493972622DFA20013A4B3 /* HorizontalSnappingCVController.swift */; };
 		AD64939C2622DFD80013A4B3 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64939B2622DFD80013A4B3 /* UIView+Layout.swift */; };
 		AD6493A02622E02E0013A4B3 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64939F2622E02E0013A4B3 /* VerticalStackView.swift */; };
@@ -104,6 +105,7 @@
 		AD0835C3262935C6005971BD /* SearchVCS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVCS.swift; sourceTree = "<group>"; };
 		AD0835C7262935DF005971BD /* CityDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDataViewController.swift; sourceTree = "<group>"; };
 		AD0835CB262935E5005971BD /* CityDataVCSCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDataVCSCollectionViewCell.swift; sourceTree = "<group>"; };
+		AD0835D32629421D005971BD /* MockDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
 		AD6493972622DFA20013A4B3 /* HorizontalSnappingCVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingCVController.swift; sourceTree = "<group>"; };
 		AD64939B2622DFD80013A4B3 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		AD64939F2622E02E0013A4B3 /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				AD083592262930AB005971BD /* FetchCitydataAPI.swift */,
 				46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */,
 				C31B35AA25DB7BB300F5436E /* NetworkClient.swift */,
+				AD0835D32629421D005971BD /* MockDataLoader.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				C37D6E3625D07F150025842E /* FavoritesCollectionViewCell.swift in Sources */,
 				C31B35AE25DB7E3000F5436E /* NetworkModels.swift in Sources */,
 				C33AB38025D1137200DAD194 /* MapScreenViewController.swift in Sources */,
+				AD0835D42629421D005971BD /* MockDataLoader.swift in Sources */,
 				466C4274249A8748007D033E /* AppDelegate.swift in Sources */,
 				46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */,
 				AD6493A42622E06F0013A4B3 /* BaseListController.swift in Sources */,

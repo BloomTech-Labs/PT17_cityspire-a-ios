@@ -24,7 +24,7 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     var cityObject : [City] = []
     
     //create a array of dummyData 
-    var dummyData: [PopularRoot] = []
+    var popularData = [PopularRoot]()
     
     //timer for search
     var timer : Timer?
@@ -53,17 +53,22 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         setupSearchBar()
         
         ///setup Favorites
-        setupFavoritesCell()
+//        setupFavoritesCell()
         
         /// Register Favorites Cell
         favoritesCollectionView.register(FavCellS.self, forCellWithReuseIdentifier: favoriteCell)
+        
+        let data = MockDataLoader().popularData
+        print("Latest Mock DATA \(data)")
     
     }
     
     func setupFavoritesCell() {
         //        print(fetchController.fetchDummyJSON(completion: <#([PopularRoot]) -> Void#>))
         fetchController.fetchDummyJSON { (dummyData) in
-            print("MOSRT RECENT DUMMYDATA", dummyData)
+//            print("MOSRT RECENT DUMMYDATA", dummyData)
+//            self.dummyData = dummyData
+//            print("MOSRT RECENT DUMMYDATA", dummyData)
 
         }
          

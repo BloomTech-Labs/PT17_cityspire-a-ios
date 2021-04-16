@@ -94,13 +94,15 @@ class FetchCitydataAPI {
     ///fetch dummy data from local file and display Data in Favorites CollectionView Cell
     func fetchDummyJSON(completion: @escaping ([PopularRoot]) -> Void) {
         let url = Bundle.main.url(forResource: "citydata", withExtension: "json")!
+        var popularData = [PopularRoot]()
         do {
             let jsonData = try Data(contentsOf: url)
             let decoder = JSONDecoder()
             let dataStruct = try decoder.decode(PopularRoot.self, from: jsonData)
-            print(dataStruct)
+//            print("OLD Data Struct", dataStruct)
             //can print struct but not display it
-            
+            popularData.append(dataStruct)
+//            print("New Data Struct", dataStruct)
             
         } catch {
             print(error)
