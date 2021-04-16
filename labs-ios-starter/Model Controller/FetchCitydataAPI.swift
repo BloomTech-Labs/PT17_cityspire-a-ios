@@ -55,9 +55,7 @@ class FetchCitydataAPI {
         request.httpBody = jsonData
         return request
     }
-    
-    //MARK: - Get Dummy Data
-    //
+
     
     
     //MARK: - Fetch City Data
@@ -91,6 +89,8 @@ class FetchCitydataAPI {
         }
     }
     
+    
+    //MARK: - Get Dummy Data
     ///fetch dummy data from local file and display Data in Favorites CollectionView Cell
     func fetchDummyJSON(completion: @escaping ([PopularRoot]) -> Void) {
         let url = Bundle.main.url(forResource: "citydata", withExtension: "json")!
@@ -138,32 +138,6 @@ class FetchCitydataAPI {
             }
             
         }
-        
-//        guard let url = URL(string: "http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/api/") else { return }
-//        let path = "get_data"
-//        guard let request = postRequestWithCity(url: url, urlPathComponent: path, city: city) else {
-//            completion(city)
-//            return
-//        }
-//        shared.dataRequest(with: request) { (data, response, error) in
-//            self.checkFetchResponse(for: "FetchCityData", data, response, error) { (result) in
-//                switch result {
-//                    case.success(let data):
-//                    do {
-//                        var newCityData = try JSONDecoder().decode(City.self, from: data)
-//                        newCityData.cityName = city.cityName
-//                        newCityData.cityState = city.cityState
-//                        completion(newCityData)
-//                        print("NEW CITY DATA:", newCityData)
-//                    } catch {
-//                        print("Error decoding city data: \(error)")
-//                        completion(city)
-//                    }
-//                    default:
-//                        completion(city)
-//                }
-//            }
-//        }
 
 }
     

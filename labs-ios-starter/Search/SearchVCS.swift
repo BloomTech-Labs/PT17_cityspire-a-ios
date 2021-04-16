@@ -15,7 +15,7 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     // MARK: - Properties
     var searchResponse = Map()
-    var network = NetworkClient()
+//    var network = NetworkClient()
     var city = "New York"
     var state = "NY"
     

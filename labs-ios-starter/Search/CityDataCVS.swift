@@ -15,11 +15,11 @@ class CityDataCVS : BaseCVListController {
     let headerCellId = "HeaderCell"
     
     //create cityDataObject to holdData
-    var cityDataResults = [CityData]()
+//    var cityDataResults = [CityData]()
     
     // MARK: - Properties
     var searchResponse = Map()
-    var network = NetworkClient()
+//    var network = NetworkClient()
     var city = "New York"
     var state = "NY"
     
