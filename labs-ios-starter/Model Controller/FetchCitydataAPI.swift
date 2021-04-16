@@ -55,7 +55,7 @@ class FetchCitydataAPI {
         request.httpBody = jsonData
         return request
     }
-
+    
     
     
     //MARK: - Fetch City Data
@@ -68,44 +68,24 @@ class FetchCitydataAPI {
         shared.dataRequest(with: request) { data, response, error in
             self.checkFetchResponse(for: "getCityData", data, response, error) { result in
                 switch result {
-                case .success(let data):
-                    do {
-                        var newCityData = try JSONDecoder().decode(City.self, from: data)
-                        newCityData.cityName = city.cityName
-                        newCityData.cityState = city.cityState
-                        completion(newCityData)
-                        print("NEW CITY DATA:", newCityData)
-                    } catch {
-                        NSLog("Error decoding city data: \(error)")
+                    case .success(let data):
+                        do {
+                            var newCityData = try JSONDecoder().decode(City.self, from: data)
+                            newCityData.cityName = city.cityName
+                            newCityData.cityState = city.cityState
+                            completion(newCityData)
+                            print("NEW CITY DATA:", newCityData)
+                        } catch {
+                            NSLog("Error decoding city data: \(error)")
+                            completion(city)
+                        }
+                    default:
                         completion(city)
-                    }
-                default:
-                     completion(city)
-//                    self.getWalkability(city: city) { city in
-//                        completion(city)
-//                    }
+                    //                    self.getWalkability(city: city) { city in
+                    //                        completion(city)
+                    //                    }
                 }
             }
-        }
-    }
-    
-    
-    //MARK: - Get Dummy Data
-    ///fetch dummy data from local file and display Data in Favorites CollectionView Cell
-    func fetchDummyJSON(completion: @escaping ([PopularRoot]) -> Void) {
-        let url = Bundle.main.url(forResource: "citydata", withExtension: "json")!
-        var popularData = [PopularRoot]()
-        do {
-            let jsonData = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            let dataStruct = try decoder.decode(PopularRoot.self, from: jsonData)
-//            print("OLD Data Struct", dataStruct)
-            //can print struct but not display it
-            popularData.append(dataStruct)
-//            print("New Data Struct", dataStruct)
-            
-        } catch {
-            print(error)
         }
     }
     
@@ -135,13 +115,13 @@ class FetchCitydataAPI {
                 } catch {
                     print("Error fetching data: ", error)
                     completion(nil,error)
-    
+                    
                 }
             }
             
         }
-
-}
+        
+    }
     
     
 }
