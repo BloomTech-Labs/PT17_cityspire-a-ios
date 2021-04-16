@@ -19,7 +19,7 @@ class CityDataCVS : BaseCVListController {
     
     // MARK: - Properties
     var searchResponse = Map()
-//    var network = NetworkClient()
+    var network = NetworkClient()
     var city = "New York"
     var state = "NY"
     
@@ -44,8 +44,6 @@ class CityDataCVS : BaseCVListController {
     
     //MARK: - Functions
     func fetchData() {
-        
-        
         
         network.getCityData(city: city, state: state) { (cityData, error) in
             if error != nil {

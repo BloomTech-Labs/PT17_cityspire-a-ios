@@ -15,9 +15,16 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     // MARK: - Properties
     var searchResponse = Map()
-//    var network = NetworkClient()
-    var city = "New York"
-    var state = "NY"
+    var fetchController = FetchCitydataAPI()
+    
+    var city = City(cityName: "", cityState: "")
+    var cityName = ""
+    var stateName = ""
+    var currentCity : City?
+    var cityObject : [City] = []
+    
+    //create a array of dummyData 
+    var dummyData: [PopularRoot] = []
     
     //timer for search
     var timer : Timer?
@@ -42,67 +49,140 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         favoritesCollectionView.dataSource = self
         favoritesCollectionView.delegate = self
         //setup search
+        
         setupSearchBar()
         
-        favoritesCollectionView.register(FavCellS.self, forCellWithReuseIdentifier: favoriteCell)
+        ///setup Favorites
+        setupFavoritesCell()
         
+        /// Register Favorites Cell
+        favoritesCollectionView.register(FavCellS.self, forCellWithReuseIdentifier: favoriteCell)
+    
+    }
+    
+    func setupFavoritesCell() {
+        //        print(fetchController.fetchDummyJSON(completion: <#([PopularRoot]) -> Void#>))
+        fetchController.fetchDummyJSON { (dummyData) in
+            print("MOSRT RECENT DUMMYDATA", dummyData)
+
+        }
+         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        searchBar.text = ""
         
     }
     
     //MARK: - Helper Function
     
     /// Creates a string based on the search query entered by the user
-    func createStringURL(_ input: String) {
-        var address = input
-        for char in address {
+    func createStringURL(_ text: String?) -> Bool {
+        guard var text = text else {
+            return false
+        }
+        for char in text {
             if char == "," {
-                address = address.replacingOccurrences(of: city, with: "")
-                state = address
-                state = state.replacingOccurrences(of: ",", with: "")
-                state = state.replacingOccurrences(of: " ", with: "")
-                return
+                text = text.replacingOccurrences(of: cityName, with: "")
+                stateName = text.uppercased()
+                stateName = stateName.replacingOccurrences(of: ",", with: "")
+                stateName = stateName.replacingOccurrences(of: " ", with: "")
+                break
             } else {
-                city.append(char)
+                cityName.append(char)
             }
         }
+        cityName = cityName.capitalized
+        if stateName.count != 2 || cityName.count < 2 {
+            return false
+        }
+        city.cityName = cityName + ", " + stateName
+        print("CityName", cityName)
+        print("State", stateName)
+        return true
+    }
+    
+    ///search for city function
+    func searchForCity() {
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = city.cityName
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        
+        activeSearch.start { (response, error) in
+            if response == nil {
+                Alert.showBasicAlert(on: self, with: "Unable to find City", message: "Please try again")
+            } else {
+                guard let cityName = response?.mapItems.first?.name else {
+                Alert.showBasicAlert(on: self, with: "Unable to find City", message: "Please try again")
+                    return
+                }
+                
+                // TO-DO: - Add logic later to precent empty or unformatted string entries
+                
+                self.cityName = cityName
+                self.city.cityName = cityName
+                self.city.cityState = self.stateName
+                ///set long and lat
+                self.city.longitude = (response?.boundingRegion.center.longitude)!
+                self.city.latitude = (response?.boundingRegion.center.latitude)!
+                
+                ///SAL
+//                self.fetchController.getCityData(cityName: self.city) { (city, error) in
+//
+//                    //error
+//                    if let error = error {
+//                        print(error)
+//                        return
+//                    }
+//
+//                    //unwrapped data
+//                    guard let city = city else { return }
+//
+//                    DispatchQueue.main.async {
+//                        self.city = city
+//                        print("SAL DATA", city)
+//                        print("The Airquality in \(city.cityName) is \(city.airQuality)")
+//                        self.performSegue(withIdentifier: "CityDataSegue", sender: self)
+//
+//                    }
+//                }
+                
+                
+                ///OLD
+                self.fetchController.getData(city: self.city) { (city) in
+                    ///present error
+                    if let error = error {
+                        print(error)
+                        return
+                    }
+
+                    //present data on main thread
+                    DispatchQueue.main.async {
+                        self.city = city
+                        self.performSegue(withIdentifier: "CityDataSegue", sender: self)
+                    }
+                }
+                
+                
+                
+            }
+        }
+        
     }
     
     // MARK: - Navigation
-
-// Prepare to segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let cityDataVC = CityDataCVS()
-        present(cityDataVC, animated: true)
-        
-//        if segue.identifier == "CityDataSegue" {
-//            let vc = segue.destination as! CityDataViewController
-//            vc.searchItem = searchResponse
-//
-//            network.getCityData(city: searchResponse.cityName, state: state) { (cityData, error) in
-//                if error != nil {
-//                    print(error?.localizedDescription)
-//                }
-//
-//                DispatchQueue.main.async {
-////                    print("City Walkability Score: \(cityData?.walkability ?? 0)")
-//                    vc.walkabilityLabel.text = "The Walkability is \(cityData?.walkability ?? 0)"
-//                    vc.AirQualityLabel.text = "The Air Quality Index is \(cityData?.airQualityIndex ?? "n/a")"
-//                    vc.crimeLabel.text = "The Crime Index is \(cityData?.crime ?? "n/a")"
-//                    vc.populationLabel.text = "The Population of \(self.searchResponse.cityName ) is \(cityData?.population ?? 0) Million)"
-//                    vc.rentalPriceLabel.text = "The Average Rent is $\(cityData?.rentalPrice ?? 0))"
-//                    //add
-//                    //diversityIndex
-//                    //livability
-//                }
-//
-////                @IBOutlet weak var rentalPriceLabel: UILabel!
-//
-//                return
-//            }
-//
-//        }
+        if segue.identifier == "CityDataSegue" {
+            let cityDetailsVC = segue.destination as! CityDataViewController
+            cityDetailsVC.cityObject.append(city)
+            cityDetailsVC.fetchController = fetchController
+        }
     }
+    
+ 
     
     
     //MARK: - IB Actions
@@ -114,7 +194,7 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        print(searchText)
+        print(searchText)
     }
     
     
@@ -124,10 +204,10 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCell, for: indexPath) as! FavCellS
-        cell.imageView.image = UIImage(named: "ny")
+        
+        cell.imageView.image = #imageLiteral(resourceName: "1")
         return cell
     }
-    
     
     
 }
@@ -136,26 +216,14 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
 extension SearchVCS: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let searchRequest = MKLocalSearch.Request()
-        
-        searchRequest.naturalLanguageQuery = searchBar.text
-        let activeSearch = MKLocalSearch(request: searchRequest)
-        
-        activeSearch.start { (response, error) in
-            if response == nil {
-                Alert.showBasicAlert(on: self, with: "Invalid Input", message: "Please use the format of \"City, State\"")
-            } else {
-                self.searchResponse.long = (response?.boundingRegion.center.longitude)!
-                self.searchResponse.lat = (response?.boundingRegion.center.latitude)!
-                self.searchResponse.cityName = searchBar.text!
-                self.createStringURL(searchBar.text!)
-                
-                
-                
-                self.performSegue(withIdentifier: "CityDataSegue", sender: self)
-                 
-            }
+        //move logic outside of delegate to searchForCity()
+        let text = searchBar.text
+        guard createStringURL(text) else {
+            Alert.showBasicAlert(on: self, with: "Invalid Input", message: "Please use the format of \"City, State\"")
+            return
         }
+        //run search function
+        searchForCity()
     }
 }
 
