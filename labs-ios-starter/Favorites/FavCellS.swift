@@ -13,24 +13,22 @@ class FavCellS: UICollectionViewCell {
     
     let imageView = UIImageView(cornerRadius: 10)
     
-    
     //ADDVIEWS
-    let appiconImageView = UIImageView(cornerRadius: 16)
+//    let appiconImageView = UIImageView(cornerRadius: 16)
     let nameLabel = UILabel(text: "Popular City Name", font: .boldSystemFont(ofSize: 30), numberOfLines: 1)
-    let descriptionLabel = UILabel(text: "Information about the City....", font: .systemFont(ofSize: 12, weight: .light) )
+//    let descriptionLabel = UILabel(text: "Information about the City....", font: .systemFont(ofSize: 12, weight: .light) )
     
-    let whatsNewLabel = UILabel(text: "Whats New", font: .boldSystemFont(ofSize: 18))
-    
-    let releaseNotesLabel = UILabel(text: "1.08 release notes", font: .systemFont(ofSize: 18), numberOfLines: 0)
+//    let whatsNewLabel = UILabel(text: "Whats New", font: .boldSystemFont(ofSize: 18))
+//    let releaseNotesLabel = UILabel(text: "1.08 release notes", font: .systemFont(ofSize: 18), numberOfLines: 0)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        imageView.contentMode = .scaleAspectFill
-        addSubview(nameLabel)
+  
         addSubview(imageView)
-        addSubview(nameLabel)
+        imageView.addSubview(nameLabel)
         imageView.fillSuperview()
-        nameLabel.textColor = .white
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 14
      
         nameLabel.anchor(top: nil, leading: imageView.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 20, bottom: 20, right: 0))
         

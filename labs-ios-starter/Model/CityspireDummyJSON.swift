@@ -24,11 +24,11 @@ struct PopularRoot : Codable {
 
 struct Popular : Codable {
 
-    let city : String?
-    let imageUrl : URL?
-    let latitude : Float?
-    let longitude : Float?
-    let state : String?
+    let city : String
+    let imageUrl : String
+    let latitude : Float
+    let longitude : Float
+    let state : String
 
 
     enum CodingKeys: String, CodingKey {
@@ -40,11 +40,11 @@ struct Popular : Codable {
     }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        city = try values.decodeIfPresent(String.self, forKey: .city)
-        imageUrl = try values.decodeIfPresent(URL.self, forKey: .imageUrl)
-        latitude = try values.decodeIfPresent(Float.self, forKey: .latitude)
-        longitude = try values.decodeIfPresent(Float.self, forKey: .longitude)
-        state = try values.decodeIfPresent(String.self, forKey: .state)
+        city = try values.decodeIfPresent(String.self, forKey: .city)!
+        imageUrl = try values.decodeIfPresent(String.self, forKey: .imageUrl)!
+        latitude = try values.decodeIfPresent(Float.self, forKey: .latitude)!
+        longitude = try values.decodeIfPresent(Float.self, forKey: .longitude)!
+        state = try values.decodeIfPresent(String.self, forKey: .state)!
     }
 }
 

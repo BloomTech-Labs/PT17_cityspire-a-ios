@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
- 
+import SDWebImage
 
 class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -25,7 +25,7 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     var cityObject : [City] = []
     
     //create a array of dummyData 
-    var popularData = [PopularRoot]()
+    var popularFetchedData = [Popular]()
     
     //timer for search
     var timer : Timer?
@@ -52,28 +52,18 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         //setup search
         setupSearchBar()
         
-        ///setup Favorites
-//        setupFavoritesCell()
-        
         /// Register Favorites Cell
         favoritesCollectionView.register(FavCellS.self, forCellWithReuseIdentifier: favoriteCell)
         
-        let data = MockDataLoader().popularData
-        print("Latest Mock DATA \(data)")
+        popularFetchedData = MockDataLoader().popularData
+        
+        //reload cell
+        DispatchQueue.main.async {
+            self.favoritesCollectionView.reloadData()
+        }
+//        print("Latest Mock DATA \(popularFetchedData)")
     
     }
-    
-//    func setupFavoritesCell() {
-//        //        print(fetchController.fetchDummyJSON(completion: <#([PopularRoot]) -> Void#>))
-//        fetchController.fetchDummyJSON { (dummyData) in
-////            print("MOSRT RECENT DUMMYDATA", dummyData)
-////            self.dummyData = dummyData
-////            print("MOSRT RECENT DUMMYDATA", dummyData)
-//
-//        }
-//
-//
-//    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -169,9 +159,6 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                         self.performSegue(withIdentifier: "CityDataSegue", sender: self)
                     }
                 }
-                
-                
-                
             }
         }
         
@@ -204,19 +191,27 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return popularData.count
+        return popularFetchedData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCell, for: indexPath) as! FavCellS
-        cell.imageView
+       
+        print(popularFetchedData.count)
+        let mocData = popularFetchedData[indexPath.item]
+        cell.nameLabel.textColor = .white
+//        cell.backgroundColor = .green
+//        print("MOC DATA", mocData)
+        cell.imageView.sd_setImage(with: URL(string: mocData.imageUrl))
+//        cell.imageView.image = #imageLiteral(resourceName: "4")
+        cell.nameLabel.text = "\(mocData.city)" + ", " + "\(mocData.state)"
         
-        cell.imageView.image = #imageLiteral(resourceName: "1")
         return cell
     }
     
     
 }
+
 
 //MARK: - Extensions
 extension SearchVCS: UISearchBarDelegate {

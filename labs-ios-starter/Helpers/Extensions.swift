@@ -21,17 +21,17 @@ extension UILabel {
 
 //ImageView to load images from URL
 extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
+    func loadImage(withUrl url: URL) {
+           DispatchQueue.global().async { [weak self] in
+               if let imageData = try? Data(contentsOf: url) {
+                   if let image = UIImage(data: imageData) {
+                       DispatchQueue.main.async {
+                           self?.image = image
+                       }
+                   }
+               }
+           }
+       }
 }
 
 // ImageView
