@@ -123,27 +123,6 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                 self.city.longitude = (response?.boundingRegion.center.longitude)!
                 self.city.latitude = (response?.boundingRegion.center.latitude)!
                 
-                ///SAL
-//                self.fetchController.getCityData(cityName: self.city) { (city, error) in
-//
-//                    //error
-//                    if let error = error {
-//                        print(error)
-//                        return
-//                    }
-//
-//                    //unwrapped data
-//                    guard let city = city else { return }
-//
-//                    DispatchQueue.main.async {
-//                        self.city = city
-//                        print("SAL DATA", city)
-//                        print("The Airquality in \(city.cityName) is \(city.airQuality)")
-//                        self.performSegue(withIdentifier: "CityDataSegue", sender: self)
-//
-//                    }
-//                }
-                
                 
                 ///OLD
                 self.fetchController.getData(city: self.city) { (city) in

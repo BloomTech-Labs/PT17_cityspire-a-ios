@@ -10,7 +10,6 @@ import UIKit
 
 class CityDataHeaderCell: UICollectionViewCell {
     
-    
     //setup Views
     let cityLabel = UILabel(text: "Los Angeles", font: .boldSystemFont(ofSize: 20))
     let titleLabel = UILabel(text: "Los Angeles is a sprawling Southern California", font: .systemFont(ofSize: 16))
