@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+ 
 
 class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -49,7 +50,6 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         favoritesCollectionView.dataSource = self
         favoritesCollectionView.delegate = self
         //setup search
-        
         setupSearchBar()
         
         ///setup Favorites
@@ -63,17 +63,17 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     }
     
-    func setupFavoritesCell() {
-        //        print(fetchController.fetchDummyJSON(completion: <#([PopularRoot]) -> Void#>))
-        fetchController.fetchDummyJSON { (dummyData) in
-//            print("MOSRT RECENT DUMMYDATA", dummyData)
-//            self.dummyData = dummyData
-//            print("MOSRT RECENT DUMMYDATA", dummyData)
-
-        }
-         
-        
-    }
+//    func setupFavoritesCell() {
+//        //        print(fetchController.fetchDummyJSON(completion: <#([PopularRoot]) -> Void#>))
+//        fetchController.fetchDummyJSON { (dummyData) in
+////            print("MOSRT RECENT DUMMYDATA", dummyData)
+////            self.dummyData = dummyData
+////            print("MOSRT RECENT DUMMYDATA", dummyData)
+//
+//        }
+//
+//
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -204,11 +204,12 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return popularData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCell, for: indexPath) as! FavCellS
+        cell.imageView
         
         cell.imageView.image = #imageLiteral(resourceName: "1")
         return cell

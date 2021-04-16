@@ -34,6 +34,7 @@
 		AD0835C8262935DF005971BD /* CityDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835C7262935DF005971BD /* CityDataViewController.swift */; };
 		AD0835CC262935E5005971BD /* CityDataVCSCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835CB262935E5005971BD /* CityDataVCSCollectionViewCell.swift */; };
 		AD0835D42629421D005971BD /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835D32629421D005971BD /* MockDataLoader.swift */; };
+		AD0835D92629535D005971BD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AD0835D82629535D005971BD /* SDWebImage */; };
 		AD6493982622DFA20013A4B3 /* HorizontalSnappingCVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493972622DFA20013A4B3 /* HorizontalSnappingCVController.swift */; };
 		AD64939C2622DFD80013A4B3 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64939B2622DFD80013A4B3 /* UIView+Layout.swift */; };
 		AD6493A02622E02E0013A4B3 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64939F2622E02E0013A4B3 /* VerticalStackView.swift */; };
@@ -145,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD0835D92629535D005971BD /* SDWebImage in Frameworks */,
 				46908EB62513C971003252BA /* OktaAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +334,7 @@
 			name = "labs-ios-starter";
 			packageProductDependencies = (
 				46908EB52513C971003252BA /* OktaAuth */,
+				AD0835D82629535D005971BD /* SDWebImage */,
 			);
 			productName = LabsScaffolding;
 			productReference = 466C4270249A8748007D033E /* labs-ios-starter.app */;
@@ -386,6 +389,7 @@
 			mainGroup = 466C4267249A8748007D033E;
 			packageReferences = (
 				46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */,
+				AD0835D72629535D005971BD /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 466C4271249A8748007D033E /* Products */;
 			projectDirPath = "";
@@ -757,6 +761,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		AD0835D72629535D005971BD /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -764,6 +776,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */;
 			productName = OktaAuth;
+		};
+		AD0835D82629535D005971BD /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD0835D72629535D005971BD /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 
