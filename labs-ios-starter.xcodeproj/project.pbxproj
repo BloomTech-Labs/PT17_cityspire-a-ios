@@ -261,13 +261,13 @@
 		C3BEDE8625C2722C006BF31A /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				AD6493F626245D6F0013A4B3 /* CityDataCVS.swift */,
+				AD0835C3262935C6005971BD /* SearchVCS.swift */,
 				AD0835C7262935DF005971BD /* CityDataViewController.swift */,
+				AD6493F626245D6F0013A4B3 /* CityDataCVS.swift */,
 				AD0835CB262935E5005971BD /* CityDataVCSCollectionViewCell.swift */,
 				C3BEDE8925C27271006BF31A /* Search.storyboard */,
 				C3BEDE9225C2731D006BF31A /* SearchViewController.swift */,
 				F35C107E25C791E0000AA795 /* CardView.swift */,
-				AD0835C3262935C6005971BD /* SearchVCS.swift */,
 				AD6493FA26245FFA0013A4B3 /* CityDataCellS.swift */,
 				AD6493FE26246E4D0013A4B3 /* CityDataHeader.swift */,
 				AD649402262471A90013A4B3 /* CityDataHeaderHorizontalCV.swift */,
