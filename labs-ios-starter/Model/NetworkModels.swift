@@ -14,9 +14,9 @@ struct PostParams: Codable {
     let state: String
 }
 
-/// Information to display a city's walkability score
-struct Walkability: Codable {
-    let walkability: Int
-}
+/// Information to display a city's walkability score Moved to CityData
+//struct Walkability: Codable {
+//    let walkability: Int
+//}
 
 
