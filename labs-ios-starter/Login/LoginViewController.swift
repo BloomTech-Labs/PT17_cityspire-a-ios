@@ -30,6 +30,23 @@ class LoginViewController: UIViewController {
     
     // MARK: - Actions
     
+    //Added signin with Lambda option
+    @IBAction func signInWithLambda(_ sender: UIButton) {
+        if let tabBarController = storyboard?.instantiateViewController(withIdentifier: "LambdaID") as? LambdaTabBarController {
+            tabBarController.modalPresentationStyle = .fullScreen
+            present(tabBarController, animated: true)
+        }
+        
+        //Original design workflow -> Enter SearchVC
+//        if let searchController = storyboard?.instantiateViewController(identifier: "SearchID") as? SearchViewController {
+//            searchController.modalPresentationStyle = .fullScreen
+//            present(searchController, animated: true)
+//        }
+        
+    }
+    
+    
+    
     @IBAction func signIn(_ sender: Any) {
         UIApplication.shared.open(ProfileController.shared.oktaAuth.identityAuthURL()!)
     }

@@ -80,5 +80,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationUsageDescription</key>
+	<string>$(PRODUCT_NAME) Requires GPS Access for search</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>$(PRODUCT_NAME) Requires GPS Access for search</string>
 </dict>
 </plist>

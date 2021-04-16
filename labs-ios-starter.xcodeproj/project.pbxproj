@@ -20,6 +20,30 @@
 		46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */; };
 		46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */; };
 		46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */; };
+		AD08358B26292FC4005971BD /* CityspireDummyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD08358A26292FC4005971BD /* CityspireDummyJSON.swift */; };
+		AD08358F26293009005971BD /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD08358E26293009005971BD /* CityData.swift */; };
+		AD083593262930AB005971BD /* FetchCitydataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD083592262930AB005971BD /* FetchCitydataAPI.swift */; };
+		AD08359B26293119005971BD /* FavCellS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD08359A26293119005971BD /* FavCellS.swift */; };
+		AD0835A0262931A8005971BD /* citydata.json in Resources */ = {isa = PBXBuildFile; fileRef = AD08359F262931A8005971BD /* citydata.json */; };
+		AD0835AA26293239005971BD /* LambdaTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835A926293239005971BD /* LambdaTabBarController.swift */; };
+		AD0835B126293267005971BD /* MapLandingDetailsVCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835AF26293267005971BD /* MapLandingDetailsVCS.swift */; };
+		AD0835B226293267005971BD /* CityMapVCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835B026293267005971BD /* CityMapVCS.swift */; };
+		AD0835B8262932CE005971BD /* MapSearchResultsCellVCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835B7262932CE005971BD /* MapSearchResultsCellVCS.swift */; };
+		AD0835BE26293453005971BD /* NetworkHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835BD26293453005971BD /* NetworkHelpers.swift */; };
+		AD0835C4262935C6005971BD /* SearchVCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835C3262935C6005971BD /* SearchVCS.swift */; };
+		AD0835C8262935DF005971BD /* CityDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835C7262935DF005971BD /* CityDataViewController.swift */; };
+		AD0835D42629421D005971BD /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835D32629421D005971BD /* MockDataLoader.swift */; };
+		AD0835D92629535D005971BD /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AD0835D82629535D005971BD /* SDWebImage */; };
+		AD0835E3262957D9005971BD /* CityDataVCSCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0835E2262957D9005971BD /* CityDataVCSCollectionViewCell.swift */; };
+		AD6493982622DFA20013A4B3 /* HorizontalSnappingCVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493972622DFA20013A4B3 /* HorizontalSnappingCVController.swift */; };
+		AD64939C2622DFD80013A4B3 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64939B2622DFD80013A4B3 /* UIView+Layout.swift */; };
+		AD6493A02622E02E0013A4B3 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64939F2622E02E0013A4B3 /* VerticalStackView.swift */; };
+		AD6493A42622E06F0013A4B3 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493A32622E06F0013A4B3 /* BaseListController.swift */; };
+		AD6493A82622E0C20013A4B3 /* BaseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493A72622E0C20013A4B3 /* BaseCVCell.swift */; };
+		AD6493AC2622E1310013A4B3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493AB2622E1310013A4B3 /* Extensions.swift */; };
+		AD6493FF26246E4D0013A4B3 /* CityDataHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6493FE26246E4D0013A4B3 /* CityDataHeader.swift */; };
+		AD649403262471A90013A4B3 /* CityDataHeaderHorizontalCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD649402262471A90013A4B3 /* CityDataHeaderHorizontalCV.swift */; };
+		AD6494092624762A0013A4B3 /* CityDataHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6494082624762A0013A4B3 /* CityDataHeaderCell.swift */; };
 		C31B35AB25DB7BB300F5436E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AA25DB7BB300F5436E /* NetworkClient.swift */; };
 		C31B35AE25DB7E3000F5436E /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31B35AD25DB7E3000F5436E /* NetworkModels.swift */; };
 		C33AB38025D1137200DAD194 /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */; };
@@ -67,6 +91,29 @@
 		46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SimpleAlert.swift"; sourceTree = "<group>"; };
 		46C2BC9124D432F90077E49D /* ProfileTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBarViewController.swift; sourceTree = "<group>"; };
+		AD08358A26292FC4005971BD /* CityspireDummyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityspireDummyJSON.swift; sourceTree = "<group>"; };
+		AD08358E26293009005971BD /* CityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
+		AD083592262930AB005971BD /* FetchCitydataAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCitydataAPI.swift; sourceTree = "<group>"; };
+		AD08359A26293119005971BD /* FavCellS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavCellS.swift; sourceTree = "<group>"; };
+		AD08359F262931A8005971BD /* citydata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citydata.json; sourceTree = "<group>"; };
+		AD0835A926293239005971BD /* LambdaTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LambdaTabBarController.swift; sourceTree = "<group>"; };
+		AD0835AF26293267005971BD /* MapLandingDetailsVCS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLandingDetailsVCS.swift; sourceTree = "<group>"; };
+		AD0835B026293267005971BD /* CityMapVCS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityMapVCS.swift; sourceTree = "<group>"; };
+		AD0835B7262932CE005971BD /* MapSearchResultsCellVCS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapSearchResultsCellVCS.swift; sourceTree = "<group>"; };
+		AD0835BD26293453005971BD /* NetworkHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelpers.swift; sourceTree = "<group>"; };
+		AD0835C3262935C6005971BD /* SearchVCS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVCS.swift; sourceTree = "<group>"; };
+		AD0835C7262935DF005971BD /* CityDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDataViewController.swift; sourceTree = "<group>"; };
+		AD0835D32629421D005971BD /* MockDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
+		AD0835E2262957D9005971BD /* CityDataVCSCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDataVCSCollectionViewCell.swift; sourceTree = "<group>"; };
+		AD6493972622DFA20013A4B3 /* HorizontalSnappingCVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingCVController.swift; sourceTree = "<group>"; };
+		AD64939B2622DFD80013A4B3 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		AD64939F2622E02E0013A4B3 /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		AD6493A32622E06F0013A4B3 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
+		AD6493A72622E0C20013A4B3 /* BaseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVCell.swift; sourceTree = "<group>"; };
+		AD6493AB2622E1310013A4B3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AD6493FE26246E4D0013A4B3 /* CityDataHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataHeader.swift; sourceTree = "<group>"; };
+		AD649402262471A90013A4B3 /* CityDataHeaderHorizontalCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataHeaderHorizontalCV.swift; sourceTree = "<group>"; };
+		AD6494082624762A0013A4B3 /* CityDataHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataHeaderCell.swift; sourceTree = "<group>"; };
 		C31B35AA25DB7BB300F5436E /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		C31B35AD25DB7E3000F5436E /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD0835D92629535D005971BD /* SDWebImage in Frameworks */,
 				46908EB62513C971003252BA /* OktaAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,9 +208,15 @@
 		46BEB4EA24C98EA300FE0CD1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AD64939F2622E02E0013A4B3 /* VerticalStackView.swift */,
+				AD6493972622DFA20013A4B3 /* HorizontalSnappingCVController.swift */,
 				46BEB4E624C98D8900FE0CD1 /* Notifications.swift */,
+				AD0835BD26293453005971BD /* NetworkHelpers.swift */,
 				46BF10BD24D388FF001C6753 /* UIViewController+SimpleAlert.swift */,
-				C31B35AA25DB7BB300F5436E /* NetworkClient.swift */,
+				AD64939B2622DFD80013A4B3 /* UIView+Layout.swift */,
+				AD6493A32622E06F0013A4B3 /* BaseListController.swift */,
+				AD6493A72622E0C20013A4B3 /* BaseCVCell.swift */,
+				AD6493AB2622E1310013A4B3 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -170,10 +224,13 @@
 		46BEB4EB24C98EB400FE0CD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD08359F262931A8005971BD /* citydata.json */,
+				AD08358E26293009005971BD /* CityData.swift */,
 				46BEB4E024C9828800FE0CD1 /* Profile.swift */,
 				C34804EA25D4E9C3007CEA5A /* Map.swift */,
 				C34804ED25D4F640007CEA5A /* Alert.swift */,
 				C31B35AD25DB7E3000F5436E /* NetworkModels.swift */,
+				AD08358A26292FC4005971BD /* CityspireDummyJSON.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,7 +238,10 @@
 		46BEB4EC24C98EBB00FE0CD1 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AD083592262930AB005971BD /* FetchCitydataAPI.swift */,
 				46BEB4ED24C98ECC00FE0CD1 /* ProfileController.swift */,
+				C31B35AA25DB7BB300F5436E /* NetworkClient.swift */,
+				AD0835D32629421D005971BD /* MockDataLoader.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -189,6 +249,7 @@
 		46BEB4EF24C98ED900FE0CD1 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				AD0835A926293239005971BD /* LambdaTabBarController.swift */,
 				46BEB4E424C98CDC00FE0CD1 /* LoginViewController.swift */,
 				463AD24424CF2CDB00447BB8 /* AddProfileViewController.swift */,
 				466C4279249A8748007D033E /* Main.storyboard */,
@@ -201,9 +262,15 @@
 		C3BEDE8625C2722C006BF31A /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				AD0835C3262935C6005971BD /* SearchVCS.swift */,
+				AD0835C7262935DF005971BD /* CityDataViewController.swift */,
+				AD0835E2262957D9005971BD /* CityDataVCSCollectionViewCell.swift */,
 				C3BEDE8925C27271006BF31A /* Search.storyboard */,
 				C3BEDE9225C2731D006BF31A /* SearchViewController.swift */,
 				F35C107E25C791E0000AA795 /* CardView.swift */,
+				AD6493FE26246E4D0013A4B3 /* CityDataHeader.swift */,
+				AD649402262471A90013A4B3 /* CityDataHeaderHorizontalCV.swift */,
+				AD6494082624762A0013A4B3 /* CityDataHeaderCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -211,6 +278,9 @@
 		C3BEDE8725C2723D006BF31A /* Map Screen */ = {
 			isa = PBXGroup;
 			children = (
+				AD0835B026293267005971BD /* CityMapVCS.swift */,
+				AD0835AF26293267005971BD /* MapLandingDetailsVCS.swift */,
+				AD0835B7262932CE005971BD /* MapSearchResultsCellVCS.swift */,
 				C3BEDE8C25C2728D006BF31A /* MapScreen.storyboard */,
 				C33AB37F25D1137200DAD194 /* MapScreenViewController.swift */,
 			);
@@ -220,6 +290,7 @@
 		C3BEDE8825C27249006BF31A /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				AD08359A26293119005971BD /* FavCellS.swift */,
 				C3BEDE8F25C272A0006BF31A /* Favorites.storyboard */,
 				C3BEDE9825C2733B006BF31A /* FavoritesViewController.swift */,
 				C37D6E3525D07F150025842E /* FavoritesCollectionViewCell.swift */,
@@ -257,6 +328,7 @@
 			name = "labs-ios-starter";
 			packageProductDependencies = (
 				46908EB52513C971003252BA /* OktaAuth */,
+				AD0835D82629535D005971BD /* SDWebImage */,
 			);
 			productName = LabsScaffolding;
 			productReference = 466C4270249A8748007D033E /* labs-ios-starter.app */;
@@ -311,6 +383,7 @@
 			mainGroup = 466C4267249A8748007D033E;
 			packageReferences = (
 				46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */,
+				AD0835D72629535D005971BD /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 466C4271249A8748007D033E /* Products */;
 			projectDirPath = "";
@@ -327,6 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD0835A0262931A8005971BD /* citydata.json in Resources */,
 				C3BEDE8D25C2728D006BF31A /* MapScreen.storyboard in Resources */,
 				466C4280249A8749007D033E /* LaunchScreen.storyboard in Resources */,
 				C3BEDE9025C272A0006BF31A /* Favorites.storyboard in Resources */,
@@ -351,26 +425,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD649403262471A90013A4B3 /* CityDataHeaderHorizontalCV.swift in Sources */,
+				AD083593262930AB005971BD /* FetchCitydataAPI.swift in Sources */,
 				C3BEDE9325C2731D006BF31A /* SearchViewController.swift in Sources */,
+				AD0835C8262935DF005971BD /* CityDataViewController.swift in Sources */,
 				46BEB4EE24C98ECC00FE0CD1 /* ProfileController.swift in Sources */,
+				AD08358B26292FC4005971BD /* CityspireDummyJSON.swift in Sources */,
+				AD0835B126293267005971BD /* MapLandingDetailsVCS.swift in Sources */,
+				AD0835C4262935C6005971BD /* SearchVCS.swift in Sources */,
 				C34804EB25D4E9C3007CEA5A /* Map.swift in Sources */,
 				C34804EE25D4F640007CEA5A /* Alert.swift in Sources */,
+				AD0835AA26293239005971BD /* LambdaTabBarController.swift in Sources */,
+				AD0835BE26293453005971BD /* NetworkHelpers.swift in Sources */,
+				AD0835E3262957D9005971BD /* CityDataVCSCollectionViewCell.swift in Sources */,
 				46BF10BE24D388FF001C6753 /* UIViewController+SimpleAlert.swift in Sources */,
 				C31B35AB25DB7BB300F5436E /* NetworkClient.swift in Sources */,
 				46BEB4E724C98D8900FE0CD1 /* Notifications.swift in Sources */,
+				AD64939C2622DFD80013A4B3 /* UIView+Layout.swift in Sources */,
 				46BEB4E124C9828800FE0CD1 /* Profile.swift in Sources */,
+				AD0835B226293267005971BD /* CityMapVCS.swift in Sources */,
 				463AD24524CF2CDB00447BB8 /* AddProfileViewController.swift in Sources */,
+				AD0835B8262932CE005971BD /* MapSearchResultsCellVCS.swift in Sources */,
+				AD08358F26293009005971BD /* CityData.swift in Sources */,
 				F35C107F25C791E0000AA795 /* CardView.swift in Sources */,
 				C37D6E3625D07F150025842E /* FavoritesCollectionViewCell.swift in Sources */,
 				C31B35AE25DB7E3000F5436E /* NetworkModels.swift in Sources */,
 				C33AB38025D1137200DAD194 /* MapScreenViewController.swift in Sources */,
+				AD0835D42629421D005971BD /* MockDataLoader.swift in Sources */,
 				466C4274249A8748007D033E /* AppDelegate.swift in Sources */,
 				46C2BC9224D432F90077E49D /* ProfileTabBarViewController.swift in Sources */,
+				AD6493A42622E06F0013A4B3 /* BaseListController.swift in Sources */,
 				46BEB4E524C98CDC00FE0CD1 /* LoginViewController.swift in Sources */,
+				AD6493A02622E02E0013A4B3 /* VerticalStackView.swift in Sources */,
 				C3BEDE9925C2733B006BF31A /* FavoritesViewController.swift in Sources */,
+				AD08359B26293119005971BD /* FavCellS.swift in Sources */,
 				F363987C25CEEA53008C5102 /* StyledButton.swift in Sources */,
+				AD6493982622DFA20013A4B3 /* HorizontalSnappingCVController.swift in Sources */,
 				C380305625E4C2F400CB8B60 /* CitySpire.xcdatamodeld in Sources */,
 				466C4276249A8748007D033E /* SceneDelegate.swift in Sources */,
+				AD6493FF26246E4D0013A4B3 /* CityDataHeader.swift in Sources */,
+				AD6493A82622E0C20013A4B3 /* BaseCVCell.swift in Sources */,
+				AD6493AC2622E1310013A4B3 /* Extensions.swift in Sources */,
+				AD6494092624762A0013A4B3 /* CityDataHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +753,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		AD0835D72629535D005971BD /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -664,6 +768,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 46908EB42513C971003252BA /* XCRemoteSwiftPackageReference "OktaAuth" */;
 			productName = OktaAuth;
+		};
+		AD0835D82629535D005971BD /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD0835D72629535D005971BD /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 
