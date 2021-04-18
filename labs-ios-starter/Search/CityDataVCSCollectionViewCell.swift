@@ -11,22 +11,17 @@ import UIKit
 class CityDataVCSCollectionViewCell: UICollectionViewCell {
     
     ///Create Views
-    var metricLabel = UILabel(text: "Population", font: .systemFont(ofSize: 24, weight: .semibold))
+    var metricLabel = UILabel(text: "Population", font: .systemFont(ofSize: 24, weight: .regular))
     var cityDataMetricValue = UILabel(text: "850,000", font: .systemFont(ofSize: 24, weight: .semibold))
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        metricLabel.textAlignment = .left
         metricLabel.textColor = .black
         cityDataMetricValue.textColor = .black
         let stackView = UIStackView(arrangedSubviews: [metricLabel,UIView(), cityDataMetricValue], customSpacing: 15)
         addSubview(stackView)
-        stackView.centerInSuperview()
-    
-        // TO-DO: - TEXT ALIGNMENT INSIDE CELLS NOT WORKING FIX
-//        cityDataMetricValue.textAlignment = .right
-        
+        stackView.fillSuperview(padding: .init(top: 20, left: 20, bottom: 20, right: 20))        
     }
     
     required init?(coder: NSCoder) {
