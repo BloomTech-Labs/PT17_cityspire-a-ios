@@ -29,14 +29,14 @@ struct Popular : Codable {
     let latitude : Float
     let longitude : Float
     let state : String
+    let rentalPrice: Int
+    let crime : String
+    let airQuality : String
+    let population : Int
+    let diversityIndex: Int
+    let walkability : Int
+    let livability : Int
     
-//    "rental_price": 2470,
-//    "crime": "Low",
-//    "air_quality_index": "Good",
-//    "population": 698941,
-//    "diversity_index": 5554,
-//    "walkability": 82,
-//    "livability": 1164,
 
 
     enum CodingKeys: String, CodingKey {
@@ -45,6 +45,14 @@ struct Popular : Codable {
         case latitude = "latitude"
         case longitude = "longitude"
         case state = "state"
+        case rentalPrice = "rental_price"
+        case crime
+        case airQuality = "air_quality_index"
+        case population
+        case diversityIndex = "diversity_index"
+        case walkability
+        case livability
+        
     }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -53,6 +61,13 @@ struct Popular : Codable {
         latitude = try values.decodeIfPresent(Float.self, forKey: .latitude)!
         longitude = try values.decodeIfPresent(Float.self, forKey: .longitude)!
         state = try values.decodeIfPresent(String.self, forKey: .state)!
+        rentalPrice = try values.decodeIfPresent(Int.self, forKey: .rentalPrice)!
+        crime = try values.decodeIfPresent(String.self, forKey: .crime)!
+        airQuality = try values.decodeIfPresent(String.self, forKey: .airQuality)!
+        population = try values.decodeIfPresent(Int.self, forKey: .population)!
+        diversityIndex = try values.decodeIfPresent(Int.self, forKey: .diversityIndex)!
+        walkability = try values.decodeIfPresent(Int.self, forKey: .walkability)!
+        livability = try values.decodeIfPresent(Int.self, forKey: .livability)!
     }
 }
 
