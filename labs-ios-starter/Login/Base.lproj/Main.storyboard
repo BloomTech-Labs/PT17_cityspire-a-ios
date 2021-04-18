@@ -134,8 +134,21 @@
                     <view key="view" contentMode="scaleToFill" id="FMi-zW-dbs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="2g9-g6-PLy">
+                                <rect key="frame" x="0.0" y="88" width="414" height="227"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="227" id="CFV-xb-VdY"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bly-7a-l9W"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2g9-g6-PLy" firstAttribute="trailing" secondItem="bly-7a-l9W" secondAttribute="trailing" id="7cN-1I-D0x"/>
+                            <constraint firstItem="2g9-g6-PLy" firstAttribute="leading" secondItem="bly-7a-l9W" secondAttribute="leading" id="izE-0Z-pXG"/>
+                            <constraint firstItem="2g9-g6-PLy" firstAttribute="top" secondItem="bly-7a-l9W" secondAttribute="top" id="vpv-28-YX5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="hlj-fV-nYP">
                         <barButtonItem key="leftBarButtonItem" title="Back" image="chevron.backward" catalog="system" id="iYG-vn-wzl"/>
@@ -143,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zT2-OV-Vbw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3303" y="2068"/>
+            <point key="canvasLocation" x="3327.5362318840585" y="2238.6160714285711"/>
         </scene>
         <!--Search-->
         <scene sceneID="pdH-hg-50d">
@@ -278,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4T8-ny-RV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3833" y="1375"/>
+            <point key="canvasLocation" x="3414" y="1402"/>
         </scene>
         <!--Lambda Tab Bar Controller-->
         <scene sceneID="mim-HO-EAZ">
@@ -418,7 +431,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlc-rC-L2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2477" y="2068"/>
+            <point key="canvasLocation" x="2558" y="2239"/>
         </scene>
         <!--City Data View Controller-->
         <scene sceneID="eQ7-7m-wN5">
@@ -565,7 +578,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ytr-vE-2FQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3016" y="1376"/>
+            <point key="canvasLocation" x="2477" y="1402"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -574,6 +587,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="1024" height="684"/>
+        <image name="2" width="1400" height="660"/>
         <image name="5" width="275" height="183"/>
         <image name="CitySpireLogo-Dark" width="234" height="66"/>
         <image name="Map" width="374.5" height="605"/>
