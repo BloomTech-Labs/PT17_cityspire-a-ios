@@ -123,7 +123,7 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
         ///Unwrapped City Data
 //        print("The City is: ", city)
         ///set Title to Searched (current) city
-        navigationController?.title = city.cityName
+        title = city.cityName
         print("City/Cityname \(city.cityName)")
         cityNameStateHeaderLabel.text = "\(city.cityName)" + ", " + "\(city.cityState)"
 
