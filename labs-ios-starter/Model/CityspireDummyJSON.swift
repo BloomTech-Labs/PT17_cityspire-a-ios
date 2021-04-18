@@ -29,6 +29,14 @@ struct Popular : Codable {
     let latitude : Float
     let longitude : Float
     let state : String
+    
+//    "rental_price": 2470,
+//    "crime": "Low",
+//    "air_quality_index": "Good",
+//    "population": 698941,
+//    "diversity_index": 5554,
+//    "walkability": 82,
+//    "livability": 1164,
 
 
     enum CodingKeys: String, CodingKey {
