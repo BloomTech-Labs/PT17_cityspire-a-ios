@@ -108,9 +108,31 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         //Rental Price Data
         if let rentalPrice = city.rentalPrice {
-            let cityDataMetrics = CityResultsData(metricLabel: "The Average Rent is:", valueLabel: "$\(rentalPrice)")
+            let cityDataMetrics = CityResultsData(metricLabel: "Average Rent is:", valueLabel: "$\(rentalPrice)")
             cityResultsData.append(cityDataMetrics)
         }
+        
+        //Livability Data
+        if let liveabilityScore = city.livability {
+            let cityDataMetrics = CityResultsData(metricLabel: "Livability Rating is:", valueLabel: "\(liveabilityScore)")
+            cityResultsData.append(cityDataMetrics)
+        }
+        
+        //Diversity Data
+        if let diversityScore = city.diversityIndex {
+            let cityDataMetrics = CityResultsData(metricLabel: "Diversity Rating is:", valueLabel: "\(diversityScore)")
+            cityResultsData.append(cityDataMetrics)
+        }
+
+//        "latitude":42.3243932353924,
+//        "longitude":-71.01447454188019,
+//        "rental_price": 2470,
+//        "crime": "Low",
+//        "air_quality_index": "Good",
+//        "population": 698941,
+//        "diversity_index": 5554,
+//        "walkability": 82,
+//        "livability": 1164,
         
     }
     
