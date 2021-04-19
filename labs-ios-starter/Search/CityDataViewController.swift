@@ -106,15 +106,15 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
             cityResultsData.append(cityDataMetrics)
         }
         
-        //Rental Price Data
-        if let rentalPrice = city.rentalPrice {
-            let cityDataMetrics = CityResultsData(metricLabel: "Average Rent is:", valueLabel: "$\(rentalPrice)")
-            cityResultsData.append(cityDataMetrics)
-        }
-        
         //Livability Data
         if let liveabilityScore = city.livability {
             let cityDataMetrics = CityResultsData(metricLabel: "Livability Rating is:", valueLabel: "\(liveabilityScore)")
+            cityResultsData.append(cityDataMetrics)
+        }
+        
+        //Rental Price Data
+        if let rentalPrice = city.rentalPrice {
+            let cityDataMetrics = CityResultsData(metricLabel: "Average Rent is:", valueLabel: "$\(rentalPrice)")
             cityResultsData.append(cityDataMetrics)
         }
         
