@@ -31,7 +31,6 @@ class FavCellS: UICollectionViewCell {
         //top rated image
         topRatedImage.image = #imageLiteral(resourceName: "toprated")
         topRatedImage.frame = .init(x: 100, y: 0, width: 200, height: 60)
-//        topRatedImage.centerXInSuperview()
 
         topRatedImage.contentMode = .scaleAspectFit
     
@@ -48,8 +47,6 @@ class FavCellS: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 14
         stackView.anchor(top: nil, leading: imageView.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 20, bottom: 20, right: 0))
-        
-//        topRatedImage.anchor(top: imageView.topAnchor, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 10, left: 0, bottom: 0, right: 0))
         
         
     }

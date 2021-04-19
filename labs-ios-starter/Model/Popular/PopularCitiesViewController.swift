@@ -8,23 +8,40 @@
 
 import UIKit
 
-class PopularCitiesViewController: UIViewController {
+class PopularCitiesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    let favCellID = "favcellID"
 
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        //register custom cell
+        collectionView.register(PopularCollectionViewCell.self, forCellWithReuseIdentifier: favCellID)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    //MARK: - Collectionview Required
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 15
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favCellID, for: indexPath) as!PopularCollectionViewCell
+        cell.backgroundColor = .green
+        return cell
+    }
+    
+    //MARK: - UICollectionViewDelegateFlowLayout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: view.frame.width - 48, height: 80)
+    }
+
 
 }

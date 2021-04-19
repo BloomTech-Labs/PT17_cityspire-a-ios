@@ -184,6 +184,7 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         cell.imageView.sd_setImage(with: URL(string: mocData.imageUrl))
 //        cell.imageView.image = #imageLiteral(resourceName: "4")
         cell.nameLabel.text = "\(mocData.city)" + ", " + "\(mocData.state)"
+        cell.liveabilityLabel.text = "Livability:\(mocData.livability)"
         
         return cell
     }

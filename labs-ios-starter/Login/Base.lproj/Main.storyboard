@@ -246,7 +246,7 @@
         <!--Popular CIties-->
         <scene sceneID="MMR-eP-Gf7">
             <objects>
-                <viewController id="yAT-DQ-EON" sceneMemberID="viewController">
+                <viewController id="yAT-DQ-EON" customClass="PopularCitiesViewController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7hh-0I-VrT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,6 +288,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Popular CIties" id="UKZ-n6-ReQ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="hRM-9B-atQ" id="kWu-7F-xDY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4T8-ny-RV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
