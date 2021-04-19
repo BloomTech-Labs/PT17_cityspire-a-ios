@@ -46,8 +46,17 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cityNameStateHeaderLabel: UILabel!
     @IBOutlet weak var cityHeaderImagerBackgroundView: UIView!
-
     
+    //IBOutlets for weather Widget
+    @IBOutlet weak var backgroundWeatherView: UIView!
+    @IBOutlet weak var weatherImage: UIImageView!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var windLabel: UILabel!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
+    
+    //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = searchItem.cityName
