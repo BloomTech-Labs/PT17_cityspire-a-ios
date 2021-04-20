@@ -504,8 +504,8 @@
                                                     <constraint firstAttribute="width" constant="102" id="UEt-wz-fmO"/>
                                                 </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gj3-lE-f20">
-                                                <rect key="frame" x="125" y="21.5" width="98.5" height="69"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gj3-lE-f20">
+                                                <rect key="frame" x="125" y="25" width="98.5" height="62"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="62.65 F°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji2-yE-M1b">
                                                         <rect key="frame" x="0.0" y="0.0" width="98.5" height="34.5"/>
@@ -514,7 +514,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clear sky" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YD9-tj-FSg">
-                                                        <rect key="frame" x="9.5" y="34.5" width="80" height="34.5"/>
+                                                        <rect key="frame" x="9.5" y="34.5" width="80" height="27.5"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
