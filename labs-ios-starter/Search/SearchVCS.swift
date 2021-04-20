@@ -124,7 +124,7 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                 self.city.latitude = (response?.boundingRegion.center.latitude)!
                 
                 
-                ///OLD
+                ///Get City Data
                 self.fetchController.getData(city: self.city) { (city) in
                     ///present error
                     if let error = error {
