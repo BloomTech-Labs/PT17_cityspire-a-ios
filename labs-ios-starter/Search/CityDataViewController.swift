@@ -73,6 +73,9 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.register(CityDataVCSCollectionViewCell.self, forCellWithReuseIdentifier: cityDataId)
         
         getCitySearchData()
+        
+        //update weather data
+        updateWeatherData()
     }
     
  
@@ -132,17 +135,46 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
             let cityDataMetrics = CityResultsData(metricLabel: "Diversity Rating is:", valueLabel: "\(diversityScore)")
             cityResultsData.append(cityDataMetrics)
         }
-
-//        "latitude":42.3243932353924,
-//        "longitude":-71.01447454188019,
-//        "rental_price": 2470,
-//        "crime": "Low",
-//        "air_quality_index": "Good",
-//        "population": 698941,
-//        "diversity_index": 5554,
-//        "walkability": 82,
-//        "livability": 1164,
         
+    }
+    //Update Weather Data
+    func updateWeatherData() {
+        guard let currentCity = currentCity else { return }
+        
+        fetchController?.getWeatherData(cityName: currentCity, completion: { (weatherData, error) in
+            
+            let images = [
+                UIImage(named: "cloud"),
+                UIImage(named: "sunny"),
+                UIImage(named: "lightning"),
+                UIImage(named: "rainMix"),
+                UIImage(named: "wi-day-cloudy"),
+                UIImage(named: "windy")
+            ]
+            guard let weatherData = weatherData else { return }
+            
+            DispatchQueue.main.async {
+                self.weatherImage.image = images.randomElement()!!
+                self.descriptionLabel.text = weatherData.description
+                self.temperatureLabel.text = weatherData.temperature
+                self.humidityLabel.text = weatherData.humidity
+                self.windLabel.text = weatherData.windSpeed
+                self.feelsLikeLabel.text = weatherData.feelsLike
+            }
+            
+            print(weatherData)
+//            var temperature: String
+//            var humidity, windSpeed, feelsLike: String
+//            var description: String
+            /*
+             @IBOutlet weak var weatherImage: UIImageView!
+             @IBOutlet weak var temperatureLabel: UILabel!
+             @IBOutlet weak var descriptionLabel: UILabel!
+             @IBOutlet weak var humidityLabel: UILabel!
+             @IBOutlet weak var windLabel: UILabel!
+             @IBOutlet weak var feelsLikeLabel: UILabel!
+             */
+        })
     }
     
     ///Update View with Data Object on Load

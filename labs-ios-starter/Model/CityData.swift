@@ -69,6 +69,28 @@ struct City: Codable {
     
 }
 
+struct Weather: Codable {
+    let description, highToday: String
+    let lowToday, humidity, windSpeed, feelsLike: String
+    let pressure: String
+    let temperature : String
+
+    enum CodingKeys: String, CodingKey {
+        case description = "Description"
+        case temperature = "Temperature"
+        case highToday = "High Today"
+        case lowToday = "Low Today"
+        case humidity = "Humidity"
+        case windSpeed = "Wind Speed"
+        case feelsLike = "Feels Like"
+        case pressure = "Pressure"
+    }
+}
+ 
+    
+
+
+
 ///// TODO: other decodable data to use
 ////Add Weather API Endpoint
 ////Add Employment Opps Endpoint

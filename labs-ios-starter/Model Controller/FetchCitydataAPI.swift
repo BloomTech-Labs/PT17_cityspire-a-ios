@@ -85,10 +85,10 @@ class FetchCitydataAPI {
                     
                 }
             }
-            
         }
         
     }
+    
     
     //MARK: - Fetch City Data
     func getData(city: City, completion: @escaping (City) -> Void) {
