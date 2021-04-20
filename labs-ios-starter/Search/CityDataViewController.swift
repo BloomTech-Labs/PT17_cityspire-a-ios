@@ -137,6 +137,7 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         
     }
+    
     //Update Weather Data
     func updateWeatherData() {
         guard let currentCity = currentCity else { return }
@@ -161,19 +162,7 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
                 self.windLabel.text = weatherData.windSpeed
                 self.feelsLikeLabel.text = weatherData.feelsLike
             }
-            
-            print(weatherData)
-//            var temperature: String
-//            var humidity, windSpeed, feelsLike: String
-//            var description: String
-            /*
-             @IBOutlet weak var weatherImage: UIImageView!
-             @IBOutlet weak var temperatureLabel: UILabel!
-             @IBOutlet weak var descriptionLabel: UILabel!
-             @IBOutlet weak var humidityLabel: UILabel!
-             @IBOutlet weak var windLabel: UILabel!
-             @IBOutlet weak var feelsLikeLabel: UILabel!
-             */
+//            print(weatherData)
         })
     }
     

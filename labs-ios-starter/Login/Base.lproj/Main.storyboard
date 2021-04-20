@@ -257,9 +257,8 @@
                                     <constraint firstAttribute="height" constant="227" id="ys5-jn-Xdr"/>
                                 </constraints>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-9B-atQ">
-                                <rect key="frame" x="0.0" y="311" width="414" height="502"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-9B-atQ">
+                                <rect key="frame" x="0.0" y="325" width="414" height="488"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cBZ-br-7I5">
                                     <size key="itemSize" width="128" height="128"/>
@@ -282,8 +281,12 @@
                         <viewLayoutGuide key="safeArea" id="jXf-uw-Lmk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hRM-9B-atQ" firstAttribute="top" secondItem="8G5-DO-bwT" secondAttribute="bottom" constant="10" id="DJv-qM-YdX"/>
+                            <constraint firstItem="hRM-9B-atQ" firstAttribute="leading" secondItem="jXf-uw-Lmk" secondAttribute="leading" id="Kwd-Zj-F5E"/>
                             <constraint firstItem="8G5-DO-bwT" firstAttribute="top" secondItem="jXf-uw-Lmk" secondAttribute="top" id="Rr6-tf-6od"/>
                             <constraint firstItem="8G5-DO-bwT" firstAttribute="trailing" secondItem="jXf-uw-Lmk" secondAttribute="trailing" id="Tei-4r-B31"/>
+                            <constraint firstItem="hRM-9B-atQ" firstAttribute="bottom" secondItem="jXf-uw-Lmk" secondAttribute="bottom" id="arh-eY-vnd"/>
+                            <constraint firstItem="hRM-9B-atQ" firstAttribute="trailing" secondItem="jXf-uw-Lmk" secondAttribute="trailing" id="eLf-Eh-ziv"/>
                             <constraint firstItem="8G5-DO-bwT" firstAttribute="leading" secondItem="7hh-0I-VrT" secondAttribute="leading" id="kI7-L8-rAB"/>
                         </constraints>
                     </view>
@@ -294,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4T8-ny-RV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3414" y="1402"/>
+            <point key="canvasLocation" x="3413.04347826087" y="1401.5625"/>
         </scene>
         <!--Lambda Tab Bar Controller-->
         <scene sceneID="mim-HO-EAZ">
