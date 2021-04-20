@@ -11,6 +11,9 @@ import UIKit
 class PopularCitiesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let favCellID = "favcellID"
+    
+    //create a array of dummyPopularData
+    var popularFetchedData = [Popular]()
 
     //MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -20,6 +23,9 @@ class PopularCitiesViewController: UIViewController, UICollectionViewDataSource,
         
         //register custom cell
         collectionView.register(PopularCollectionViewCell.self, forCellWithReuseIdentifier: favCellID)
+        
+        //fetch Popular Data
+        popularFetchedData = MockDataLoader().popularData
     }
     
     //MARK: - IBOutlets
@@ -29,12 +35,17 @@ class PopularCitiesViewController: UIViewController, UICollectionViewDataSource,
     //MARK: - Collectionview Required
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return popularFetchedData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favCellID, for: indexPath) as!PopularCollectionViewCell
-        cell.backgroundColor = .green
+        
+        //DISPLAY CUSTOMCELL
+        let mocData = popularFetchedData[indexPath.item]
+//        cell.backgroundColor = .green
+        cell.cityName.text = mocData.city
+         
         return cell
     }
     

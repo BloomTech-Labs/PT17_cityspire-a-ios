@@ -10,9 +10,14 @@ import UIKit
 
 class PopularCollectionViewCell: UICollectionViewCell {
     
+    //add Views/Create Custom Cell Layout
+    var cityName = UILabel(text: "City", font: .systemFont(ofSize: 20))
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        addSubview(cityName)
+        cityName.textColor = .white
+        cityName.fillSuperview(padding: .init(top: 5, left: 5, bottom: 5, right: 5))
         backgroundColor = .darkGray
     }
     
