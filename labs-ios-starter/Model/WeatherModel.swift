@@ -9,10 +9,10 @@
 import Foundation
 
 struct Weather {
-    
+        var date, reviewDescription, temperature, highToday: String
+        var lowToday, humidity, windSpeed, feelsLike: String
+        var pressure: String
 }
-
-
 
 /* Weather Model from http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/api/temperature
  "Date": "04/19/21",
