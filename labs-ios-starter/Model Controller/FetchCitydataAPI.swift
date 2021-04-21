@@ -56,6 +56,38 @@ class FetchCitydataAPI {
         return request
     }
     
+    //MARK: - Fetch Weather Data
+    func getWeatherData(cityName: City, completion: @escaping (Weather?, Error?) -> Void) {
+        
+        guard let url = URL(string: "http://cityspire-a.eba-tgambvt2.us-east-1.elasticbeanstalk.com/api/temperature") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let body = PostParameters(city: cityName.cityName, state: cityName.cityState)
+        guard let jsonData = try? JSONEncoder().encode(body) else { return }
+        request.httpBody = jsonData
+        
+        shared.dataRequest(with: request) { (data, response, error) in
+            
+            if let error = error {
+                print(error)
+                return
+            } else if let data = data {
+                do {
+                    let cityWeatherData = try JSONDecoder().decode(Weather.self, from: data)
+                    completion(cityWeatherData, nil)
+                    print("City data in DO:", cityWeatherData)
+                } catch {
+                    print("Error fetching data: ", error)
+                    completion(nil,error)
+                    
+                }
+            }
+        }
+        
+    }
     
     
     //MARK: - Fetch City Data

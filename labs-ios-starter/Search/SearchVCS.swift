@@ -124,7 +124,7 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                 self.city.latitude = (response?.boundingRegion.center.latitude)!
                 
                 
-                ///OLD
+                ///Get City Data
                 self.fetchController.getData(city: self.city) { (city) in
                     ///present error
                     if let error = error {
@@ -184,6 +184,7 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         cell.imageView.sd_setImage(with: URL(string: mocData.imageUrl))
 //        cell.imageView.image = #imageLiteral(resourceName: "4")
         cell.nameLabel.text = "\(mocData.city)" + ", " + "\(mocData.state)"
+        cell.liveabilityLabel.text = "Livability:\(mocData.livability)"
         
         return cell
     }

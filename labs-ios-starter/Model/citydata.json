@@ -4,6 +4,13 @@
       "state":"WA",
       "latitude":47.598457541981766,
       "longitude":-122.28600702714175,
+      "rental_price": 2076,
+      "crime": "High",
+      "air_quality_index": "Good",
+      "population": 763706,
+      "diversity_index": 5885,
+      "walkability": 74,
+      "livability": 1228,
       "imageUrl":"https://i.imgur.com/oG9CGFB.jpg"
    },
    {
@@ -11,6 +18,13 @@
       "state":"TX",
       "latitude":30.30799450600118,
       "longitude":-97.74993596132845,
+      "rental_price": 1549,
+      "crime": "Medium",
+      "air_quality_index": "Good",
+      "population": 986062,
+      "diversity_index": 6249,
+      "walkability": 41,
+      "livability": 1294,
       "imageUrl":"https://i.imgur.com/Gtnzvw7.jpg"
    },
    {
@@ -18,6 +32,13 @@
       "state":"NY",
       "latitude":40.70728095173828,
       "longitude":-74.02256537228823,
+      "rental_price": 2263,
+      "crime": "Low",
+      "air_quality_index": "Good",
+      "population": 8379043,
+      "diversity_index": 6843,
+      "walkability": 88,
+      "livability": 1424,
       "imageUrl":"https://i.imgur.com/AQBbygl.jpg"
    },
    {
@@ -25,6 +46,13 @@
       "state":"MA",
       "latitude":42.3243932353924,
       "longitude":-71.01447454188019,
+      "rental_price": 2470,
+      "crime": "Low",
+      "air_quality_index": "Good",
+      "population": 698941,
+      "diversity_index": 5554,
+      "walkability": 82,
+      "livability": 1164,
       "imageUrl":"https://i.imgur.com/ayfr7Do.jpg"
    }
 ]

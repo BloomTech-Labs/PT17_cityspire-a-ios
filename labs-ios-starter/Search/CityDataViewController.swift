@@ -46,8 +46,17 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cityNameStateHeaderLabel: UILabel!
     @IBOutlet weak var cityHeaderImagerBackgroundView: UIView!
-
     
+    //IBOutlets for weather Widget
+    @IBOutlet weak var backgroundWeatherView: UIView!
+    @IBOutlet weak var weatherImage: UIImageView!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var windLabel: UILabel!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
+    
+    //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = searchItem.cityName
@@ -64,6 +73,9 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.register(CityDataVCSCollectionViewCell.self, forCellWithReuseIdentifier: cityDataId)
         
         getCitySearchData()
+        
+        //update weather data
+        updateWeatherData()
     }
     
  
@@ -106,12 +118,52 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
             cityResultsData.append(cityDataMetrics)
         }
         
-        //Rental Price Data
-        if let rentalPrice = city.rentalPrice {
-            let cityDataMetrics = CityResultsData(metricLabel: "The Average Rent is:", valueLabel: "$\(rentalPrice)")
+        //Livability Data
+        if let liveabilityScore = city.livability {
+            let cityDataMetrics = CityResultsData(metricLabel: "Livability Rating is:", valueLabel: "\(liveabilityScore)")
             cityResultsData.append(cityDataMetrics)
         }
         
+        //Rental Price Data
+        if let rentalPrice = city.rentalPrice {
+            let cityDataMetrics = CityResultsData(metricLabel: "Average Rent is:", valueLabel: "$\(rentalPrice)")
+            cityResultsData.append(cityDataMetrics)
+        }
+        
+        //Diversity Data
+        if let diversityScore = city.diversityIndex {
+            let cityDataMetrics = CityResultsData(metricLabel: "Diversity Rating is:", valueLabel: "\(diversityScore)")
+            cityResultsData.append(cityDataMetrics)
+        }
+        
+    }
+    
+    //Update Weather Data
+    func updateWeatherData() {
+        guard let currentCity = currentCity else { return }
+        
+        fetchController?.getWeatherData(cityName: currentCity, completion: { (weatherData, error) in
+            
+            let images = [
+                UIImage(named: "cloud"),
+                UIImage(named: "sunny"),
+                UIImage(named: "lightning"),
+                UIImage(named: "rainMix"),
+                UIImage(named: "wi-day-cloudy"),
+                UIImage(named: "windy")
+            ]
+            guard let weatherData = weatherData else { return }
+            
+            DispatchQueue.main.async {
+                self.weatherImage.image = images.randomElement()!!
+                self.descriptionLabel.text = weatherData.description
+                self.temperatureLabel.text = weatherData.temperature
+                self.humidityLabel.text = weatherData.humidity
+                self.windLabel.text = weatherData.windSpeed
+                self.feelsLikeLabel.text = weatherData.feelsLike
+            }
+//            print(weatherData)
+        })
     }
     
     ///Update View with Data Object on Load
@@ -123,7 +175,7 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
         ///Unwrapped City Data
 //        print("The City is: ", city)
         ///set Title to Searched (current) city
-        navigationController?.title = city.cityName
+        title = city.cityName
         print("City/Cityname \(city.cityName)")
         cityNameStateHeaderLabel.text = "\(city.cityName)" + ", " + "\(city.cityState)"
 
