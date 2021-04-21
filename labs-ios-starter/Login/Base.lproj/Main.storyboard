@@ -130,7 +130,7 @@
         <!--Favorites-->
         <scene sceneID="zh2-5p-S5G">
             <objects>
-                <viewController id="zRL-gO-elP" sceneMemberID="viewController">
+                <viewController id="zRL-gO-elP" customClass="FavoritesVCS" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FMi-zW-dbs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,22 +141,50 @@
                                     <constraint firstAttribute="height" constant="227" id="CFV-xb-VdY"/>
                                 </constraints>
                             </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hrp-Vv-tqS">
+                                <rect key="frame" x="0.0" y="315" width="414" height="581"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="17a-vd-3XP">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YCK-Vi-rNi" customClass="FavCellS" customModule="labs_ios_starter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7Ct-L8-WUU">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bly-7a-l9W"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2g9-g6-PLy" firstAttribute="trailing" secondItem="bly-7a-l9W" secondAttribute="trailing" id="7cN-1I-D0x"/>
+                            <constraint firstItem="hrp-Vv-tqS" firstAttribute="trailing" secondItem="bly-7a-l9W" secondAttribute="trailing" id="E1k-rh-98A"/>
+                            <constraint firstItem="hrp-Vv-tqS" firstAttribute="leading" secondItem="bly-7a-l9W" secondAttribute="leading" id="OYK-is-z9B"/>
+                            <constraint firstAttribute="bottom" secondItem="hrp-Vv-tqS" secondAttribute="bottom" id="aGv-Tg-arA"/>
+                            <constraint firstItem="hrp-Vv-tqS" firstAttribute="top" secondItem="2g9-g6-PLy" secondAttribute="bottom" id="hnn-ZW-ABh"/>
                             <constraint firstItem="2g9-g6-PLy" firstAttribute="leading" secondItem="bly-7a-l9W" secondAttribute="leading" id="izE-0Z-pXG"/>
                             <constraint firstItem="2g9-g6-PLy" firstAttribute="top" secondItem="bly-7a-l9W" secondAttribute="top" id="vpv-28-YX5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="hlj-fV-nYP">
                         <barButtonItem key="leftBarButtonItem" title="Back" image="chevron.backward" catalog="system" id="iYG-vn-wzl"/>
+                        <barButtonItem key="rightBarButtonItem" image="bolt.heart" catalog="system" id="ef2-Vy-D6p"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="hrp-Vv-tqS" id="gap-6n-peC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zT2-OV-Vbw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3327.5362318840585" y="2238.6160714285711"/>
+            <point key="canvasLocation" x="3327.5362318840585" y="2237.9464285714284"/>
         </scene>
         <!--Search-->
         <scene sceneID="pdH-hg-50d">

@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class FavCellS: UICollectionViewCell {
     
     let imageView = UIImageView(cornerRadius: 10)
@@ -38,6 +37,7 @@ class FavCellS: UICollectionViewCell {
         addSubview(imageView)
         let stackView = VerticalStackView(arrangedSubviews: [nameLabel, liveabilityLabel], spacing: 2)
         liveabilityLabel.textColor = .white
+        nameLabel.textColor = .white
         
         //imageview properties
         imageView.alpha = 0.85
