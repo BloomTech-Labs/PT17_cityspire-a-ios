@@ -26,7 +26,14 @@ class PopularCitiesViewController: UIViewController, UICollectionViewDataSource,
         
         //fetch Popular Data
         popularFetchedData = MockDataLoader().popularData
+        
+        //
+        
+        collectionView.isPagingEnabled = true
+        
     }
+    
+    
     
     //MARK: - IBOutlets
     
@@ -39,20 +46,29 @@ class PopularCitiesViewController: UIViewController, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favCellID, for: indexPath) as!PopularCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favCellID, for: indexPath) as! PopularCollectionViewCell
         
         //DISPLAY CUSTOMCELL
         let mocData = popularFetchedData[indexPath.item]
-//        cell.backgroundColor = .green
-        cell.cityName.text = mocData.city
-         
+        cell.imageView.sd_setImage(with: URL(string: mocData.imageUrl))
+        
+        cell.nameLabel.text = mocData.city
+        cell.liveabilityLabel.text = "Livability Rating:\(mocData.livability)"
         return cell
     }
     
     //MARK: - UICollectionViewDelegateFlowLayout
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 48, height: 80)
-    }
+ 
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return .init(width: view.frame.width - 48, height: 300)
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+            return .init(top: 25, left: 25, bottom: 25, right: 25)
+        }
+    
+
+    
 
 
 }
