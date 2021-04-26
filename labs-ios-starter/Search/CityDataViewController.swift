@@ -98,7 +98,9 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         //Population Data - Cannot be zero - create and append to dictionary
         if let population = city.population {
-            let cityDataMetrics = CityResultsData(metricLabel: " Population of: ", valueLabel: "\(population)", emojiImage: UIImage(systemName: "person.3.fill") ?? #imageLiteral(resourceName: "search"))
+            // "1,605,436" where Locale == en_US
+            let formattedInt = String(format: "%d", locale: Locale.current, population)
+            let cityDataMetrics = CityResultsData(metricLabel: " Population of: ", valueLabel: "\(formattedInt)", emojiImage: UIImage(systemName: "person.3.fill") ?? #imageLiteral(resourceName: "search"))
             cityResultsData.append(cityDataMetrics)
         }
         

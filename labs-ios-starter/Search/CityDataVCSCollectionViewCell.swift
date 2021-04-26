@@ -25,11 +25,11 @@ class CityDataVCSCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         metricLabel.textColor = .white
         cityDataMetricValue.textColor = .white
-        emojiImage.frame = .init(x: 0, y: 0, width: 50, height: 50)
+        emojiImage.frame = .init(x: 0, y: 0, width: 75, height: 75)
         let stackView = UIStackView(arrangedSubviews: [emojiImage, metricLabel,UIView(), cityDataMetricValue], customSpacing: 5)
    
         addSubview(stackView)
-        stackView.fillSuperview(padding: .init(top: 20, left: 20, bottom: 20, right: 20))
+        stackView.fillSuperview(padding: .init(top: 15, left: 15, bottom: 15, right: 15))
         
     }
     
