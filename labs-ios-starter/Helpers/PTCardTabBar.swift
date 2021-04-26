@@ -115,7 +115,7 @@ open class PTCardTabBar: UIView {
         let button = PTBarButton(image: image)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.selectedColor = tintColor
-        
+//        button.title(for: .normal)
         button.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
         self.stackView.addArrangedSubview(button)
     }

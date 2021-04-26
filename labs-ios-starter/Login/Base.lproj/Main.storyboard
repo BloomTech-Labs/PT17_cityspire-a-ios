@@ -57,6 +57,7 @@
                                         </state>
                                         <connections>
                                             <action selector="signInWithLambda:" destination="4a7-cC-Xlp" eventType="touchUpInside" id="Bx3-rm-rcc"/>
+                                            <segue destination="QDa-2K-GPH" kind="presentation" modalPresentationStyle="fullScreen" id="Gcp-eF-Za9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -349,16 +350,44 @@
             </objects>
             <point key="canvasLocation" x="3413.04347826087" y="1401.5625"/>
         </scene>
-        <!--Lambda Tab Bar Controller-->
+        <!--View Controller-->
+        <scene sceneID="hoW-sw-le0">
+            <objects>
+                <viewController id="55l-j9-EkV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XVn-12-Pmv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DETAILED VIEW" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gv5-Ic-hce">
+                                <rect key="frame" x="97" y="186" width="201" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hoo-Ts-U8e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYw-Ou-9ca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4314.4927536231889" y="1401.5625"/>
+        </scene>
+        <!--Card Tab Bar Controller-->
         <scene sceneID="mim-HO-EAZ">
             <objects>
-                <tabBarController storyboardIdentifier="LambdaID" id="QDa-2K-GPH" customClass="LambdaTabBarController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="LambdaID" id="QDa-2K-GPH" customClass="PTCardTabBarController" customModule="labs_ios_starter" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Yf1-Lf-KQM"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fgV-fm-rDa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" name="LightBlue"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="sD1-uo-oY4" kind="relationship" relationship="viewControllers" id="dae-fO-cAX"/>
                         <segue destination="UPA-Yg-boD" kind="relationship" relationship="viewControllers" id="ze4-si-zq9"/>
@@ -367,7 +396,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7t-vw-7om" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="1076"/>
+            <point key="canvasLocation" x="1328" y="1116"/>
         </scene>
         <!--Add Profile View Controller-->
         <scene sceneID="Rcb-Kk-CcR">
@@ -706,7 +735,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rnB-j3-xWj"/>
+        <segue reference="ze4-si-zq9"/>
         <segue reference="dot-8d-cdO"/>
     </inferredMetricsTieBreakers>
     <resources>

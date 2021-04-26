@@ -62,11 +62,10 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
         title = searchItem.cityName
         collectionView.delegate = self
         collectionView.dataSource = self
-        cityNameStateHeaderLabel.textColor = .white
-        
-        cityHeaderImagerBackgroundView.backgroundColor = #colorLiteral(red: 0.04957468063, green: 0.4228932858, blue: 0.7525009513, alpha: 1)
-        cityHeaderImagerBackgroundView.alpha = 0.65
+        cityHeaderImagerBackgroundView.backgroundColor = #colorLiteral(red: 0.04957468063, green: 0.4228932858, blue: 0.7525009513, alpha: 0.8461312072)
+//        cityHeaderImagerBackgroundView.alpha = 0.65
         cityHeaderImagerBackgroundView.layer.cornerRadius = 14
+        cityNameStateHeaderLabel.textColor = .white
         
         updateViews()
         ///register collectionView cell
@@ -86,6 +85,8 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
 //        var icon: UIImage
         var metricLabel: String
         var valueLabel: String
+//        var emojiLabel: String
+        var emojiImage: UIImage
     }
     
     ///Stored property Data in a dictionary - to be used for presenting CustomCollectionViewCell
@@ -97,63 +98,63 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         //Population Data - Cannot be zero - create and append to dictionary
         if let population = city.population {
-            let cityDataMetrics = CityResultsData(metricLabel: "Population of: ", valueLabel: "\(population)")
+            let cityDataMetrics = CityResultsData(metricLabel: " Population of: ", valueLabel: "\(population)", emojiImage: UIImage(systemName: "person.3.fill") ?? #imageLiteral(resourceName: "search"))
             cityResultsData.append(cityDataMetrics)
         }
         
         //Air Quality Data
         if let airQuality = city.airQuality {
-            let cityDataMetrics = CityResultsData(metricLabel: "Air Quality Rating: ", valueLabel: "\(airQuality)")
+            let cityDataMetrics = CityResultsData(metricLabel: " Air Quality Rating: ", valueLabel: "\(airQuality)", emojiImage: UIImage(systemName: "lungs.fill") ?? #imageLiteral(resourceName: "search"))
             cityResultsData.append(cityDataMetrics)
         }
         
         //Crime Data
         if let crimeData = city.crime{
-            let cityDataMetrics = CityResultsData(metricLabel: "Crime Rating: ", valueLabel: "\(crimeData)")
+            let cityDataMetrics = CityResultsData(metricLabel: " Crime Rating: ", valueLabel: "\(crimeData)", emojiImage: UIImage(systemName: "binoculars.fill") ?? #imageLiteral(resourceName: "search"))
             cityResultsData.append(cityDataMetrics)
         }
         
         //Livability Data
         if let liveabilityScore = city.livability {
-            let cityDataMetrics = CityResultsData(metricLabel: "Livability Rating: ", valueLabel: "\(liveabilityScore)")
+            let cityDataMetrics = CityResultsData(metricLabel: " Livability Rating: ", valueLabel: "\(liveabilityScore)", emojiImage: UIImage(systemName: "figure.wave") ?? #imageLiteral(resourceName: "search"))
             cityResultsData.append(cityDataMetrics)
         }
         
         //Rental Price Data
         if let rentalPrice = city.rentalPrice {
-            let cityDataMetrics = CityResultsData(metricLabel: "Average Rent: ", valueLabel: "$\(rentalPrice)")
+            let cityDataMetrics = CityResultsData(metricLabel: " Average Rent: ", valueLabel: "$\(rentalPrice)", emojiImage: UIImage(systemName: "dollarsign.circle.fill") ?? #imageLiteral(resourceName: "search"))
             cityResultsData.append(cityDataMetrics)
         }
         
         //Diversity Data
         if let diversityScore = city.diversityIndex {
-            let cityDataMetrics = CityResultsData(metricLabel: "Diversity Rating: ", valueLabel: "\(diversityScore)")
+            let cityDataMetrics = CityResultsData(metricLabel: " Diversity Rating: ", valueLabel: "\(diversityScore)", emojiImage: UIImage(systemName: "mail.stack.fill") ?? #imageLiteral(resourceName: "search"))
             cityResultsData.append(cityDataMetrics)
         }
         
         ////    "percent_high_performing_schools": 12,
         //percent_high_performing_schools Data
         if let highSchoolPerformance = city.highPerformingSchools {
-            let cityDataMetrics = CityResultsData(metricLabel: "High Schools Rating: ", valueLabel: "\(highSchoolPerformance)")
+            let cityDataMetrics = CityResultsData(metricLabel: " High Schools Rating: ", valueLabel: "\(highSchoolPerformance)", emojiImage: UIImage(systemName: "graduationcap.fill") ?? #imageLiteral(resourceName: "search"))
             cityResultsData.append(cityDataMetrics)
         }
         
         //    "transitscore": 84,
         //Transit Data
         if let transitScore = city.diversityIndex {
-            let cityDataMetrics = CityResultsData(metricLabel: "Public Transport Rating: ", valueLabel: "\(transitScore)")
+            let cityDataMetrics = CityResultsData(metricLabel: " Public Transport Rating: ", valueLabel: "\(transitScore)", emojiImage: UIImage(systemName: "tram.fill") ?? #imageLiteral(resourceName: "search"))
             cityResultsData.append(cityDataMetrics)
         }
         
         //Walkability Data
         if let walkability = city.walkability {
-            let cityDataMetrics = CityResultsData(metricLabel: "Walkability Rating: ", valueLabel: "\(walkability)")
+            let cityDataMetrics = CityResultsData(metricLabel: " Walkability Rating: ", valueLabel: "\(walkability)", emojiImage: UIImage(systemName: "figure.walk.diamond.fill") ?? #imageLiteral(resourceName: "search"))
             cityResultsData.append(cityDataMetrics)
         }
         //    "bikescore": 70,
         //Biking Data
         if let bikingScore = city.diversityIndex {
-            let cityDataMetrics = CityResultsData(metricLabel: "Biker Friendliness Rating: ", valueLabel: "\(bikingScore)")
+            let cityDataMetrics = CityResultsData(metricLabel: " Biker Friendliness Rating: ", valueLabel: "\(bikingScore)", emojiImage: UIImage(systemName: "bicycle.circle.fill") ?? #imageLiteral(resourceName: "search"))
             cityResultsData.append(cityDataMetrics)
         }
         
@@ -217,12 +218,18 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cityDataId, for: indexPath) as! CityDataVCSCollectionViewCell
         cell.backgroundColor = #colorLiteral(red: 0.04523042589, green: 0.431027025, blue: 0.768438518, alpha: 1)
-        cell.alpha = 0.60
+//        cell.alpha = 0.60
         cell.layer.cornerRadius = 14
+        cell.cityDataMetricValue.textColor = .white
+        cell.metricLabel.textColor = .white
+        cell.emojiImage.tintColor = .white
+
         //Set City Data Stored in Local Instance here
 //        cell.metricLabel.text = "The City Population is:"
 //        cell.cityDataMetricValue.text = "510,000 People"
         //Present Data from StoredArray
+//        cell.emojiLabel.text = cityResultsData[indexPath.item].emojiLabel
+        cell.emojiImage.image = cityResultsData[indexPath.item].emojiImage
         cell.metricLabel.text =  cityResultsData[indexPath.item].metricLabel
         cell.cityDataMetricValue.text = cityResultsData[indexPath.item].valueLabel
         print("The CitySEARCHDATA is" , cityResultsData)
