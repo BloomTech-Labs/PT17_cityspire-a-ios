@@ -83,6 +83,7 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     /// create dataStructure to hold values needed for display
     struct CityResultsData {
+//        var icon: UIImage
         var metricLabel: String
         var valueLabel: String
     }
@@ -96,43 +97,63 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         //Population Data - Cannot be zero - create and append to dictionary
         if let population = city.population {
-            let cityDataMetrics = CityResultsData(metricLabel: "Population of:", valueLabel: "\(population)")
-            cityResultsData.append(cityDataMetrics)
-        }
-        
-        //Walkability Data
-        if let walkability = city.walkability {
-            let cityDataMetrics = CityResultsData(metricLabel: "Walkability Rating:", valueLabel: "\(walkability)")
+            let cityDataMetrics = CityResultsData(metricLabel: "Population of: ", valueLabel: "\(population)")
             cityResultsData.append(cityDataMetrics)
         }
         
         //Air Quality Data
         if let airQuality = city.airQuality {
-            let cityDataMetrics = CityResultsData(metricLabel: "Air Quality Rating:", valueLabel: "\(airQuality)")
+            let cityDataMetrics = CityResultsData(metricLabel: "Air Quality Rating: ", valueLabel: "\(airQuality)")
             cityResultsData.append(cityDataMetrics)
         }
         
         //Crime Data
         if let crimeData = city.crime{
-            let cityDataMetrics = CityResultsData(metricLabel: "Crime Rating:", valueLabel: "\(crimeData)")
+            let cityDataMetrics = CityResultsData(metricLabel: "Crime Rating: ", valueLabel: "\(crimeData)")
             cityResultsData.append(cityDataMetrics)
         }
         
         //Livability Data
         if let liveabilityScore = city.livability {
-            let cityDataMetrics = CityResultsData(metricLabel: "Livability Rating is:", valueLabel: "\(liveabilityScore)")
+            let cityDataMetrics = CityResultsData(metricLabel: "Livability Rating: ", valueLabel: "\(liveabilityScore)")
             cityResultsData.append(cityDataMetrics)
         }
         
         //Rental Price Data
         if let rentalPrice = city.rentalPrice {
-            let cityDataMetrics = CityResultsData(metricLabel: "Average Rent is:", valueLabel: "$\(rentalPrice)")
+            let cityDataMetrics = CityResultsData(metricLabel: "Average Rent: ", valueLabel: "$\(rentalPrice)")
             cityResultsData.append(cityDataMetrics)
         }
         
         //Diversity Data
         if let diversityScore = city.diversityIndex {
-            let cityDataMetrics = CityResultsData(metricLabel: "Diversity Rating is:", valueLabel: "\(diversityScore)")
+            let cityDataMetrics = CityResultsData(metricLabel: "Diversity Rating: ", valueLabel: "\(diversityScore)")
+            cityResultsData.append(cityDataMetrics)
+        }
+        
+        ////    "percent_high_performing_schools": 12,
+        //percent_high_performing_schools Data
+        if let highSchoolPerformance = city.highPerformingSchools {
+            let cityDataMetrics = CityResultsData(metricLabel: "High Schools Rating: ", valueLabel: "\(highSchoolPerformance)")
+            cityResultsData.append(cityDataMetrics)
+        }
+        
+        //    "transitscore": 84,
+        //Transit Data
+        if let transitScore = city.diversityIndex {
+            let cityDataMetrics = CityResultsData(metricLabel: "Public Transport Rating: ", valueLabel: "\(transitScore)")
+            cityResultsData.append(cityDataMetrics)
+        }
+        
+        //Walkability Data
+        if let walkability = city.walkability {
+            let cityDataMetrics = CityResultsData(metricLabel: "Walkability Rating: ", valueLabel: "\(walkability)")
+            cityResultsData.append(cityDataMetrics)
+        }
+        //    "bikescore": 70,
+        //Biking Data
+        if let bikingScore = city.diversityIndex {
+            let cityDataMetrics = CityResultsData(metricLabel: "Biker Friendliness Rating: ", valueLabel: "\(bikingScore)")
             cityResultsData.append(cityDataMetrics)
         }
         

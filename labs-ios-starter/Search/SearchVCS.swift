@@ -197,28 +197,6 @@ class SearchVCS: UIViewController {
         print(searchText)
     }
     
-    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return popularFetchedData.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCell, for: indexPath) as! FavCellS
-//
-//        print(popularFetchedData.count)
-//        let mocData = popularFetchedData[indexPath.item]
-//        cell.nameLabel.textColor = .white
-////        cell.backgroundColor = .green
-////        print("MOC DATA", mocData)
-//        cell.imageView.sd_setImage(with: URL(string: mocData.imageUrl))
-////        cell.imageView.image = #imageLiteral(resourceName: "4")
-//        cell.nameLabel.text = "\(mocData.city)" + ", " + "\(mocData.state)"
-//        cell.liveabilityLabel.text = "Livability:\(mocData.livability)"
-//
-//        return cell
-//    }
-    
-    
 }
 
 

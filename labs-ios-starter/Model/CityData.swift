@@ -33,6 +33,13 @@ struct City: Codable {
     var crime: String?
     var rentalPrice: Int?
     var airQuality: String?
+    var highPerformingSchools: Int?
+    var transitscore: Int?
+    var bikescore: Int?
+    
+//    "percent_high_performing_schools": 12,
+//    "transitscore": 84,
+//    "bikescore": 70,
     
     enum CityModelKeys: String, CodingKey {
         case latitude
@@ -44,6 +51,9 @@ struct City: Codable {
         case diversity_index
         case walkability
         case livability
+        case transitscore
+        case percent_high_performing_schools
+        case bikescore
 
     }
     
@@ -60,6 +70,10 @@ struct City: Codable {
         crime = try container.decodeIfPresent(String.self, forKey: .crime)
         rentalPrice = try container.decodeIfPresent(Int.self, forKey: .rental_price)
         airQuality = try container.decodeIfPresent(String.self, forKey: .air_quality_index)
+        transitscore = try container.decodeIfPresent(Int.self, forKey: .transitscore)
+        highPerformingSchools = try container.decodeIfPresent(Int.self, forKey: .percent_high_performing_schools)
+        bikescore = try container.decodeIfPresent(Int.self, forKey: .bikescore)
+        
     }
     
     init(cityName: String, cityState: String) {
