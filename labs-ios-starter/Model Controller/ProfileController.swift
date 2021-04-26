@@ -9,13 +9,21 @@
 import UIKit
 import OktaAuth
 
+/*
+ let oktaAuth = OktaAuth(baseURL: URL(string: "https://auth.lambdalabs.dev/")!,
+                             clientID: "0oa18is3355KlyP5C4x7",
+                             redirectURI: "labs://cityspire/implicit/callback")
+     
+     private let baseURL = URL(string: "https://pt17-cityspire-b.herokuapp.com/")!
+ */
+
 class ProfileController {
     
     static let shared = ProfileController()
     
         let oktaAuth = OktaAuth(baseURL: URL(string: "https://auth.lambdalabs.dev/")!,
-                                clientID: "0oalwkxvqtKeHBmLI4x6",
-                                redirectURI: "labs://scaffolding/implicit/callback")
+                                clientID: "0oa18is3355KlyP5C4x7",
+                                redirectURI: "labs://cityspire/implicit/callback")
         
         private(set) var authenticatedUserProfile: Profile?
         private(set) var profiles: [Profile] = []

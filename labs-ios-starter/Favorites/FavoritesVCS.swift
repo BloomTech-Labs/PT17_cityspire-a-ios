@@ -60,5 +60,10 @@ class FavoritesVCS: UIViewController, UICollectionViewDataSource, UICollectionVi
             return .init(top: 25, left: 25, bottom: 25, right: 25)
         }
     
+    @IBAction func backBtnPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 
 }

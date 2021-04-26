@@ -9,8 +9,9 @@
 import UIKit
 import MapKit
 import SDWebImage
+import Lottie
 
-class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SearchVCS: UIViewController {
 
     let favoriteCell = "FavoritesCell"
     
@@ -30,10 +31,27 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     //timer for search
     var timer : Timer?
     
+    // MARK: - Background gradient
+    
+    /// Sets the gradient colors for the background view
+    func setGradientBackgroundColor() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor(named: "LightBlue")!.cgColor, UIColor(named: "MedBlue")!.cgColor ]
+        gradientLayer.shouldRasterize = true
+        backgroundView.layer.addSublayer(gradientLayer)
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+    }
+    
     //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var animationView: AnimationView!
+    @IBOutlet var backgroundView: UIView!
     
+    @IBOutlet weak var cardview: UIView!
     
+    //disabled CollectionVIEW
     @IBOutlet weak var favoritesCollectionView: UICollectionView!
     
     //create search function
@@ -47,20 +65,31 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        favoritesCollectionView.dataSource = self
-        favoritesCollectionView.delegate = self
+        
+//        animationView.layer.cornerRadius = 15
+//        cardview.layer.cornerRadius = 15
+        
+        setGradientBackgroundColor()
+        
+        //lottie
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+        
+//        favoritesCollectionView.dataSource = self
+//        favoritesCollectionView.delegate = self
         //setup search
         setupSearchBar()
         
         /// Register Favorites Cell
-        favoritesCollectionView.register(FavCellS.self, forCellWithReuseIdentifier: favoriteCell)
+//        favoritesCollectionView.register(FavCellS.self, forCellWithReuseIdentifier: favoriteCell)
         
-        popularFetchedData = MockDataLoader().popularData
+//        popularFetchedData = MockDataLoader().popularData
         
         //reload cell
-        DispatchQueue.main.async {
-            self.favoritesCollectionView.reloadData()
-        }
+//        DispatchQueue.main.async {
+//            self.favoritesCollectionView.reloadData()
+//        }
 //        print("Latest Mock DATA \(popularFetchedData)")
     
     }
@@ -169,25 +198,25 @@ class SearchVCS: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return popularFetchedData.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCell, for: indexPath) as! FavCellS
-       
-        print(popularFetchedData.count)
-        let mocData = popularFetchedData[indexPath.item]
-        cell.nameLabel.textColor = .white
-//        cell.backgroundColor = .green
-//        print("MOC DATA", mocData)
-        cell.imageView.sd_setImage(with: URL(string: mocData.imageUrl))
-//        cell.imageView.image = #imageLiteral(resourceName: "4")
-        cell.nameLabel.text = "\(mocData.city)" + ", " + "\(mocData.state)"
-        cell.liveabilityLabel.text = "Livability:\(mocData.livability)"
-        
-        return cell
-    }
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return popularFetchedData.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoriteCell, for: indexPath) as! FavCellS
+//
+//        print(popularFetchedData.count)
+//        let mocData = popularFetchedData[indexPath.item]
+//        cell.nameLabel.textColor = .white
+////        cell.backgroundColor = .green
+////        print("MOC DATA", mocData)
+//        cell.imageView.sd_setImage(with: URL(string: mocData.imageUrl))
+////        cell.imageView.image = #imageLiteral(resourceName: "4")
+//        cell.nameLabel.text = "\(mocData.city)" + ", " + "\(mocData.state)"
+//        cell.liveabilityLabel.text = "Livability:\(mocData.livability)"
+//
+//        return cell
+//    }
     
     
 }
@@ -208,17 +237,17 @@ extension SearchVCS: UISearchBarDelegate {
     }
 }
 
-
-extension SearchVCS: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 48, height: 300)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 25, left: 25, bottom: 25, right: 25)
-    }
-}
+//DISABLED
+//extension SearchVCS: UICollectionViewDelegateFlowLayout {
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return .init(width: view.frame.width - 48, height: 300)
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return .init(top: 25, left: 25, bottom: 25, right: 25)
+//    }
+//}
 
  
  

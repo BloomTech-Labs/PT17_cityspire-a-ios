@@ -17,8 +17,8 @@ class CityDataVCSCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        metricLabel.textColor = .black
-        cityDataMetricValue.textColor = .black
+        metricLabel.textColor = .white
+        cityDataMetricValue.textColor = .white
         let stackView = UIStackView(arrangedSubviews: [metricLabel,UIView(), cityDataMetricValue], customSpacing: 15)
         addSubview(stackView)
         stackView.fillSuperview(padding: .init(top: 20, left: 20, bottom: 20, right: 20))

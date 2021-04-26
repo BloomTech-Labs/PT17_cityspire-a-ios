@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LambdaTabBarController: UITabBarController {
+class LambdaTabBarController: PTCardTabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

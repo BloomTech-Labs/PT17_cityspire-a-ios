@@ -62,9 +62,9 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
         title = searchItem.cityName
         collectionView.delegate = self
         collectionView.dataSource = self
-        cityNameStateHeaderLabel.textColor = .black
+        cityNameStateHeaderLabel.textColor = .white
         
-        cityHeaderImagerBackgroundView.backgroundColor = #colorLiteral(red: 0.7219179869, green: 0.8892920017, blue: 0.8767277598, alpha: 1)
+        cityHeaderImagerBackgroundView.backgroundColor = #colorLiteral(red: 0.04957468063, green: 0.4228932858, blue: 0.7525009513, alpha: 1)
         cityHeaderImagerBackgroundView.alpha = 0.65
         cityHeaderImagerBackgroundView.layer.cornerRadius = 14
         
@@ -195,7 +195,7 @@ class CityDataViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cityDataId, for: indexPath) as! CityDataVCSCollectionViewCell
-        cell.backgroundColor = #colorLiteral(red: 0.7231394649, green: 0.8902314305, blue: 0.8783438802, alpha: 1)
+        cell.backgroundColor = #colorLiteral(red: 0.04523042589, green: 0.431027025, blue: 0.768438518, alpha: 1)
         cell.alpha = 0.60
         cell.layer.cornerRadius = 14
         //Set City Data Stored in Local Instance here
